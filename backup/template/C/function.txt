@@ -1,0 +1,10 @@
+/*======================= FUNCTION ==========================
+ * Function:<+name+>
+ * Description:<+description+>
+ *===========================================================
+ */
+
+<+type+>  <+name+>(<+parameters+>){
+	 <+arguments+> 
+		 return <+variable+>;
+}/*---------End of function-------------*/

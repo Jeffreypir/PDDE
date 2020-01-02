@@ -1,0 +1,12 @@
+FILE *gp;
+	gp = popen(GNUPLOT, "w");
+		fprintf(gp,"set title 'Solution EDO' \n");
+		fprintf(gp,"set xlabel 'Axis (x)'\n");
+		fprintf(gp,"set ylabel 'Axis (y)'\n");
+		fprintf(gp,"set key right bottom \n");
+		fprintf(gp,"set term pdf \n");
+		fprintf(gp,"set output '<++>.pdf'\n");
+		fprintf(gp,"plot '<++>.txt' using 1:2 with points lc 6 pt 6 ps 0.4 t'Analitic solution','<++>.txt' using 1:2  with points lc 7 pt 6 ps 0.4 t'Numeric solution \n");
+	fclose(gp);
+		
+system("zathura <++>.pdf & ");
