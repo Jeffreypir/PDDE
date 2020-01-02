@@ -1,0 +1,6 @@
+FILE *ptg;
+ptg = fopen("<++>","w");
+	for (int i = 0; i <= N; i++){
+		fprintf(ptg,"%f   %f\n",x[i],y[i]);
+		 }
+fclose(ptg);

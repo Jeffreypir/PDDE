@@ -1,0 +1,600 @@
+\documentclass[9pt]{beamer}
+\usepackage[portuguese]{babel}
+\usepackage{anyfontsize}
+\usepackage{MnSymbol, mathtools, extarrows, mathrsfs, tikz, pgfplots, graphicx, subfigure,float}
+\usepackage{amsfonts}
+\usepackage{ragged2e}
+\usefonttheme[onlymath]{serif}
+
+\title {Transformada de Laplace}
+\author{Jefferson Bezerra dos Santos}
+
+\begin{document}
+\begin{frame}
+  \maketitle
+\end{frame}
+\begin{frame}{Qual  o motivo de estudar a tranformada de Laplace ?}
+  \justifying
+  A teoria da Transformada de Laplace ou Transformada de Laplace tornou-se ao longo do tempo parte essencial da bagagem matem\'{a}tica de f\'{i}sicos, matem\'{a}ticos e engenheiros, entre outras ci\^{e}ncias,
+  por ter grande interesse te\'{o}rico e al\'{e}m de oferecer uma maneira f\'{a}cil e efetiva para solu\c{c}\~{a}o de problemas. Para o nosso estudo a Transformada de Laplace tem sua utilidade por permitir  a an\'{a}lise
+  de sinais e sistemas que podem ser analisados com a Transformada de Fourier e por aqueles que Fourier n\~{a}o consegue, al\'{e}m  de podemos utilizar Laplace para  an\'{a}lise de muitos  sistemas inst\'{a}veis,
+  desempenhando  um papel importante na investiga\c{c}\~{a}o de estabilidade ou instabilidade de sistemas, al\'{e}m  de possui propriedades \'{a}lgebricas que facilitam nossa investiga\c{c}\~{a}o.
+\end{frame}
+\begin{frame}{Relembre :}
+  \justifying
+  A  \textit{fun\c{c}\~{a}o degraunit\'{a}rio} : 
+  \begin{displaymath}
+    u(t) = \left \{\begin{array}{ll}
+      0, \textrm { se $t < 0$ } \\
+      1, \textrm { se $t > $0}
+      	\end{array} \right.
+  \end{displaymath}
+   A \textit{paridade} de fun\c{c}\~{o}es :
+   \begin{eqnarray}
+     cos (x) & = & cos(-x), \, \textit{fun\c{c}\~{a}o par} \nonumber \\
+     sen(-x) & = & -sen(x), \, \textit{fun\c{c}\~{a}o \'{i}mpar} \nonumber
+   \end{eqnarray}
+   \par
+   A rela\c{c}\~{a}o de Euler:
+   $$ e^{jwt} = cos(wt) + j sen(wt)$$
+   \par
+   Na defini\c{c}\~{a}o  da transformada de Laplace envolve exponencias, vejamos graficamente seu comportamento.
+   \begin{figure}[!htpb]
+     \subfigure[Exponencial (x)]{
+    	 \includegraphics[width = 3cm, height = 3cm]{grafico1.eps}}
+     \subfigure[Exponcial (-x)]{
+         \includegraphics[width = 3cm, height = 3cm]{grafico2.eps}}
+   \end{figure}
+\end{frame}
+\begin{frame}{Integral  de convolu\c{c}\~{a}o :}
+  \justifying
+  Antes de come\c{c}ar vamos definir a integral de convolu\c{c}\~{a}o, tamb\'{e}m conhecida como integral de superposi\c{c}\~{a}o,
+  $$ y(t) = \int_{-\infty}^{\infty} x(\tau)h(t - \tau)d \tau$$
+  onde est\'{a} representar\'{a}  um sistema  LIT de tempo cont\'{i}nuo em termos do impulso unit\'{a}rio.  Tamb\'{e}m definiremos a convolu\c{c}\'{a}o de dois sinais por,
+  $$ y(t) = x(t) * h(t)$$ 
+  \par
+  Exemplo:
+  \par
+  Seja $x(t)$ a entrada de um sistema LIT com resposta ao impulso unit\'{a}rio $h(t)$ com,
+  $$ x(t) = e^{-at} u(t), a > 0$$
+  \par
+  e
+  \par
+  $$ h(t) = u(t).$$
+\end{frame}
+\begin{frame}
+  Vamos fazer uma an\'{a}lise de gr\'{a}fico 
+  \begin{figure}[!htb]
+    \subfigure[ $ h( \tau)$]{
+      \includegraphics[width = 5cm ,height = 5cm]{graf_conv6_atual.eps}}
+      \subfigure[ $ h(- \tau)$]{
+      \includegraphics[width = 5cm ,height = 5cm]{graf_conv7_atual.eps}}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \begin{figure}[!htpb]
+    \subfigure[ $ h(t - \tau )$]{
+      \includegraphics[width = 5cm , height = 5cm]{graf_conv8_atual.eps}}
+    \subfigure[$h(t - \tau )$]{
+      \includegraphics[width = 5cm, height = 5cm]{graf_conv9_atual.eps}}  
+  \end{figure}
+\end{frame}
+\begin{frame}
+  Observando os gr\'{a}ficos podemos perceber que, para $ t < 0 $ temos,
+  $$ x( \tau )h(t - \tau) = 0$$
+  \par
+  J\'{a} para $ t > 0 $,
+  \begin{displaymath}
+    x(\tau)h( t - \tau) = \left \{\begin{array}{ll}
+      e^{-a \tau},  \textrm { $ 0 < \tau < t $ } \\
+      0, \textrm { c.c}
+    \end{array} \right.
+  \end{displaymath}
+  Dessa express\~{a}o podemos integra para $ t > 0$, portanto,
+  \begin{eqnarray}
+    y(t) \equal \int_{0}^{t} e^{-a \tau} d \tau  & \equal & -\frac {1} {a} e^{-a \tau} \bigg \arrowvert_{0}^{t} \nonumber \\
+    & \equal & \frac {1} {a} (1 - e^{-at}) \nonumber
+  \end{eqnarray}
+  Ficando com  a seguinte express\~{a}o para todo $ t $,
+  $$ y(t) \equal  \frac {1} {a} (1 - e^{-at}) u(t) $$
+\end{frame}
+\begin{frame}{ A Transformada de Laplace :}
+  \justifying
+  A transformada de Laplace de um sinal $x(t)$  qualquer \'{e} definida como:
+  \begin{equation}
+    X(s)  \triangleq \int_{-\infty}^{\infty} x(t)e^{-st} dt
+  \end{equation}
+  \par
+  Onde est\'{a} \'{e} transformada de \textit{Laplace bilateral}, para a transformada  \textit{Laplace unilateral} tomemos  $t > 0$,
+  \par
+  \begin{equation}
+    X(s) \triangleq \int_{0}^{\infty} x(t)e^{-st} dt
+  \end{equation}
+  \par
+  Primeiramente devemos notar que a vari\'{a}vel $s$  na transformada, \'{e} um n\'{u}mero complexo da forma $s = \sigma + jw$, 
+  sendo $\sigma$ e $w$ a parte  real e imagin\'{a}ria respectivamente. Por conveni\^{e}ncia, temos como outra representa\c{c}\~{a}o,
+  $$x(t) \xlongleftrightarrow{\mathcal{L}} X(s)$$
+\end{frame}
+\begin{frame}
+  \justifying
+  Exemplo 1 :
+  \par
+  Seja o sinal $ x(t) = e^{-at}u(t)$, onde $ a > 0$.  Aplicando a transformada de Laplace(1),
+  \par
+  \begin{eqnarray} 
+    X(s) & = &  \int_{-\infty}^{\infty} e^{-at} u(t)e^{-st} dt \nonumber \\
+    & =  & \int_{-\infty}^{0} e^{-at} u(t)e^{-st} dt + \int_{0}^{\infty}e^{-at} u(t) e^{-st} dt \nonumber \\ 
+    & = & \int_{0}^{\infty} e^{-at} e^{-st} dt \nonumber  
+  \end{eqnarray}
+  \newline 
+  como $ s = \sigma + jw $, temos,  
+  $$ \int_{0}^{\infty} e^{-(\sigma + a )t} e^{-jwt} dt $$
+  \newline 
+  note que nossa integral \'{e} impr\'{o}pria, podendo ser reecrita da seguinte forma, 
+  $$ \lim_{b\rightarrow\infty} {\int_{0}^{b} e^{-(\sigma + a)t} e^{-jwt}} dt $$ 
+  \newline 
+  para facilitar tomemos $ \alpha = \sigma + a$, ficando, 
+  \par
+  $$ \lim_{b\rightarrow\infty} {\int_{0}^{b} e^{-\alpha t} e^{-jwt}} dt $$ 
+\end{frame}
+\begin{frame}
+  \justifying
+  $$ \int e^{-\alpha t} e^{-jwt} dt $$
+  \  \section{0i}
+\begin{eqnarray}
+    & u  & =  e^{-\alpha t} \Rightarrow  du  =   -\alpha e^{-\alpha t} dt \nonumber  \\
+    & v & =  \int e^{-jwt} dt =  -\frac {e^{-jwt}} {jw} \nonumber   
+  \end{eqnarray}
+  \par
+  De onde temos,
+  \par
+  \begin{eqnarray}
+    \int e^{-\alpha t} e^{-jwt} dt & = & -\frac {e^{-\alpha t} e^{-jwt}} {jw} - \int \frac {\alpha e^{-\alpha t} e^{ -jwt}} {jw} dt \nonumber \\
+    &  = &  -\frac {e^{-\alpha t} e^{-jwt}} {jw} - \frac {\alpha} {jw} \int e^{-\alpha t} e^{-jwt} dt \nonumber \\
+    \int e^{-\alpha t} e^{-jwt} dt & = & -\frac{e^{-\alpha t} e^{-jwt}} {\alpha + jw}  + C \nonumber
+  \end{eqnarray}
+\end{frame}
+\begin{frame}
+  \justifying
+  Por fim,
+  \begin{eqnarray}
+    \int_{0}^{b} e^{-(\sigma + a)t} e^{-jwt} dt & = &  -\frac { e^{-\alpha t} e^{-jwt}} {\alpha + jw} \bigg \arrowvert_{0}^{b} \nonumber \\
+    \lim_{b\rightarrow\infty} {\int_{0}^{b} e^{-(\sigma + a)t} e^{-jwt}} dt & = & \lim_{b\rightarrow\infty} {-\frac {e^{- \alpha t } e^{-jwt}} {\alpha + jw} \bigg \arrowvert_{0}^{b}} \nonumber
+  \end{eqnarray}
+  \par
+  Analisando, temos que ocorre   converg\^{e}ncia quando  $ \alpha > 0 $ uma vez que $ e^{-jwt}$ \'{e} limitada. Portanto, temos como solu\c{c}\~{a}o,
+  \begin{eqnarray}
+    \int_{0}^{\infty} e^{-(\sigma + a)t} e^{-jwt} dt & = & \frac {1} {\alpha + jw} = \frac {1} {(\sigma + a) +  jw}, \sigma + a > 0 \nonumber \\
+    X(s) & = & \frac {1} {(\sigma + a) + jw}, \Re(s) + a > 0 \nonumber
+  \end{eqnarray}
+  \par
+  Ou de forma equivalente,
+  \begin{eqnarray}
+    e^{-at} u(t) \xlongleftrightarrow{\mathcal{L}} \frac {1} {s + a }, \Re (s)> -a \nonumber
+  \end{eqnarray}
+\end{frame}
+\begin{frame}
+  \justifying
+  Exemplo 2 : 
+  \par
+  Seja agora, o seguinte sinal $ x(t) =  -e^{-at} u(-t) $, com $ a > 0 $, 
+  \par
+  \begin{eqnarray}
+	X(s) & =  & \int_{-\infty}^{\infty} - e^{-at} e^{-st} u(-t) dt  \nonumber \\ 
+	   & = & - \int_{-\infty}^{0} e^{-at} e^{-st} dt  \nonumber \\ 
+	   & = & - \lim_{b\rightarrow -\infty} {\int_{b}^{0} e^{-(\sigma + a)t} e^{-jwt}} dt \nonumber \\ 
+	   & = & - \lim_{b\rightarrow -\infty} {-\frac {e^{- \alpha t} e^{ -jwt}} {\alpha + jw} \bigg  \arrowvert_{b}^{0}} \nonumber \\ 
+	   & = &  \lim_{b\rightarrow -\infty} {\frac {e^{- \alpha t} e^{ -jwt}} {\alpha + jw} \bigg  \arrowvert_{b}^{0}} \nonumber \\ 
+	   & = &  \frac {1} {\alpha + jw}, \nonumber \, \alpha < 0  \\ 
+	   X(s) & = &  \frac {1} {s + a}, \nonumber \, \Re(s) <  -a
+  \end{eqnarray}
+\end{frame}
+\begin{frame}
+  \justifying
+ Exemplo 3:
+ \par
+ Vamos considerar  o sinal formado pela a soma de duas exponenciais,
+ $$ x(t) = 3e^{-2t}u(t) - 2e^{-t} $$
+ \par
+ Aplicando a transformada de Laplace,
+ \begin{eqnarray}
+   X(s) & = & \int_{-\infty}^{\infty} 3e^{-2t}e^{-st} - 2e^{-t}e^{-st} dt \nonumber \\ 
+   & = & 3 \int_{-\infty}^{\infty} e^{-2t}e^{-st} dt -2 \int_{-\infty}^{\infty} e^{-t}e^{-st} dt  \nonumber \\	
+   & = & 3 \frac {1} {s + 2} - 2 \frac {1} {s + 1} \nonumber
+ \end{eqnarray}
+ \par
+ Note que  as nossas integrais, s\~{a}o da forma de nossos resultados anteriores, o c\'{a}lculo se torna simples,
+ $$X(s) = \frac {3} {s + 2} - \frac {2} {s + 1}.$$
+ \par
+ \end{frame}
+\begin{frame}
+ Contudo, ainda precisamos definir nossa  regi\~{a}o de converg\^{e}ncia, nossa transformada \'{e} const\'{i}tuida por uma soma, portanto, precisamos avaliar
+ cada integral de forma individual  e a nossa RDC ser\'{a} a sua intersec\c{c}\~{a}o, ou seja,	
+ \begin{eqnarray}
+   3e^{-2t} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {3} {s + 2}, \Re(s) > -2 \nonumber \\
+   2e^{-t} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {2} {s + 1},  \Re(s) > -1 \nonumber \\
+   3e^{-2t} - 2e^{-t} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {3} {s + 2} - \frac {2} {s + 1},  \Re(s) > -1  \nonumber \\
+   3e^{-2t} - 2e^{-t} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {s - 1} {s^2 + 3s  + 2},  \Re(s) > -1  \nonumber  
+ \end{eqnarray} 
+\end{frame}
+\begin{frame}
+  \justifying
+ Exemplo 4 :
+ $$ x(t) = e^{-2t} u(t)  +  e^{-t}cos(3t) u(t) $$
+ \par
+ Note pela rela\c{c}\~{a}o de Euler temos,
+ \begin{eqnarray}
+   e^{jwt} & = & cos(wt) + j sen(wt) \nonumber \\
+   e^{-jwt} & = & cos(-wt) + j sen (-wt) \nonumber
+ \end{eqnarray}
+ \par
+ A soma e a subtra\c{c}\~{a}o dessas equa\c{c}\~{o}es constroem as express\~{o}es para o $ sen (wt) \, \textup{e} \, cos (wt) $ 
+ \begin{eqnarray}
+   cos (wt) = \frac {e^{jwt} + e^{-jwt}} {2} \nonumber \\
+   sen (wt) = \frac {e^{jwt}  -  e^{-jwt}} {2j} \nonumber
+ \end{eqnarray}
+ \par
+ Portanto temos,
+ \begin{eqnarray}
+   x(t) = \left[ e^{-2t} + \frac {e^{-(1 - 3j)t}} {2}  + \frac {e^{-(1 + 3j)t}} {2} \right]u(t)  \nonumber 
+ \end{eqnarray}
+ \end{frame}
+ \begin{frame}
+   \justifying
+   Agora podemos aplicar a transformada da Laplace,
+   \par
+   \begin{eqnarray}
+     X(s)  = \int_{-\infty}^{\infty} e^{-2t} u(t) e^{-st} dt + \int_{-\infty}^{\infty}  \frac {e^{-(1 - 3j)t}} {2} u(t) e^{-st} dt   \nonumber \\
+     +  \int_{-\infty}^{\infty} \frac {e^{-(1 + 3j)t}} {2} u(t) e^{-st} dt   \nonumber \\
+      =  \int_{-\infty}^{\infty} e^{-2t} u(t)e^{-st} dt +  \frac {1} {2} \int_{-\infty}^{\infty}  e^{-(1 - 3j)t} u(t)e^{-st} dt   \nonumber \\ 
+       + \frac {1} {2} \int_{-\infty}^{\infty} e^{-(1 + 3j)t}  u(t)e^{-st} dt 
+     \nonumber
+   \end{eqnarray}
+ \end{frame}
+ \begin{frame}
+   \justifying
+   Note que, como no exemplo anterior cada integral representar  uma transformada de Laplace que sabemos calcular, logo,
+   \par
+   \begin{eqnarray}
+     e^{-2t} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {1} {s + 2}, \Re(s) > -2 \nonumber \\
+     e^{(1-3j)} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {1} {s + (1 -3j)}, \Re(s) > - 1 \nonumber \\
+     e^{(1+3j)} u(t) & \xlongleftrightarrow{\mathcal{L}} & \frac {1} {s + (1 + 3j)}, \Re(s) > -1 \nonumber 
+   \end{eqnarray}
+   Fazendo  a intersec\c{c}\~{a}o, podemos determinar a RDC, de onde  obtemos nossa solu\c{c}\~{a}o para $X(s), $
+   $$ X(s) \equal \left (\frac {1} {s + 2} \right) +  \frac {1} {2} \left(\frac {1} {s + (1 -3j)} \right) +  \frac {1} {2} \left (\frac {1} {s + (1 + 3j)} \right) , \Re(s) > -1$$ 
+\end{frame}
+\begin{frame}
+  \justifying
+  Observa\c{c}\~{o}es:
+  \par
+   Note que tomando  a = 0, teriamos,
+   $$ X(s) = \frac {1} {s},\Re(s) > -a $$
+   Devemos observar que a transformada de \textit{Laplace} n\~{a}o converge para todos os valores de $s$ sendo necess\'{a}rio verificar a converg\^{e}ncia, em particular, sendo $s$ imagin\'{a}rio puro
+   ,ou seja, $ s = 0 + jw $, 
+	teriamos,
+	\begin{eqnarray}
+	   X (jw) = \int_{-\infty}^{\infty} e^{-at} e^{-jwt} dt = \frac {1} { jw + a}, a > 0 \nonumber \\
+	\end{eqnarray}
+	$$X(jw) = \frac {1} { jw + a }, a > 0$$
+	\par
+	A equa\c{c}\~{a}o  (3) \'{e} conhecida como  a transformada de \textit{Fourier}. Sendo definida,
+	$$ X(jw) \triangleq \int_{-\infty}^{\infty} x(t)e^{-jwt} dt $$ 
+\end{frame}
+\begin{frame}{ Impulso unit\'{a}rio}
+  Considere a fun\c{c}\~{a}o,
+  \begin{displaymath}
+    \delta_\Delta (t) = \left \{\begin{array}{ll}
+      \frac {1} {\delta}, \textrm {se $ 0 \leq  t \leq \delta $} \\
+      0, \textrm {se $ t > 0 $}
+    \end{array} \right.
+  \end{displaymath}
+  \newline
+  dada pelo gr\'{a}fico abaixo,
+  \newline
+  \begin{figure}[!htb]
+    \includegraphics[width = 7cm, height = 6cm]{graf_conv3_atual.eps}
+  \end{figure}
+  \par
+\end{frame}
+\begin{frame}
+  Note que  o  ret\^{a}ngulo da regi\~{a}o sombreada possui \'{a}rea unit\'{a}ria, assim como a medida que a largura tende a zero, ou seja, $\delta \rightarrow 0 $ temos que
+  altura tender\'{a} infinitamente. Contudo  os todos ret\^{a}ngulos formados continuaram com \'{a}rea unit\'{a}ria, ou seja,
+  $$\int_{0}^{\infty} \delta_\Delta (t) dt = 1. $$
+  \par
+  Assim, podemos definir,
+  $$ \delta (t) = \lim_{\delta \rightarrow\infty} \delta_\Delta (t) $$ 
+  sendo $\delta (t)$  conhecida como \textit {fun\c{c}\~{a}o impulso unit\'{a}rio}. Tendo as seguintes propriedades:
+  \newline
+  \par
+  (A) $ \int_{0}^{\infty} \delta (t) dt  = 1$
+  \newline
+  \par
+  (B) $ \int_{0}^{\infty} \delta (t) G(t) = G(0)$, \textit{ onde G(t) \'{e} cont\'{i}nua}
+  \newline
+  \par
+  (C) $ \int_{0}^{\infty} \delta(t - a)G(t) dt = G(a)$, \textit{ onde G(t) \'{e} cont\'{i}nua}
+\end{frame}
+\begin{frame}
+  Exemplo 5: 
+  \par 
+  Considere o  sinal, $$ x(t) \equal \delta (t) -\frac {4} {3 } e^{-t} u(t) + \frac {1} {3} e^{2t} u(t) $$
+  Aplicando Laplace temos,
+  \begin{eqnarray}
+    \int_{-\infty}^{\infty}  \left [ \delta (t) -\frac {4} {3} e^{-t} u (t) + \frac {1} {3} e^{2t} u (t) \right] e^{-st} dt  \nonumber \\
+    = \int_{-\infty}^{\infty} \delta (t) e^{-st} dt  \nonumber  
+    + \int_{-\infty}^{\infty} -\frac {4} {3} e^{-t} e^{-st} dt  \nonumber \\
+    + \int_{-\infty}^{\infty} \frac {1} {3} e^{2t} e^{-st} dt \nonumber 
+  \end{eqnarray}
+\par
+As duas \'{u}ltimas integrais sabemos calclular, para a primeira  usando a defini\c{c}\~{a}o da fun\c{c}\~{a}o impulso  unit\'{a}rio.
+\begin{eqnarray}
+  \int_{-\infty}^{\infty} \delta (t) e^{-st} dt & = & \int_{-\infty}^{0} \delta  (t) e^{-st} (t) dt + \int_{0}^{\infty} \delta (t) e^{-st}  dt \nonumber \\
+  & = & \int_{0}^{\infty} e^{-st} \delta (t) dt \nonumber \\
+   & = & e^{-s.0} \nonumber \\
+   & = & 1 \nonumber
+\end{eqnarray}
+\'{E} verdadeira para qualquer valor de $s$, portanto, para a fun\c{c}\~{a}o impulso unit\'{a}rio temos RDC o plano todo.
+\end{frame}
+\begin{frame}
+  Por \'{u}ltimo, voltando a nossa integral temos, 
+  \begin{eqnarray}
+    \delta (t) & \xlongleftrightarrow{\mathcal{L}} &  1, \textit{para todo s} \nonumber \\
+    e^{-t} & \xlongleftrightarrow{\mathcal{L}} &, \Re(s) > -1 \nonumber \\
+    e^{2t} & \xlongleftrightarrow{\mathcal{L}}&, \Re(s) > 2 \nonumber 
+  \end{eqnarray}
+Portanto, 
+$$ X(s) = 1 - \frac {4} {3} \left (\frac {1} {s + 1} \right ) +  \frac {1} {3}  \left (\frac {1} { s - 2} \right), \Re(s) > 2$$
+$$X(s) = \frac {(s - 1)^2}{(s + 1)(s -2)}, \Re (s) > 2$$
+\end{frame}
+\begin{frame}{Gr\'{a}fico de p\'{o}los e zeros}
+  A representa\c{c}\~{a}o gr\'{a}fica pode ser  bastante \'{u}til quando estamos trabalhando com  a transformada de Laplace. Portanto, seja a transformada de Laplace racional,ou seja,
+  $$X(s) = \frac {N(s)} {D(s)} $$
+  onde temos que os valores para os quais $ N(s) = 0 $ s\~{a}o as chamadas ra\'{i}zes. De forma, anal\'{o}ga os valores para os quais $ D(s) = 0$ diremos que s\~{a}o os p\'{o}los. 
+  Vejamos o comportamento dos exemplos anteriores. Tomemos o exemplo 3:
+  $$X(s)= \frac {s -1} {(s -2) (s + 1)} $$
+  \begin{figure}[!htb]
+    \includegraphics[width = 4cm ,height = 4cm ]{graf_conv4_atual.eps}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  Exemplo 4:
+  \par
+  $$ X(s) \equal \left (\frac {1} {s + 2} \right) +  \frac {1} {2} \left(\frac {1} {s + (1 -3j)} \right) \ + \frac {1} {2} \left (\frac {1} {s + (1 + 3j)} \right) , \Re(s) > -1$$ 
+  \par
+  $$ X(s) = \frac {2s^{2} + 5s + 12} {(s + 2 ) (s^{2} + 2s + 10)}, \Re (s) > -1 $$
+  \begin{figure}[!htpb]
+    \includegraphics[width = 6cm, height = 6cm]{graf_conv5_atual.eps}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  Exemplo 5:
+$$ X(s) = 1 - \frac {4} {3} \left (\frac {1} {s + 1} \right ) +  \frac {1} {3}  \left (\frac {1} { s - 2} \right), \Re(s) > 2$$
+$$X(s) = \frac {(s - 1)^2}{(s + 1)(s -2)}, \Re (s) > 2$$
+  \par
+  \begin{figure}[!htb]
+    \includegraphics[width = 5cm , height = 5cm ]{graf_conv10_atual.eps}
+  \end{figure}
+\end{frame}
+\begin{frame}{Propriedades}
+  \begin{block}{Propriedade 1:} 
+    A RDC de $ X(s) $ consiste de faixas paralelas ao eixo $jw$ no plano $s$.
+    \par
+  \justifying
+  De fato, a justificativa para essa afirma\c{c}\~{a}o consiste no fato de que a converg\^{e}ncia de Laplace
+  depende dos valores de $s$ para os quais $x(t)e^{\sigma t}$ \'{e} absolutamente convergente, ou seja, 
+  $$ \int_{-\infty}^{\infty} \vert x(t) \vert e^{\sigma t}dt < \infty .$$
+  Note que a condi\c{c}\~{a}o depende apenas  de $ \sigma . $ 
+   \end{block}
+  \begin{block}{Propriedade 2:} 
+    Para  a transformada de Laplace racional a RDC n\~{a}o possui qualquer p\'{o}lo.
+    \par
+    De fato, temos que $X(s) = \frac {N(s)} {D(s)} $, os p\'{o}los s\~{a}o os valores para os quais $ D(s) = 0$, portanto, os p\'{o}los
+    n\~{a}o podem fazer parte da RDC.
+  \end{block}
+  \begin{block}{Propriedade 3:}
+    Se $x(t)$ tem dura\c{c}\~{a}o finita e \'{e} absolutamente integr\'{a}vel, ent\~{a}o a RDC \'{e} todo o plano $s$.
+  \end{block}
+\end{frame}
+\begin{frame}
+  Para a propriedade 3, vamos precisar de um pouco de rigor, suponhamos que $x(t)$ seja absolutamente integr\'{a}vel, ou seja, 
+  $$ \int_{T_1}^{T_2} \vert x(t) \vert dt  < \infty $$
+  Se $s \equal \sigma + jw $ est\'{a} na regi\~{a}o de converg\^{e}ncia (RDC), temos que $ \vert x(t) \vert e^{-\sigma t}$ \'{e} absolutamente convergente, ou seja,
+  $$ \int_{T_1}^{T_2} \vert x(t) \vert e^{-\sigma t} dt  < \infty .$$
+  \par
+  Para $ \sigma \equal 0 $ temos,
+  $$ \int_{T_1}^{T_2} \vert x(t) \vert e^{0. t}dt \equal  \int_{T_1}^{T_2} \vert x(t) \vert 1 dt  \equal \int_{T_1}^{T_2} \vert x(t) dt < \infty $$ 
+  Suponhamos agora $ \sigma > 0$, o intervalo no qual $x(t)$ \'{e} n\~{a}o nulo temos que $x(t)e^{\sigma t}$ obt\'{e}m valor m\'{a}ximo em $x(t)e^{\sigma T_1}$,
+  podemos escrever,
+  $$ \int_{T_1}^{T_2} \vert x(t) \vert e^{-\sigma t} <  e^{\sigma T_1} \int_{T_1}^{T_2} \vert x(t) \vert dt $$
+  \par
+Como o lado direito \'{e} limitado, o lado esquerdo tamb\'{e}m ser\'{a}. De maneira an\'{a}loga para $ \sigma < 0$, temos
+$$\int_{T_1}^{T_2} \vert x(t) \vert e^{-\sigma t} <  e^{\sigma T_2} \int_{T_1}^{T_2} \vert x(t) \vert dt$$ 
+\end{frame}
+\begin{frame}{Transformada Inversa de Laplace}
+  Vamos definir a transformada inversa de Laplace como,
+ $$ x (t) \triangleq \frac {1} {2 \pi j} \int_{ \sigma -\infty}^{ \sigma + \infty} X(s) e^{st} ds $$ 
+ onde $ \sigma + jw $ e $w$ variando de  $-\infty$ at\'{e} $\infty.$ 
+ \par
+ Perceba que est\'{a}  f\'{o}rmula envolve conceitos mais complexos  do que estamos trabalhando, assim \'{e} mais pr\'{a}tico utilizamos  a decomposi\c{c}\~{a}o em fra\c{c}\~{o}es parciais. Seja,  
+ $$ X(s) \equal \frac {1} {(s + 1) (s + 2)}, \Re (s) > -1 $$
+ vamos obter a sua transformada inversa.
+ \par
+ Primeiramente vamos decompor $ X(s)$ em fra\c{c}\~{o}es parciais, ou seja,
+ $$ X(s) \equal \frac {1} {s + 1} + \frac {1} {s + 2} \equal \frac {A} {s + 1} + \frac {B} {s + 2} $$
+ de onde temos,
+ $$ A(s + 2) + B(s +1) \equal 1.$$
+ Tomando $s \equal -2 $ temos,
+ $$B = -1. $$
+ Tomando $s \equal -1$ temos,
+ $$A \equal 1. $$
+ \end{frame}
+ \begin{frame}
+  Ent\~{a}o,
+ $$ X(s) \equal \frac {1} {s + 1} - \frac {1} {s + 2} $$
+ Como a regi\~{a}o de converg\^{e}ncia inclui $-1$ o mesmo  \'{e} verdade para as parcelas individuais, segue que os sinais s\~{a}o laterais direitos. Portanto,
+ \begin{eqnarray}
+   e^{-t} u(t) \xlongleftrightarrow {\mathcal{L}} \frac {1} {s + 1}, \Re (s) > -1 \nonumber \\
+   e^{-2t} u(t) \xlongleftrightarrow {\mathcal{L}} \frac {1} {s +2 }, \Re (s) > -2 \nonumber 
+ \end{eqnarray}
+ por fim, 
+ $$ [ e^{-t} -e^{-2t}] u(t) \xlongleftrightarrow {\mathcal{L}} \frac {1} {(s + 1)(s + 2)}, \Re (s) > -1. $$
+ Note que podemos tamb\'{e}m ter um polo complexo, seja, 
+ $$ X(s) \equal \frac {1} { \left [ s + (1 -j) \right] \left [s + (2 + j) \right ]},  \Re (s) > -1 $$
+ aplicando decomposi\c{c}\~{a}o por fra\c{c}\~{o}es parciais, 
+ $$ X(s) \equal \frac {1} { \left [ s + (1 -j) \right] \left [s + (2 + j) \right ]} \equal \frac {A} { s + (1 -j)} + \frac {B} {s + (2 +j)} $$
+ de onde temos,
+ $$ A [s + (2 + j) ] + B [ s + (1 -j)] = 1 .$$
+ Tomando, $ s \equal -2 -j $, temos,
+ $$B( -1 -2j) \equal 1 \Rightarrow B \equal  -\frac {1} {1 + 2j} $$ 
+ por outro lado,
+ $$A(1 + 2j) \equal 1 \Rightarrow A \equal \frac {1} {1 + 2j}$$
+ \end{frame}
+ \begin{frame}
+   segue que,
+ \begin{eqnarray}  
+  X(s) & \equal & \frac {1} { \left [ s + (1 -j) \right] \left [s + (2 + j) \right]} \nonumber \\ 
+  & \equal & \frac {\frac {1} {1+ 2j}} { s + (1 -j)} - \frac {\frac {1} {1+ 2j}} {s + (2 +j)} \nonumber \\ 
+  & \equal & \frac {1} {(1 + 2j) (s + (1 -j))} - \frac {1} {(1 + 2j) (s + (2 + j))} \nonumber \\
+  & \equal & \frac {1} {s + (1 - j) + 2sj + (1 - j)2j} - \frac {1} {s + (2 + j) + 2sj + (2 + j)2j}  \nonumber \\  
+  & \equal & \frac {1} { s + 3 +j + 2sj} - \frac {1} { s - 2 + 5j + 2sj } \nonumber  
+\end{eqnarray}
+como $ s \equal \sigma + jw $, temos, 
+\begin{eqnarray}
+  X(s) & \equal & \frac {1} { \sigma + jw + 3 + j + 2 (\sigma + jw)j} -\frac {1} {\sigma + jw - 2 + 5j + 2( \sigma + jw)j} \nonumber \\
+  & \equal &  \frac {1} {s + [(3 -2w) + (2 \sigma + 1)j]}  -\frac {1} {s + [(-2 -2w ) + (2 \sigma + 5)j]}. \nonumber 
+\end{eqnarray}
+ \end{frame}
+ \begin{frame}
+   De maneira an\'{a}loga ao sinal anterior,
+\begin{eqnarray}
+  e^{-(( 3 - 2w) + (2 \sigma + 1)j)t} u(t) ,\Re(s) > 3 - 2w \nonumber \\
+  e^{-(( -2 -2w) + (2 \sigma + 5 )j)t}u(t), \Re(s) >-2 -2w \nonumber
+\end{eqnarray}
+Usando o fato que os sinais s\~{a}o laterais direitos e $-1$ pertence a RDC, podemos analisar o comportamento de $w$, ou seja,
+\begin{eqnarray}
+  3 -2w \leq -1  \nonumber \\
+  -2 -2w \leq -1 \nonumber   
+\end{eqnarray}
+dessas  desigualdade temos $ w \geq 2$.
+\par
+Por fim,
+$$[e^{-(( 3 - 2w) + (2 \sigma + 1)j)t} - e^{-(( -2 -2w) + (2 \sigma + 5 )j)t}]u(t) \xlongleftrightarrow{\mathcal{L}}   \frac {1} { \left [ s + (1 -j) \right] \left [s + (2 + j) \right]}$$
+com $ \Re(s) > -1$ desde que $ w \geq 2$.
+ \end{frame}
+ \begin{frame}
+   Devemos ter o muito cuidado quando aplicamos a decomposi\c{c}\~{a}o em fra\c{c}\~{o}es parciais, sempre devemos observar a RDC para ter certeza que n\~{a}o estamos fazendo coisas sem sentido.
+\par
+Seja,
+$$ X(s) \equal \frac {1} {s(s + 1)},  \Re (s) > -1$$
+aplicando o m\'{e}todo das fra\c{c}\~{o}es parcias, 
+$$ \frac {1} {s (s + 1)} \equal \frac {1} {s} - \frac {1} {s + 1} $$
+contudo, note que $ X(s)$ uma vez decomposta possui como RDC de uma de suas parcelas $ \Re(s) > 0$, ou seja, estariamos cometendo um engano na transformada inversa, pois $\Re (s) > -1$ dever pertencer a cada parcela,
+o que n\~{a}o acontecer.
+\par
+Tamb\'{e}m pode acontecer que o polo tenha multiplicidade, seja o sinal 
+$$ X(s) \equal \frac {2s^2 + 5s + 5} {(s + 1)^2 (s + 2)}, \Re(s) > -1$$ 
+discutiremos este tipo de sinal mais adiante por precisamos de  um resultado. 
+ \end{frame}
+ \begin{frame}{Diferencia\c{c}\~{a}o no dom\'{i}nio s}
+Tomemos a Transformada de Laplace,
+$$ x(t) \equal \int_{-\infty}^{\infty} x(t) e^{-st} dt, $$
+diferenciando ambos os membros em rela\c{c}\~{a}o a s,
+\begin{eqnarray}
+  \frac {dX(s)} {ds} & \equal &  \int_{- \infty}^{\infty} (-t) x(t) e^{-st} dt \nonumber \\
+  -\frac {dX(s)} {ds} & \equal & \int_{- \infty}^{\infty} te^{-st} dt \nonumber
+\end{eqnarray}
+logo,
+\par
+\vspace{1.0cm}
+\begin{minipage}[!h]{12cm}
+  se 
+  $$ x(t) \xlongleftrightarrow{\mathcal{L}} X(s), \textrm{ com RDC = R} $$
+  ent\~{a}o
+  $$ tx(t) \xlongleftrightarrow{\mathcal{L}} -\frac {dX(s)} {ds}, \textrm{ com RDC = R} $$
+\end{minipage}
+\vspace{0.5cm}
+\par
+Para fixar as ideias vejamos um exemplo.
+ \end{frame}
+ \begin{frame}
+   Exemplo :
+\par
+Seja o sinal,
+$$ x(t) \equal te^{-st} u(t)$$
+vamos encontra a sua transformada de Laplace, sabemos que,
+$$ e^{-at} u(t) \xlongleftrightarrow{\mathcal{L}} \frac {1} {s + a}, \Re(s) > -a $$
+\par
+Pelo resultado anterior temos,
+$$ te^{-at} u(t) \xlongleftrightarrow{\mathcal{L}} - \frac {d} {ds}  \left [\frac {1} {s + a} \right]  \equal \frac {1} {(s + a)^2}, \Re (s) > -a.$$
+De maneira an\'{a}loga temos,
+$$ \frac {t^2} {2} e^{-at} u(t) \xlongleftrightarrow{\mathcal{L}} \frac {1} {(s + a)^3}, \Re (s) > -a.$$
+Segue de forma indutiva que,
+$$ \frac {t^{(n -1)}} {(n -1!)} e^{-at} u(t) \xlongleftrightarrow{\mathcal{L}} \frac {1} {(s + a)^n}, \Re (s) > -a. $$ 
+ \end{frame}
+ \begin{frame}
+   Est\'{a} \'{u}ltima possui um resultado importante, seja a transformada de Laplace com a multiplicidade no polo,
+$$ X(s) \equal \frac {2s^2 + 5s + 5} { (s + 1)^2  (s + 2)}, \Re (s) > -1$$ 
+utilizando o m\'{e}todo das fra\c{c}\~{o}es parciais temos,
+\begin{eqnarray}
+  X(s) & \equal & \frac{2s^2 + 5s + 5} {(s + 1) (s + 2)} \equal \frac{A} {(s + 1)^2} + \frac {B} {(s + 1)} + \frac {C} {(s + 2)} \nonumber \\ 
+  & \equal & \frac {A (s + 1) (s +2) + B(s + 1)^2 (s + 2) + c (s + 1)^3} { (s + 1)^2 (s + 1) (s + 2)} \nonumber \\
+  & \equal & \frac {A(s + 2) + B (s + 1)(s + 2) + c(s + 1)^2} { (s + 1)^2 (s + 2)} \nonumber 
+\end{eqnarray}
+\newline
+eliminando os denominadores,
+$$A(s + 2) + B (s + 1)(s + 2) + C(s + 1)^2 \equal 2s^2 + 5s + 5$$
+ \end{frame}
+ \begin{frame}
+   $$A(s + 2) + B (s + 1)(s + 2) + C(s + 1)^2 \equal 2s^2 + 5s + 5$$
+tomando $ s \equal -1$, 
+$$ A \equal 2 $$
+\newline
+tomando $ s \equal -2 $,
+$$ C \equal 3 $$
+perceba que n\~{a}o conseguimos o valor de C, portanto devemos recorrer as equa\c{c}\~{o}es que representam a nossa express\~{a}o, ou seja,
+\begin{eqnarray}
+  B + C  \equal 2\\
+  A + 3B + 2C \equal 5 \\
+  2A + 2B + C \equal 5 
+\end{eqnarray}
+\newline
+tomando $ C \equal 3 $ em  $ (5)$ temos, 
+$$ B \equal -1$$
+por fim,
+$$ X(s) \equal \frac {2} {(s + 1)^2} - \frac {1} {s + 1} + \frac {3} {s + 2}, \Re(s) > -1 .$$ 
+Note como a RDC est\'{a} a direita de $s \equal -1 $ e $ \equal -2,$ portanto, se trata de um sinal direito, pelo resultado anterior, a transformada inversa de laplace,
+$$ x(t) \equal \left [ 2te^{-t}  - e^{-t} + 3e^{-2t} \right] u(t) $$ 
+ \end{frame}
+ \begin{frame}{ Convolu\c{c}\~{a}o}
+\begin{center}
+  Se
+  \par
+  $$ x_1(t) \xlongleftrightarrow{\mathcal{L}} X_1(s), \textrm{ com RDC = R}$$
+  e
+  $$ x_2(t) \xlongleftrightarrow{\mathcal{L}} X_2(s), \textrm{ com RDC = R}$$
+  ent\~{a}o 
+  $$ x_1(t)*x_2(t) \xlongleftrightarrow{\mathcal{L}} X_1(s)X_2(s), \textrm{ com RDC contendo $ R_1 \cap R_2$}$$ 
+\end{center}
+\par
+Assim como ocorrer com a linearidade, a RDC pode ser maior que a intersec\c{c}\~{a}o das RDC(s) individuais.
+\par
+Seja, 
+$$ X_1(s) \equal \frac {s + 1} { s + 2}, \Re(s) > -2, $$
+e
+$$ X_2(s) \equal \frac {s + 2} { s + 1}, \Re(s) > -1 $$
+\par
+Portanto,
+$$  X_1(s)  X_2(s)  \equal \left (\frac {s + 1} { s + 2} \right)  \left (\frac {s + 2} {s + 1} \right) \equal 1 $$  
+para este caso a RDC \'{e} o plano s todo.
+ \end{frame}
+ \begin{frame} {Observa\c{c}\~{o}es:}
+  \par
+  \begin{itemize}
+    \item O gr\'{a}fico de p\'{o}los e zeros \'{e} bastante \'{u}til  na an\'{a}lise de Laplace. 
+    \item   Note que se RDC n\~{a}o cont\'{e}m o eixo $jw$, ou seja, $ \Re(s) = 0$ a transformada de Fourier n\~{a}o converge.  De fato, observe o exemplo 5 e seu gr\'{a}fico. Perceba que
+      $ \frac {1} {3} e^{2t} u(t)$ n\~{a}o possui transformada de Fourier.
+   \item   Portanto, a converg\^{e}ncia de Laplace nem sempre garante a converg\^{e}ncia de Fourier muito cuidado!!! 
+  \end{itemize}
+\end{frame}
+\end{document}
+

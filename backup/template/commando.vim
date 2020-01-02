@@ -1,0 +1,3 @@
+"Chave
+":let g:mapleader = '-'
+"
