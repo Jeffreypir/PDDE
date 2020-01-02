@@ -1,0 +1,31 @@
+*octave.txt* funcionality for the octave programming language
+===========================================================
+ ____  _             _        ___       _                  ~
+|  _ \| |_   _  __ _(_)_ __  / _ \  ___| |_ __ ___   _____ ~
+| |_) | | | | |/ _` | | '_ \| | | |/ __| __/ _` \ \ / / _ \~
+|  __/| | |_| | (_| | | | | | |_| | (__| || (_| |\ V /  __/~
+|_|   |_|\__,_|\__, |_|_| |_|\___/ \___|\__\__,_| \_/ \___|~
+               |___/                                       ~
+Author: Jeffrey
+==========================================================
+
+"Functions
+	"Line function
+  	Insertion mode @...................... <+name+> = @(<+paramenters+>) <+arguments+>;  
+
+	"Default function
+	Inserciton mode <leader>fc.................. function [<+output+>] = <+name+> (<+input+>) ... endfunction
+
+	"Funciton call 
+	Inserciton mode <leader>cf..................  [<+output+>] = <+name+> (<+parameter+>) 
+
+"Loop 
+	"For
+     Inserction mode <leader>sf ................  for i = number1 : number2 endfor
+
+	"While
+     Inserction mode <leader>sw ................ while (expression avaliation) ... endwhile 
+
+"Data print
+	"print
+	Inserciton mode <leader>p ................... printf("<+message+>%<+type+>\n",<+print+>);
