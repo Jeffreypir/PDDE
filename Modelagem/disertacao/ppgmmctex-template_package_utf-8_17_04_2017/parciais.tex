@@ -1,0 +1,259 @@
+\graphicspath{ {/home/jefferson/Modelagem/} }
+No cap\'itulo anterior foi abordado a formula\c c\~ao do modelamento de despacho de energia hidrot\'ermico. Nesse
+cap\'itulo ser\'a debatidos alguns dos resultados da aplica\c c\~ao da modelagem din\^amica dual estoc\'astica na
+modelagem do despacho.
+A simula\c c\~ao  foi constitu\'ida para um sistema hidrot\'ermico de duas usinas hidrel\'etricas em cascata
+com duas termel\'etricas associadas considerando-se dois cen\'arios com probabilidade $p$ e $1-p$ respectivamente.
+O sistema foi configurado de tal forma a garantir a demanda da regi\~ao dada por,
+\begin{align*}
+  \displaystyle{\rho}_1*VTH1 + {\rho}_2*VTH2 + G1 + G2 = DEMANDA,
+\end{align*}
+onde:
+\begin{itemize}
+	\item $H_1$ e $H_2$ representam as hidrel\'etricas associadas ao sistema;
+	\item $G_1$ e $G_2$ representam as termel\'etricas associadas ao sistema;
+	\item $\rho_1$ e $\rho_2$ s\~ao os \'indices de produtibilidade das usinas H1 e H2;
+	\item $VTH1$ e $VTH$  os volumes turbinados das hidrel\'etricas associadas.
+\end{itemize}
+O sistema deve preservar o balan\c co hidr\'ico dada por,
+\begin{align*}
+  \displaystyle Vt = VI + VIC - \left( VT + VV \right), 
+\end{align*}
+onde : 
+\begin{itemize}
+	\item $V(t)$ representar o volume em qualquer instante de tempo;
+	\item $VI$  volume inicial;
+	\item $VIC$ volume incremental;
+	\item $VV$ volume vertido
+\end{itemize}
+Por quest\~oes relacionadas ao custo e ao ambiente a gera\c c\~ao das termel\'etricas devem respeitar uma toler\^ancia de
+gera\c c\~ao dada por:
+\begin{align*}
+	G_1 + G_2 \leq G_{max}
+\end{align*}
+onde $G_{max}$ representar a produ\c c\~ao m\'axima das termel\'etricas associadas aos sistema. O n\'ivel de
+produtibilidade adotado na simula\c c\~ao ser\'a nomeado por $\rho$. 
+Os resultados para a
+simula\c c\~ao considerando as probabilidades do cen\'arios 1 e 2 seram denominados  por $p$ e $ 1 -
+p$ respectivamente. A seguir os resultados das simula\c c\~oes.
+\begin{figure}[!ht]
+	\centering
+	\subfigure[$\rho = 1,0$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.1/simulacao.1.0/simula.pdf}
+	}
+	\subfigure[$\rho = 1,4$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.1/simulacao.1.4/simula.pdf}
+	}
+	\subfigure[$\rho = 1,5$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.1/simulacao.1.5/simula.pdf}
+	}
+	\subfigure[$\rho = 1,6$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.1/simulacao.1.6/simula.pdf}
+	}
+	\subfigure[$\rho = 1,8$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.1/simulacao.1.8/simula.pdf}
+	}
+	\subfigure[$\rho = 2,0$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.1/simulacao.2.0/simula.pdf}
+	}
+	\caption{Simula\c c\~ao para cen\'arios de probabilidade $p = 0.1$ e $1 - p = 0.9$.}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\subfigure[Custo para $\rho = 1,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.1/simulacao.1.0/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,4.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.1/simulacao.1.4/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,5.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.1/simulacao.1.5/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,6.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.1/simulacao.1.6/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,8.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.1/simulacao.1.8/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 2,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.1/simulacao.2.0/custo.pdf}
+	}
+	\caption{Simula\c c\~ao da curva de custo esperado $p = 0.1$ e $1 - p = 0.9$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[$\rho = 1,1$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.0/simula.pdf}
+	}
+	\subfigure[$\rho = 1,4$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.4/simula.pdf}
+	}
+	\subfigure[$\rho = 1,5$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.5/simula.pdf}
+	}
+	\subfigure[$\rho = 1,6$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.6/simula.pdf}
+	}
+	\subfigure[$\rho = 1,8$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.8/simula.pdf}
+	}
+	\subfigure[$\rho = 2,0$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.2/simulacao.2.0/simula.pdf}
+	}
+	\caption{Simula\c c\~ao para cen\'arios de probabilidade $p = 0.2$ e $1 - p = 0.8$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[Custo para $\rho = 1,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.0/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,4.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.4/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,5.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.5/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,6.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.6/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,8.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.1.8/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 2,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.2.0/custo.pdf}
+	}
+	\caption{Simula\c c\~ao da curva de custo esperado $p = 0.2$ e $1 - p = 0.8$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[$\rho = 1,1$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.0/simula.pdf}
+	}
+	\subfigure[$\rho = 1,4$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.4/simula.pdf}
+	}
+	\subfigure[$\rho = 1,5$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.5/simula.pdf}
+	}
+	\subfigure[$\rho = 1,6$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.6/simula.pdf}
+	}
+	\subfigure[$\rho = 1,8$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.8/simula.pdf}
+	}
+	\subfigure[$\rho = 2,0$.]{
+		\includegraphics[width=6cm,height=5cm]{prob.0.5/simulacao.2.0/simula.pdf}
+	}
+	\caption{Simula\c c\~ao para cen\'arios de probabilidade $p = 0.5$ e $1 - p = 0.5$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[Custo para $\rho = 1,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.0/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,4.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.4/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,5.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.5/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,6.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.6/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,8.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.5/simulacao.1.8/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 2,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.2/simulacao.2.0/custo.pdf}
+	}
+	\caption{Simula\c c\~ao da curva de custo esperado $p = 0.5$ e $1 - p = 0.5$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[$\rho = 1,1$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.0/simula.pdf}
+	}
+	\subfigure[$\rho = 1,4$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.4/simula.pdf}
+	}
+	\subfigure[$\rho = 1,5$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.5/simula.pdf}
+	}
+	\subfigure[$\rho = 1,6$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.6/simula.pdf}
+	}
+	\subfigure[$\rho = 1,8$.]{
+		\includegraphics[width=6cm,height=7cm]{prob.0.7/simulacao.1.8/simula.pdf}
+	}
+	\subfigure[$\rho = 2,0$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.2.0/simula.pdf}
+	}
+	\caption{Simula\c c\~ao para cen\'arios de probabilidade $p = 0.7$ e $1 - p = 0.3$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[Custo para $\rho = 1,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.0/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,4.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.4/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,5.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.5/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,6.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.6/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,8.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.1.8/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 2,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.0.7/simulacao.2.0/custo.pdf}
+	}
+	\caption{Simula\c c\~ao da curva de custo esperado $p = 0.7$ e $1 - p = 0.3$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[$\rho = 1,1$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.0/simula.pdf}
+	}
+	\subfigure[$\rho = 1,4$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.4/simula.pdf}
+	}
+	\subfigure[$\rho = 1,5$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.5/simula.pdf}
+	}
+	\subfigure[$\rho = 1,6$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.6/simula.pdf}
+	}
+	\subfigure[$\rho = 1,8$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.8/simula.pdf}
+	}
+	\subfigure[$\rho = 2,0$.]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.2.0/simula.pdf}
+	}
+	\caption{Simula\c c\~ao para cen\'arios de probabilidade $p = 1.0$ e $1 - p = 0.0$.}
+\end{figure}
+\begin{figure}[!ht]
+	\centering
+	\subfigure[Custo para $\rho = 1,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.0/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,4.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.4/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,5.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.5/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,6.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.6/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 1,8.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.1.8/custo.pdf}
+	}
+	\subfigure[Custo para $\rho = 2,0.$]{
+		\includegraphics[width=7cm,height=7cm]{prob.1.0/simulacao.2.0/custo.pdf}
+	}
+	\caption{Simula\c c\~ao da curva de custo esperado $p = 1.0$ e $1 - p = 0.0$.}
+\end{figure}
+

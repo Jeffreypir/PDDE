@@ -1,0 +1,52 @@
+\begin{figure}[!ht]
+  \centering
+  \subfigure{
+  \scalebox{0.9} {\begin{tikzpicture}
+	\begin{axis}[ 
+		legend style={  
+		  at={(1.0,1)},
+		anchor=north east},
+		axis lines = left,
+		xlabel= {$\text{Demanda (kW)}$},
+	  ylabel={$\text{Gera\c c\~ao(kW)}$},
+	]
+	\addplot[color=red,mark=*] coordinates{
+(100,400.000000)
+(200,400.000000)
+(300,400.000000)
+(400,400.000000)
+(500,400.000000)
+(600,400.000000)
+
+};
+	\legend{Termel\'etrica T1}
+  \end{axis} 
+\end{tikzpicture}
+}}
+\quad
+\subfigure{
+\scalebox{0.9} {\begin{tikzpicture}
+	\begin{axis}[  
+		legend style={  
+		  at={(0.8,1)},
+		anchor=north east},
+		axis lines = left,
+		xlabel= {$\text{Demanda (kW)}$},
+		ylabel={$\text{Gera\c c\~ao(kW)}$},
+	]
+
+\addplot[color=green,mark=*] coordinates{
+(100,2700.000000)
+(200,2700.000000)
+(300,2800.000000)
+(400,2900.000000)
+(500,3000.000000)
+(600,3100.000000)
+};
+\legend{Hidrel\'etrica H2}
+\end{axis} 
+\end{tikzpicture}
+}}
+\caption {Simula\c c\~ao 3, $p_1 = 0.5$ e $p_2 = 0.5$.}
+\label{fig7}
+\end{figure}

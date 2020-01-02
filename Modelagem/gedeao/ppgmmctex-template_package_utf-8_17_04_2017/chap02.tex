@@ -1,0 +1,368 @@
+\chapter{Preliminares}
+\section{No\c{c}\~{o}es de Probabilidade}
+Para a formula\c{c}\~{a}o de um modelo de dispacho de energia, fazer a an\'{a}lise do modelo considerando somente o aspecto deterministico,
+costumar ser pouco vi\'{a}vel, pois, as mudan\c{c}as que podem ocorrer no ambiente podem causa um s\'{e}rio impacto. Portanto, para modelos
+hidrot\'{e}rmicos \'{e} necess\'{a}rio o conhecimento sobre a teoria das probabilidades. Est\'{a} se\c{c}\~{a}o aborda os  principais conceitos
+para o entendimento do modelo de dispacho de energia considerando a variedade de cen\'{a}rios que podem  ocorrer. Para um estudo mais rigoroso 
+sobre o probabilidade consulte  \cite{james} e \cite{magalhaes}. 
+\par 
+Na natureza encontramos uma s\'{e}rie de situa\c{c}\~{o}es que envolvem algum tipo de incerteza, sendo denomindas de fen\^{o}menos ou
+experimentos aleat\'{o}rios. Por exemplo, o lan\c{c}amento de um dado, a previs\~{a}o do clima.
+O espa\c{c}o amostral \'{e} o conjunto de todos os resultado poss\'{i}veis \'{e} representado por $\Omega$. Segundo
+\cite{magalhaes} pode ser enumer\'{a}vel, finito ou infinito, sendo for poss\'{i}vel uma correspond\^{e}ncia biun\'{i}voca com os n\'{u}meros 
+reais, caso contr\'{a}rio ser\'{a} n\~{a}o enumer\'{a}vel. Para maiores detalhes sobre conjuntos o ap\^{e}ndice A dever ser consultado.
+Onde os resultados poss\'{i}veis do espa\c{c}o amostral seram conhecidos
+como os pontos ou elementos de $\Omega$. De forma generica os elementos de $\Omega$ seram representados por $\omega$.
+O conjunto vazio por $\emptyset$. Para os subconjunto de $\Omega$ ser\'{a} adotado por conven\c{c}\~{a}o a utiliza\c{c}\~{a}o de
+letras mai\'{u}sculas do alfabeto latino, para indicar um subconjunto de $\Omega$ ser\'{a} adotado $ A \subset \Omega$. Caso exista $\omega$
+que pertence ao espa\c{c}o amostral, escreve-se $ \omega \in \Omega$.  
+\newline
+Exemplo:
+\newline
+Seja o lan\c{c}amento de um dado, para especificar o espa\c{c}o amostral deste fen\^{o}meno deve-se elencar todos os resultados
+poss\'{i}veis, ou seja, $ 1, 2, 3, 4, 5, 6$. Portanto, o espa\c{c}o amostral ser\'{a} dado por, 
+$$\Omega =  \{1,2,3,4,5,6\}$$
+alguns dos subconjuntos de $\Omega$ podem ser elencados da seguinte forma,
+$$ A = \{1,2,3\}$$
+$$ B = \{6\}$$
+pode-se notar que,
+$$ A \subset \Omega \qquad  \textrm{e} \qquad  B \subset \Omega $$       
+significando que tanto A como B s\~{a}o subconjuntos de $\Omega$. A representa\c{c}\~{a}o pela linguagem dos conjuntos permite que
+uma forma objetiva de ser expressa os eventos, por exemplo, no lan\c{c}amento do dado poderia-se um interesse no evento 
+``sair um n\'{u}mero menor que 4'', uma representa\c{c}\~{a}o para esse tipo de evento poderia ser,
+$$ C = \{\omega \in \Omega; \omega < 4 \}$$ 
+desta forma, o evento de interesse est\'{a} bem formulado. Quando ser est\'{a} trabalhando com conjuntos deve-se ter alguns cuidados,
+um deles, tomando como ref\^{e}ncia o lan\c{c}amento do dado, a seguinte forma de escrita,
+$$ 6 \in \Omega $$
+\'{e} v\'{a}lida, contudo,
+$$ 6 \subset \Omega $$
+n\~{a}o tem sentido,
+\newline
+caso seja necess\'{a}rio pode-se escrever,
+$$\{6 \} \subset \Omega .$$
+\par
+As nota\c{c}\~{o}es b\'{a}sicas para as opera\c{c}\~{o}es entre conjuntos s\~{a}o:
+\begin{description}
+  \item[\textit{(i)}] $A^c$ complemento, ou seja, todos os elementos $\omega$ de $\Omega$, exceto aqueles que est\~{a}o em A.
+  \item[\textit{(ii)}] $A_1 \cup A_2 \cup A_3, \dots ,\cup A_n$  ou $ \bigcup_{j = 1}^{n} A_n $, \'{e} a uni\~{a}o, s\~{a}o todos os 
+	pontos $\omega \in \Omega$, que pertecem a pelo menos um $A_i$ com $ i = 1,2, \dots,n$.
+  \item[\textit{(iii)}]  $A_1 \cap A_2 \cap A_3, \cdots ,\cap A_n$  ou $ \bigcap_{j = 1}^{n} A_n $, \'{e} a intersec\c{c}\~{a}o,
+	s\~{a}o todos os pontos $\omega \in \Omega$, pertencentes $A_i$ qualquer que seja o $i = 1, \dots, n$.
+  \item [\textit{(iv)}] $A - B$ ou $A \cup B^c$ \'{e} a diferen\c{c}a entre A e B, ou seja, s\~{a}o todos os elementos
+	$ \omega \in \Omega$ pertencentes \`{a} A que n\~{a}o pertecem a B.
+  \item [\textit{(v)}]$A \bigtriangleup B$ \'{e} a diferen\c{c}a sim\'{e}trica entre A e B, todos os $\omega \in \Omega$
+	pertecentes a $A \cup B$ exceto os $\omega \in \Omega$ que est\~{a}o na $A \cap B$. 
+\par
+Dados dois conjuntos A e B s\~{a}o ditos disjuntos ou mutuamente exclusivos se, somente se, a interse\c{c}\~{a}o entre A e B
+\'{e} o conjunto vazio, ou de outra forma,
+$$ \textrm{A e B disjuntos} \Leftrightarrow A \cap B = \emptyset$$
+Ser\'{a} dita parti\c{c}\~{a}o de um conjunto $\Omega$, satifazendo as seguintes condi\c{c}\~{o}es,
+$$ \bigcup A_i = \Omega \qquad \textit{e} \qquad A_i \cap A_j = \emptyset, i \neq j$$
+\end{description}
+pode-se pensa no conceito de parti\c{c}\~{a}o a divis\~{a}o de uma \textit{pizza} onde a reuni\~{a}o forma o todo, \'{e} cada peda\c{c}o
+\'{e} \'{u}nico. 
+Conforme  \cite{james} \'{e} \cite{magalhaes} a defini\c{c}\~{a}o cl\'{a}ssica de probabilidade \'{e} dada pelo n\'{u}mero de caso favor\'{a}veis
+sobre o n\'{u}mero de casos poss\'{i}veis, de outra forma,
+$$ P(A) = \frac{n(A)}{n(\Omega)} $$
+para um $\Omega$ finito e supondo-se caso equiprov\'{a}veis, onde cada evento tem a mesma probabilidade de ocorr\^{e}ncia, conforme
+\cite{james} est\'{a} defini\c{c}\~{a}o segue o principio da indifer\^{e}n\c{c}a, ou seja, a ocorr\^{e}ncia de um evento A n\~{a}o 
+modificar a probabilidade de ocorr\^{e}ncia de um evento B. Para o lan\c{c}amento do dado tem-se,
+  \begin{equation*}
+	P(i) = \frac{1}{6},\forall \quad i \in \Omega, \quad i = 1,2,3,4,5,6.	
+  \end{equation*}
+Portanto, independente da jogada do dado,considerando que este n\~{a}o \'{e} viciado, tem-se uma mesma probabilidade associdada
+independente do evento no espa\c{c}o amostral, outro exemplo cl\'{a}ssico e o lan\c{c}amento de uma moeda. Descrevendo os eventos poss\'{i}veis
+tem-se,
+$$\Omega = \{ \textrm{cara}, \textrm{coroa} \}$$
+ambos equiprov\'{a}veis, ou seja,
+\begin{equation*}
+  P(\textrm{cara}) = P(\textrm{coroa}) = \frac{1}{2}.  
+\end{equation*}
+\par
+Conforme \cite{magalhaes} tem-se a segunda defini\c{c}\~{a}o para a probabilidade definida como, frequentista ou est\'{a}tistica, onde
+dado um evento, seja n(A) o n\'{u}mero de ocorr\^{e}ncias de ocorr\^{e}cias independentes do evento A, seja n todo o casos poss\'{i}veis
+tem-se,
+$$P(A) = \displaystyle\lim_{n \to \infty} \frac{n (A)} {n} $$
+a express\~{a}o acima \'{e} a fr\^{e}ncia para a de ocorr\^{e}cia do evento A para o \textit{n} sucientemente grande. As defini\c{c}\~{o}es
+dadas utilizam-se da intui\c{c}\~{a}o, contudo s\~{a}o amplamentes utilizadas, por outro lado \'{e} necess\'{a}rio uma formaliza\c{c}\~{a}o
+conceitual, permitindo que n\~{a}o tenha-se uma deped\^{e}ncia alta em rela\c{c}\~{a}o a intui\c{c}\~{a}o, diante disso, o
+conforme \cite{magalhaes} matem\'{a}tico Kolmogorov estabeleceu um conjunto de axiomas para a formaliza\c{c}\~{a}o a probabilidade dados
+a seguir.
+
+\theoremstyle{definition}
+\newtheorem{defin}{Defini\c{c}\~{a}o}[section]
+\newtheorem{prop}{Proposi\c{c}\~{a}o}[section]
+\newtheorem{teo}{Teorema}[section]
+
+\begin{defin}[Probabilidade]
+ Uma fun\c{c}\~{a}o P, definida na $\sigma$-\'{a}lgebra F de subconjunto de $\Omega$ e valores no intervalo [0,1],
+ \'{e} uma probabilidadese satisfaz os Axiomas de Kolmogorov: \\
+ \begin{enumerate}
+   \item $P(\Omega)= 1$;
+   \item Para todo subconjunto $ A \in F, P(A) \geq 0$;
+   \item Qualquer que seja a sequ\^{e}ncia $A_1, A_2, \cdots \in F$, mutuamente exclusivos, temos,
+	 $$P( \bigcup\limits_{i = 1}^{\infty}A_i) = \sum\limits_{i = 1}^{\infty} P(A_i)$$ 
+ \end{enumerate}
+  \end{defin}
+  O significado que deve-se guardado dos axioma anterioes, \'{e} o seguinte, a probabilidade associado ao espa\c{c}o amostral $\Omega$ 
+  \'{e} 1, a probalidade de qualquer evento \'{e} sempre n\~{a}o negativa, sabendo-se que os eventos s\~{a}o mutuamente exclusivos,
+  pode-se calcular a probabilidade da uni\~{a}o de eventos pelo somat\'{o}rio das probabilidades. Os axiomas de Kolgomorov definem a ideia
+  de probabilidade, al\'{e}m de permitir que as defini\c{c}\~{o}es anterioes se tornem casos particulares. A trinca ($\Omega$, F, P),
+  define o espa\c{c}o de probabilidade, sendo que os subconjuntos em F s\~{a}o os eventos, somente a estes tem-se uma
+  probabilidade associada. Uma vez que probabilidade est\'{a} bem definida pode-se no espa\c{c}o de probabilidade, as propriedades 
+  associadas s\~{a}o elencadas a seguir.
+  \par
+  Primeiramente, considere o espa\c{c}o de probabilidade $(\Omega, F, P )$, onde os conjuntos mencionados est\~{a}o contidos neste
+  espa\c{c}o tem-se:
+  \begin{enumerate}
+	\item $P(A) = 1 - P(A^c)$ 
+	\item Sendo A e B dois eventos quaisquer tem-se: \\
+	  $P(B)= P(B \cap A) + P(B \cap A^c) $
+	\item Se $ A \subset $ B, ent\~{a}o $P(A) \leq P(B)$
+	\item Regra da adi\c{c}\~{a}o de probabilidade  \\
+	  $ P(A \cup B )= P(A) +  P(B) - P(A \cap B)$ 
+	\item Para eventos quaisquer $A_1, A_2, \cdots $ \\
+	  $$P(\bigcup\limits_{i = 1}^{\infty})A_i \leq \sum\limits_{i = 1}^{\infty} P(A_i).$$
+  \end{enumerate}
+  \par
+  Considerando-se o exemplo a seguir encontrado em \cite{magalhaes} para exemplificar as propriedades. 
+  Um dado equilibrado \'{e} lan\c{c}ado duas vezes e as faces resultantes observadas. Considerando-se os seguintes eventos de
+  interesse:
+
+  \vspace{0.5cm}
+  \hspace{4cm}
+  \begin{minipage}{9cm}
+	 A : a soma dos resultados \'{e} \'{i}mpar. \\
+	 B : o resultado do primeiro lan\c{c}amento \'{i}mpar. \\
+	 C : o produto do resultado \'{e} impar.
+  \end{minipage}
+  \vspace{0.5cm}
+  \par
+  Primeiramente deve-se definir um espa\c{c}o adequado para o experimento, considerando-se
+  $\Omega = \{1,2,3,4,5,6 \} \hspace{2mm} \text{x} \hspace{2mm} \{1,2,3,4,5,6 \}$. Sendo, $\Omega$ o produto cartesino de todos os resultados
+  poss\'{i}veis, ou seja, todo ponto $\omega \in \Omega$ pode ser descrito como $\omega = (\omega_1, \omega_2)$ respectivamente. 
+  Sendo, a $\sigma$-\'{a}lgebra  o conjunto das partes de $\Omega$ e P a probabilidade associada a cada ponto, para cada um dos 
+  eventos em $\Omega$ tem-se uma probabilidade uniforme, ou seja, $P(\{\omega \}) = \frac {1}{36}$. De fato, resultado \'{e} 
+  uma implica\c{a}\~{a}o do pr\'{i}ncipio fundamental da contagem, encontrado em \cite{magalhaes} enunciado como se segue,
+  se uma tarefa tem k etapas e cada etapa \textit{i} tem \textit{n} maneiras diferentes de ser realizada, ent\~{a}o  o n\'{u}mero total
+  de alternativas para realizar a tarefa \'{e} o produto $n_1 n_2 \cdots n_k$. Para cada jogada de um dos dado tem-se, 6 possibilidades
+  para o resultado, portanto para o lan\c{c}amento de dois dados tem-se 36 possibilidades, significando que o espa\c{c}o amostral
+  possui 36 pontos, a jogada do dado D1 n\~{a}o interfere na jogada do dado D2, configurando-se a indep\^{e}ndencia de eventos. 
+  O evento A \'{e} descrito da seguinte forma,
+  \begin{equation*}
+	A = \{ \omega = (\omega_1,\omega_2) \in \Omega; \textrm{\'{e} \'{i}mpar} \}
+  \end{equation*}
+  ou de maneira equivalente
+  \begin{equation*}
+	A = \{ \omega = (\omega_1,\omega_2) \in \Omega; \omega = 2n + 1, n \in \mathbb{R} \} 
+  \end{equation*}
+  forma de descrever eventos podem facilitar o entendimento do problema probalistico como tam\'{e}m podem dificultar nota-se que a primeira
+  forma \'{e} intuitiva em rela\c{c}\~{a}o a segunda, a sua utiliza\c{c}\~{a}o para este tipo problema ser\'{a} mais eficaz. 
+  Feitas as devididas considera\c{c}\~{o}es, para o c\'{a}lculo da probabilidade do evento poderia-se elencar todos as poss\'{i}veis
+  combina\c{c}\~{o}es para este evento, ou seja, os pontos procurado s\~{a}o, $\{1,2 \},\{1,4 \},\{1,6 \}, \{2,1 \}, \{2, 3\}, \{2,5 \}
+  ,\{3,2 \}, \{3,4 \}, \{3,6 \}, \{4,1 \}, \{4,3 \}, \{4,5 \}, \\ \{5,2 \},\{5,4 \},  \{5,6 \}, \{6,1 \}, \{6, 3 \}, \{6, 5 \}$.
+  Verifica-se que o total de 18 pontos pontos, a probabilidade associdada \'{e} $P(A) = \frac{18} {36}  = \frac{1} {2}$.
+  O evento B, pode-se descrito da seguinte forma,
+  \begin{equation*}
+	B = \{\omega = (\omega_1, \omega_2) \in \Omega; \omega_1 \textrm {\'{e} \'{i}mpar} \}
+  \end{equation*}
+  O procedimento segue de modo an\'{a}logo em rela\c{c}\~{a}o ao evento B, os pontos  s\~{a}o,
+  $\{1,1 \},\{1,2 \},\{1,3 \}, \{1,4 \}, \{1, 5\}, \{1,6 \},\{3,1 \},\{3,2 \},\{3,3 \}, \{3,4 \}, \{3, 5\}, \{3,6 \}, \\
+  \{5,1 \},\{5,2 \},\{5,3 \}, \{5,4 \}, \{5, 5\}, \{5,6 \}$.
+  A probabilidade de ocorr\^{e}ncia do evento B \'{e} $P(B) = \frac{18} {36} = \frac {1} {2} $. A probabilidade associdada a C, 
+  de modo an\'{a}logo, $P(C) = \frac{9}{36} = \frac {1} {4}$. Com base nas informa\c{c}\~{o}es das probabilidade do eventos
+  A, B e C pode-se fazer conclus\~{o}es interessantes, percebe-se que
+  $P(A \cap B) = \frac{1} {4}$, de fato uma vez que, $A \cap B = \{1,1 \},\{1,3 \},\{1,5 \}, \{3,1 \}, \{3,3 \},\{3,5 \},
+  \{5,1 \}, \{5,3 \},\{5, 5 \}$ 
+  dada essa informa\c{c}\~{a}o, obtem-se facilmente,
+  \begin{eqnarray*}
+	P(A \cup B) &=&  P(A) + P(B) -P(A \cap B) \\ \nonumber
+	P(A \cup B) &=&  \frac{1} {2} + \frac{1} {2} - \frac{1} {4} = \frac{3} {4} 	
+  \end{eqnarray*}
+  Consequentemente, a probabilidade de dado o resultado a soma dos resultados ser \'{i}mpar e o resultado do primeiro lan\c{c}amento ser
+  \'{i}mpar corresponde a $\frac{1} {4}$, e a probabilidade de ocorr\^{e}ncia das soma dos resultado ser \'{i}mpar e o
+  resultado do primeiro lan\c{c}amento ser \'{i}mpar corresponde a $\frac{3} {4}$. Em problemas pr\'{a}ticos \'{e} o interesse
+  por probabilidades que tenham alguma indep\^{e}ncia entre si, considerando-se a pergunta ``Qual a probabilidade do evento
+  A tal que ocorreu B ?'', a resposta a esse tipo de pergunta de interesse pr\'{a}tico, fundamentar a probabilidade condicional.
+
+  \begin{defin}[Probabilidade Condicional]
+	Considerando-se os eventos A e B em ($\Omega$, F, P), onde $P(B)  > 0$ define-se a probabilidade de ocorr\^{e}ncia do evento
+	A tal que B ocorreu, por,
+	\begin{equation*}
+	  P(A \textbackslash B) = \frac{P(A \cap B)} {P(B)}
+	\end{equation*}
+	para o caso $P(B) = 0$, define-se $P(A\textbackslash B ) = P(A) $.
+  \end{defin}
+  Conforme \cite{james} \'{e} interessante que $P(A \textbackslash B) = P(A)$, pois, a probabilidade de $P(A \textbackslash B)$
+  depender\'{a} somente de A (como uma fun\c{c}ao de A). Por \cite{magalhaes} a probabilidade condicional tamb\'{e}m tem um certo
+  interesse te\'{o}rico por permitir a decomposi\c{c}\~{a}o de probalidade de dif\'{i}cil caracteriza\c{c}\~{a}o por meio
+  de probabilidade condicionais mais simples.
+  \begin{prop}[Regra do produto de probabilidades]
+	Para os eventos $A_1,A_2, \cdots, A_n$ em ($\Omega$, F, P), com $P( \bigcap\limits_{i = 1}^{\infty}) > 0 $,
+	o produto das probabilidades \'{e} dado por,
+	\begin{equation*}
+	  P(A_1 \cap A_2, \cap A_3 \cdots \cap A_n) = P(A_1)P(A_2 \textbackslash A_1) \cdots P(A_n\textbackslash A_1 \cap A_2 \cdots A_{n-1})
+   \end{equation*}
+ \end{prop}
+ Uma aplica\c{c}\~{a}o direta da regra do produto de probabilidades \'{e} a lei da probabilidade total dada por,
+ \begin{teo}[Lei da Probabilidade Total]
+   Supondo-se que os eventos $C_1,C_2,\cdots, C_n$ em ($\Omega$, F, P) formam uma parti\c{c}\~{a}o de $\Omega$ e que para
+   qualquer $C_n$ tem-se $C_n > 0$. Ent\~{a}o qualquer evento A neste espa\c{c}o de probabilidade, a probabilidade do evento A,
+   \'{e} dada por, 
+   \begin{equation*}
+	 P(A) = \sum\limits_{i = 1}^{n} P(C_i)P(A \textbackslash C_i).
+   \end{equation*}
+ \end{teo}
+ Nota-se que o membro do direito lei de probabilidade total \'{e} justamente formada produtos envolvento a probabilidade condicional. 
+ Utilizou-se forma intuitiva o conceito de indep\^{e}ncia de eventos, contudo com o conhecimento da probabilidade condiconal
+ pode-se ter uma defini\c{c}\~{a}o que evite qualquer tipo de ambiguidade.
+ \begin{defin}[Indeped\^{e}ncia de dois eventos] 
+   Dados dois eventos A e B em ($\Omega$, F, P) s\~{a}o ditos independentes, quando a ocorr\^{e}ncia do evento A n\~{a}o
+	 influ\^{e}ncia na ocorr\^{e}ncia do evento do evento B, isto \'{e},
+	 \begin{equation*}
+	   P(A \textbackslash B) = P(A)
+	 \end{equation*}
+	 conforme a defini\c{c}\~{a}o de probabilidade condicional,
+	 \begin{equation*}
+	   P(A \textbackslash B) =  \frac{P(A \cap B)} {P(B)}
+	 \end{equation*}
+	 obt\^{e}m-se uma representa\c{c}\~{a}o equivalente para a indeped\^{e}ncia de eventos dada por,
+	 \begin{equation*}
+	  P(A \cap B) = P(A)P(B). 
+	 \end{equation*}
+	 \label{ind}
+   \end{defin}
+   Nota-se que a independ\^{e}ncia para dois eventos, pode ser analisada conforme o c\'{a}lculo da probabiliadade associada para
+   a interse\c{c}\~{a}o facilitando-se a an\'{a}lise dos eventos e futuras conclus\~{o}es sobre o fen\^{o}meno observado. Com base na 
+   \ref{ind} define-se a indenp\^{e}ncia de v\'{a}rios eventos.
+   \begin{defin}
+	 Os eventos $A_1,A_2,\cdots ,A_n $ em ($\Omega$, F, P) s\~{a}o independentes se, para toda cole\c{c}\~{a}o de \'{i}ndices
+	 $ 1 \leq i_1 \leq i_2 < \cdots i_k \leq n $, tem-se, 
+	 \begin{equation*}
+	   P(A_{i_1} \cap A_{i_2} \cap A_{i_3} \cdots \cap A_{i_k}) = P(A_{i_1})P(A_{i_2}) \cdots P(A_{i_k})
+	 \end{equation*}
+	 \label{indg}
+   \end{defin}
+   Consequentemente por \ref{ind} e \ref{indg}, \'{e} poss\'{i}vel analisar a independ\^{e}ncia de eventos com base no c\'{a}lculo
+   de probabilidades. Al'{e}m de conhecida a indeped\^{e}ncia facilitar o c\'{a}lculo de eventos de interesse. Considerando-se o 
+   seguinte evento. Uma moeda \'{e} lan\c{c}ada duas vezes, sejam os eventos.
+
+   \vspace{0.5cm}
+   \hspace{4cm}
+   \begin{minipage}{9cm}
+	 A : Sair cara. \\
+	 B : Sair coroa. \\
+   \end{minipage}
+   Nota-se que para este evento A e B s\~{a}o independentes, uma vez que a ocorr\^{e}ncia de A ou B no primeiro lan\c{c}amento em nada
+   influ\^{e}ncia este resultado para o segundo lan\c{c}amento. A probabilidade de sair cara no segundo lan\c{c}amento dado que saiu
+   coroa no primeiro lan\c{c}amento corresponde a $\frac {1} {4}$, de fato, nota-se que como os eventos s\~{a}o indepedentes, 
+   \begin{eqnarray*}
+	 P(B \textbackslash A) &=&  P(B) \\ \nonumber
+	 P(B \textbackslash A) &=&  \frac{1} {2} \nonumber
+   \end{eqnarray*}
+   \'{e} de imediato que,
+   \begin{eqnarray*}
+	 P(B \cap A ) &=&  P(B)P(A) \\
+	 P(B \cap A ) &=&  \left( \frac{1} {2}  \right) \left( \frac{1} {2}  \right) = \frac{1} {4}
+   \end{eqnarray*}
+   o mesmo resultado poderia ser obtido c\'{a}lculando a probabilidade de forma cl\'{a}ssica, onde deve-se elencar o resultado possiveis,
+   ou seja, (cara, cara), (cara, coroa), (coroa, cara), (coroa, coroa). O evento de interesse \'{e} (coroa, cara) como para esse evento
+    $\Omega = 4 $ tem-se de imediato que,
+	\begin{equation*}
+	  P( \textrm{coroa, cara}) = \frac {1} {4}.
+	\end{equation*}
+	Nota-se que tanto a primeira forma quanto a segunda tiveram o mesmo resultado, contudo, se o evento um espa\c{c}o amostral com uma
+	quantidade de elementos grande a primeira forma \'{e} mais atraente, diante desse tipo de evento pode-se observar os benef\'{i}cios
+	do conhecimento de da probabilidade condicional.
+	Uma vez estebelecido conceito de probabilidade condicional, as ferramentas probabilistas j\'{a} \~{a}o suficientes para conceitua, uma
+	vari\'{a}vel aleat\'{o}ria. No estudo de fen\^{o}menos alet\'{o}rios \'{e} comum o interesse em quantidades associadas a esse
+	tipo de fen\^{o}meno, segundo \cite{magalhaes} essas quantidades s\~{a}o fun\c{c}\~{o}es das ocorr\^{e}ncias do fen\^{o}meno
+	observado, em alguns casos essas fun\c{c}\~{o}es s\~{a}o o pr\'{o}prio fen\^{o}meno observado, \'{e} comum tomar a identidade
+	para casos esses tipos de casos de interesse. Antes da realiza\c{c}\~{a}o de qualquer experimento ou ocorr\^{e}ncia de qualquer
+	fen\^{o}meno de natureza aleat\'{o}ria n\~{a}o \'{e} comum ter o resultado, somente em alguns casos especiais, contudo a 
+	uma vez que o espa\c{c}o de probabilidade est\'{a} bem definido \'{e} poss\'{i}vel observar qualquer evento de interesse na 
+	$\sigma$-\'{a}lgebra, diante disso, tamb\'{e}m \'{e} poss\'{i}vel atribuir probabilidades para as fun\c{c}\~{o}es que descrevem
+	esse evento, com essa ideia fundamenta-se o conceito do termo vari\'{a}vel aleat\'{o}ria, de forma mais r\'{i}gida.
+	\begin{defin}[Vari\'{a}vel aleat\'{o}ria (quantitativa)]
+	  Dado um espa\c{c}o de probabilidade ($\Omega$, F, P), define-se uma vari\'{a}vel aleat\'{o}ria, como uma fun\c{c}\~{a}o
+	  X: $\Omega \rightarrow \mathbb{R}$
+	  \begin{equation*}
+		X^{-1}(I) = \{ \omega \in \Omega; X(\omega) \in I \} \in F
+	  \end{equation*}
+	  \label{v.a}
+	  qualquer que seja o conjunto $I \subset \mathbb{R}$ pertecente a $\sigma$-\'{a}lgebra.
+	\end{defin}
+	Pela defini\c{c}\~{a}o \ref{v.a}, primeiramente existe uma fun\c{c}\~{a}o de $\Omega$ em $\mathbb{R}$, diante disso dever existir uma
+	fun\c{c}\~{a}o inversa de $\mathbb{R}$ para cada subconjunto $I \subset \mathbb{R}$ pertecente a $\sigma$-\'{a}lgebra F. A exig\^{e}ncia
+	que a inversa devar perten\c{c}a a $\sigma$-\'{a}lgebra \'{e} importante, pois \'{e} poss\'{i}vel garantir as opera\c{c}\~{o}es com 
+	probabilidades para elementos que estejam na $\sigma$-\'{a}lgebra. Conforme \cite{magalhaes}, considere $\Omega = \{1,2,3,4 \}$, seja 
+	$ F = \{ \emptyset, \Omega, \{1,2 \}, \{3,4 \} \} $  define-se os conjuntos $A = \{1,2 \}$ e $B = \{1,3 \}$, deve-se verificar se 
+	\'{e} poss\'{i}vel $I_A$ e $I_B$ sejam vari\'{a}veis aleat\'{o}rias, definindo $X^{-1}$ por,
+	\begin{equation*}
+	( \omega \in \Omega; I_{A} \in (-\infty, x]) = \left\{
+	  \begin{array}{lcl}
+		\emptyset, & \mbox {se} &  x <  0, \\
+	    A^{c},     & \mbox {se} &  0 \leq x < 1, \\ 
+		\Omega,    & \mbox {se} &  x \geq 1 
+	  \end{array}
+	\right.
+	\end{equation*}
+  nota-se que para qualquer intervalo da forma  $ (-\infty, x ] \in F $, uma vez que  ambos os subconjuntos
+  $\emptyset, A^{c}, \Omega \in F$, e portanto $I_A$ \'{e} vari\'{a}vel aleat\'{o}ria, contudo utilizando-se a mesma defini\c{c}\~{a}o de
+  $I_A$ para $I_B$, ocorrer que $B^{c}$ n\~{a}o pertence a F, de fato $B^{c} = \{2,4 \}\ \not \in F$, portanto $I_B$ n\~{a}o nestas
+  condi\c{c}~{o}es n\~{a}o \'{e} uma  vari\'{a}vel aleat\'{o}ria, por outro lado, poderia-se definir uma outra $\sigma$-\'{a}lgebra 
+  que comporta-se o $I_B$, o que tornaria $I_B$ uma vari\'{a}vel aleat\'{o}ria. A formula\c{c}\~{a}o de uma vari\'{a}vel aleat\'{a}ria
+  est\'{a} sempre associada diretamente  com a $\sigma$-\'{a}lgebra associada, conforme \cite{magalhaes} os eventos da forma 
+  $( - \infty, x)$ possuem um interesse em particular, pois, por meio deste, define-se uma importante fun\c{c}~{a}o no estudo da 
+  probabilidade, conhecida como fun\c{c}\~{a}o de ditribui\c{c}\~{a}o de probabiliade, para facilitar o entendimento
+  quando houve men\c{c}\~{a}o a $\omega$ em algum evento da forma $ \{ \omega \in \Omega; X(\omega) \in I)\} $ este ser\'{a} omitido
+  sendo representado este evento como, $ [ X \in I ]$, logo, eventos com $I = (-\infty, x]$, seram representados  na forma,
+  $[X < 0]$, por fim, em vez de $P(\{\omega \in \Omega: X(\omega) \in I \})$, ser\'{a} $P(X \in I)$. Por este tipo de simplica\c{c}\~{a}o
+  a fun\c{c}\~{a}o de ditribui\c{c}\~{a}o de probabilidade tamb\'{e}m \'{e} conhecida por fun\c{c}\~{a}o de probabilidade acumulada,
+  pelo acumulo de probabilidade no intervalo real nota-se, pela defini\c{c}\~{a}o a seguir.
+
+  \begin{defin}[Fun\c{c}\~{a}o de distribui\c{c}\~{a}o de probabilidade]
+	Seja X uma vari\'{a}vel aleat\'{o}ria em um espa\c{c}o de probabilidade ($\Omega$, F, P), sua fun\c{c}\~{a}o de distribui\c{c}\~{a}o
+	\'{e} dada por,
+	\begin{equation*}
+	F_{x} (x) = P( X \in (-\infty, x]) = P(X \leq x). 
+	\end{equation*}
+	\label{fdp}
+  \end{defin}
+  Conforme  \cite{magalhaes} o conhecimento de \ref{fdp}, permite obter qualquer informa\c{c}\~{a}o sobre a vari\'{a}vel a ser examinada.
+   Uma vez que apesar da vari\'{a}vel possa assumir valores num subconjunto dos reais, a sua fun\c{c}\~{a}o de distribui\c{c}\~{a}o 
+   assumir valores em todos os reais. Al\'{e}m da fun\c{c}\~{a}o de distribui\c{c}\~{a}o, existe uma fun\c{c}\~{a}o de fundamental
+   import\^{a}ncia para o estudo de probabilidades, conhecida como fun\c{c}\~{a}o de probabilidade. Uma var\'{a}vel aleat\'{o}ria X, 
+   \'{e} classificada como, discreta ou con\'{i}nua para ambos os casos tem-se fun\c{c}\~{o}es de probabilidade especificas associadas.
+   Uma primeira an\'{a}lise para o caso discreto, uma vari\'{a}vel \'{e} classificada como discreta, quando assumir somente um n\'{u}mero
+   enumer\'{a}vel de valores finito ou infinito, onde este tipo de fun\c{c}\~{a}o atribuir valor a cada um dos poss\'{i}veis valores
+   assumidos pela vari\'{a}vel aleat\'{o}ria, ou seja, tomando-se X como uma vari\'{a}vel aleat\'{o}ria, assumindo valores em 
+   $x_1, x_2, \cdots $, para $i = 1,2, \cdots,$
+   \begin{equation*}
+	 P(x_i) = P(X = x_i) = P(\omega \in \Omega; X(\omega) = x.
+   \end{equation*}
+   Para o caso discreto a fun\c{c}\~{a}o de probabilidade dever satisfazer duas propriedades, a saber,
+   \begin{description}
+	 \item [p1] $ 0 \leq p(x_i) \leq 1, \forall i = 1,2, \cdots $,
+	 \item [p2] $ \sum _i p(x_i) = 1.$
+   \end{description}
+   As propriedades, confirmam a ideia intuitiva de probabilidade, por p1, a probabilidade somente assumir\'{a} valores n\~{a}o negativos
+   no intervalo $[0,1]$, e o somat\'{o}rio de todas as probabilidades asssocidas ao evento dever ser igual a 1. Para o caso cont\'{i}nuo
+   a ideia em si \'{e} semelhante, contudo pela sua continuidade, a utiliza\c{c}\~{a}o de uma integral ao inv\'{e}s do somat\'{o}rio
+   \'{e} o ideal, portanto, uma vari\'{a}vel aleat\'{o}ria X ser\'{a} classificada como cont\'{i}nua como quando exite uma fun\c{c}\~{a}o
+   $f$ n\~{a}o negativa que satisfa\c{c}a,
+   \begin{description}
+	 \item[p1] $\int_{-\infty}^{\infty} f(\omega) d\omega \geq 0 , \forall x \in \mathbb{R} $,
+	 \item[p2] $\int_{-\infty}^{\infty} f(\omega) d\omega = 1.$ 
+   \end{description}
+   observando-se que a constru\c{c}\~{a}o de tais fun\c{c}\~{o}es dever existir uma espa\c{c}o de probabilidade ($\Omega$, F, P).
+   Pelas fun\c{c}\~{o}es de ditribui\c{c}\~{a}o e de probabilidade consegue-se a maioria das informa\c{c}\~{o}es sobre o evento,
+   por fim, \'{e} inevit\'{a}vel o conceito de valor esperado,esperan\c{c}a matem\'{a}tica, ou m\'{e}dia de uma vari\'{a}vel
+   extremamente \'{u}til na an\'{a}lise de fen\^{o}menos aleat\'{o}rios justamente por esse ser comportar como a m\'{e}dia, trazendo 
+   uma informa\c{c}\~{o}es do problema em um contexto geral. Podendo ser definido para o caso discreto como,
+   $$E(X) = \sum\limits_{i = 1}^{\infty}x_ip_X(x_i),$$
+   desde que soma esteja bem determinada e o espa\c{c}o de probabilidade bem definido.
+   Para o caso cont\'{i}nuo, a ideia \'{e} an\'{a}loga, 
+   $$E(X) = \int\limits_{-\infty}^{\infty} xf(x) dx,$$
+   desde que a integral esteja bem definida, assim como o espa\c{c}o de probabilidade.
+

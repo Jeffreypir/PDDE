@@ -1,0 +1,68 @@
+\documentclass[msc,numbers]{ppgmmc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{indentfirst}
+\setlength{\parindent}{1.5cm}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{pageslts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{subfiles}
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}}}
+\includeonly{chap02}
+
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+\title{Modelo de planejamento de Usina Hidrot\'{e}rmica baseado em Programa\c{c}\~{a}o Din\^{a}mica Dual Estoc\'{a}stica}
+  \foreigntitle{Thesis Title}
+  \author{Jefferson}{Bezerra dos Santos}
+  \advisor{Prof.}{Camila}{Mara Vital Barros }{D.Sc.}
+  \advisor{Prof.}{S\'{e}rgio}{de Carvalho Bezerra}{Ph.D.}
+
+  \examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
+  \examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
+  \examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
+  \department{MMC}
+  \date {04}{2019}
+
+
+  \keyword{Primeira palavra-chave}
+  \keyword{Segunda palavra-chave}
+  \keyword{Terceira palavra-chave} 
+
+  \fichacatalogclassautor{M21m}
+  \fichacatalogclasschamada{CDU: 719.6(043)} 
+  \maketitle
+
+  \frontmatter
+  
+  \include{dedic}
+  \include{thanks}
+  \include{resumo}
+  \include{abstract}
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+  \include{chap01}
+  \include{chap02}
+  \include{chap03}
+  \include{chap04}
+  \include{chap05}
+
+  \backmatter
+  
+  %\bibliographystyle{./ppgmmc/ppgmmc-unsrt}
+  \bibliographystyle{./ppgmmc/ppgmmc-plain}
+  \bibliography{refs}
+
+  \appendix
+  \include{appenA}
+  \include{appenB}
+\end{document}

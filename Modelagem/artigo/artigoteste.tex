@@ -1,0 +1,520 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[portuguese]{babel}
+\usepackage{xiiiemc}
+\usepackage{natbib}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{wallpaper} 
+\usepackage{titlesec}   %% Define space between paragraph e section
+\usepackage{float} 	%% Use to fix Figure or Table: ex: \begin{table}[H]
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{siunitx}
+\usepackage{subfigure}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage[hyphens]{url}
+\usepackage[all]{xy}
+\urlstyle{same}
+\lstset{
+  literate=% %configuration alfabeth  brazilian 
+  {\'a}{{\'a}}1
+  {\'i}{{\'i}}1
+  {\~a}{{\~a}}1
+  {\^a}{{\^a}}1
+  {\^e}{{\^e}}1,
+  basicstyle = \small,
+  mathescape % math mode
+}
+
+\usepackage{caption}
+
+%%%%Don't edit this block. It reduces the spacing between the lines of the references
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{\OLDthebibliography{#1} \setlength{\parskip}{0pt}\setlength{\itemsep}{0pt plus 0.3ex}}
+%%-----------------------------------------------EDIT-----------------------------------------------
+  \title{ESTUDO COMPUTACIONAL SOBRE OS PONTOS CR\'ITICOS DE DEMANDA E DE PRODUTIBILIDADE ENERG\'ETICA PARA  MODELO HIDROT\'ERMICO}%%-----------------------------------------------EDIT----------------------------------------------
+\author
+    {\rm \begin{tabular}{l} 
+    \textbf{Jefferson Bezerra dos Santos}$^{1}$ - {\textnormal jeffersonsantos@ppgmmc.ci.ufpb.br}\\%
+    \textbf{Camila Mara Vital Barros}$^{2}$ - {\textnormal camila.barros@ci.ufpb.br}\\
+    \textbf{S\'ergio de Carvalho Bezerra}$^{3}$ - {\textnormal sergio@ci.ufpb.br}\\
+    {\fontsize{11}{0}\selectfont $^{1}$ {\begin{tabular} {l} Programa de P\'os-gradua\c c\~ao em  Modelagem Matem\'atica e Computacional, Centro de Inform\'atica,\\
+    Universidade Federal da Para\'iba, Jo\~ao Pessoa,
+  PB, Brasil.\end{tabular}}}\vspace*{0.07cm} \\
+    {\fontsize{11}{0}\selectfont $^{2}$ \begin{tabular}{l} Departamento de Sistemas de Computa\c c\~ao, Centro de Inform\'atica,\\
+    Universidade Federal da Para\'iba, Jo\~ao Pessoa, PB, Brasil. \end{tabular}}\vspace*{0.07cm}\\
+    {\fontsize{11}{0}\selectfont $^{3}$ \begin{tabular}{l} Departamento de Sistemas de Computa\c c\~ao,Centro de Inform\'atica,\\ 
+    Universidade Federal da Para\'iba,  Jo\~ao Pessoa,
+  PB, Brasil.\end{tabular}}
+  \end{tabular}}
+%%----------------------------------------------------------------------------------------------
+
+\fancypagestyle{firspagetstyle}
+{
+	\lhead{}
+	\fancyhead[C]{%
+		\includegraphics[width=1\linewidth]{logo}\\%
+		{\scriptsize \fontfamily{phv}\fontseries{b}\selectfont \color[rgb]{0.45,0.45,0.45}
+		08 a 11 de Outubro de 2019\\
+		Universidade Federal de Juiz de Fora\\
+		Juiz de Fora - MG\\
+	    }
+	}
+	\renewcommand{\headrulewidth}{0.0pt}
+	\fancyfoot[C]{\footnotesize \parbox{15cm} {\centering  \fontsize{7.5}{0}\selectfont \it Anais do XXII ENMC – Encontro Nacional de Modelagem Computacional e X ECTM – Encontro de Ciências e Tecnologia de Materiais\\Juiz de Fora, MG – 08 a 11 Outubro 2019}} % \ttfamil
+	\rhead{}
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{firspagetstyle}
+
+\fancyhead[L]{\footnotesize{\fontsize{7.5}{0}\selectfont \it XXII ENMC e X ECTM\\
+	08 a 11 de Outubro de 2019\\
+	Universidade Federal de Juiz de Fora – Juiz de Fora - MG\\}}
+\renewcommand{\headrulewidth}{0.0pt}
+\fancyfoot[C]{\footnotesize \parbox{15cm} {\centering  \fontsize{7.5}{0}\selectfont \it  Anais do XXII ENMC – Encontro Nacional de Modelagem Computacional e X ECTM – Encontro de Ciências e Tecnologia de Materiais\\Juiz de Fora, MG – 08 a 11 Outubro 2019}} % \ttfamil
+\rhead{}
+
+\begin{abstract}
+  Com o aumento da demanda por energia el\'etrica e o apelo das fontes renov\'aveis, grandes avan\c cos tecnol\'ogicos
+  s\~ao indispens\'aveis para um crescimento eficiente e sustent\'avel. No Brasil a hidrel\'etrica \'e a principal fonte de gera\c c\~ao de energia. No entanto, devido ao aumento desproporcional da demanda e a escassez de chuvas, tem sido necess\'ario a ativa\c c\~ao de termel\'etricas para suprir a demanda. Consequentemente, isto acarreta em um aumento na fatura
+  dos consumidores residenciais. Neste contexto, este trabalho tem como finalidade analisar, as consequ\^encias que o aumento da demanda e varia\c c\~oes de produtibilidade 
+  associados a problemas energ\'eticos, podem ocasionar no gerenciamento do balan\c co energ\'etico. Vislumbrando a necessidade de realizar um gerenciamento adequado do despacho de energia, de modo a minimizar os custos da gera\c
+  c\~ao e uma diminui\c c\~ao do impacto ambiental, neste trabalho foi proposto um estudo baseado em Programa\c c\~ao
+  Din\^amica Dual Estoc\'astica para sistemas hidrot\'ermicos (hidrel\'etricas e termel\'etricas). De fato, ao variar a produtibilidade e a demanda se identifica qual a configura\c c\~ao de despacho que apresenta o menor custo esperado para a gera\c c\~ao do sistema. 
+\end{abstract}
+
+\palavra {\em{Gera\c c\~ao de Energia, Demanda, Modelo Hidrot\'ermico, Planejamento, Programa\c c\~ao Din\^amica Dual Estoc\'astica.}}
+\pagestyle{fancy}
+
+\section{INTRODU\c C\~AO}
+A crescente necessidade pelo atendimento \`a demanda tem ocasionado um aumento da complexidade dos
+sistemas de gera\c c\~ao de energia el\'etrica. Em contrapartida, a pesquisa por uma gera\c c\~ao de energia que favore\c
+ca o desenvolvimento sustent\'avel tornou-se um dos principais temas debatidos no cen\'ario internacional. O sistema brasileiro \'e constitu\'ido predominantemente por um sistema interligado
+hidrot\'ermico, tendo como caracter\'iticas principais o interc\^ambio de energia entre regi\~oes e a possibilidade de
+complementaridade existente entre as hidrel\'etricas e as termel\'etricas (Tolmasquim,2016). Em um planejamento hidrot\'ermico os aspectos
+de relev\^ancia s\~ao: acoplamento espacial, acoplamento temporal e a estocasticidade dos reservat\'orios. Em cada
+est\'agio do planejamento \'e necess\'aria a tomada de decis\~ao fazendo-se a escolha pela quantidade gerada de energia
+proveniente das termel\'etricas e das hidrel\'etricas. Neste contexto, atualmente destaca-se a Programa\c c\~ao Din\^amica Dual
+Estoc\'astica (PDDE), pois possibilita uma flexibilidade para a descri\c c\~ao do acoplamento temporal e espacial existente entre as
+usinas hidrel\'etricas, al\'em de permitir o  planejamento em v\'arios cen\'arios de aflu\^encias proporcionando-se a
+modelagem da incerteza dos reservat\'orios. Contudo, dependendo do n\'umero elevado e das quantidades de cen\'arios  para o planejamento
+nem sempre \'e poss\'ivel que a t\'ecnica de PDDE obtenha uma configura\c c\~ao \'otima para todos os cen\'arios
+considerados, tornando-se sua principal desvantagem.
+
+Diversos trabalhos na literatura utilizam a PDDE como forma de planejamento. Um estudo recente da t\'ecnica
+de constru\c c\~ao de \'arvore cen\'arios para a PDDE pode ser encontrado em (Rebennack, 2016). O estudo sobre
+modelagem hidrot\'ermica n\~ao convexa utilizando PDDE para restri\c c\~oes n\~ao lineares envolvendo reservat\'orios de
+hidrel\'etricas \'e encontrado em (Cerisola \& Latorre \& Ramos,
+2011). E uma an\'alise comparativa entre Programa\c c\~ao Din\^amica Primal Estoc\'astica e PDDE para modelo
+hidrot\'ermico de longo prazo \'e descrita em (Martinez \&
+Soares, 2004). 
+
+Neste trabalho propõe-se a analisar os pontos cr\'iticos de demanda e de produtibilidade em modelos hidrot\'ermicos que utilizam a PDDE.
+Tendo como intuito verificar quais as consequ\^encias nas varia\c c\~oes da demanda e da produtibilidade no valor total do custo esperado. Vale destacar a obten\c c\~ao de duas configura\c c\~oes de despacho considerando-se o aspecto macro, ou seja, ordem de acionamento das hidrel\'etricas e das termel\'etricas, com o aumento da demanda e dos n\'iveis de produtibilidade.  Ao final se detecta qual cen\'ario apresenta o menor custo esperado de produ\c c\~ao de gera\c c\~ao de energia el\'etrica, dentro das situa\c c\~oes modeladas.
+
+ Este trabalho \'e
+subdividido da seguinte maneira: Na Se\c c\~ao 2 foi abordada a configura\c c\~ao do despacho do Brasil; Na se\c c\~ao 3
+\'e abordada a Programa\c c\~ao Din\^amica Dual Estoc\'astica; Na se\c c\~ao 4 \'e abordada a an\'alise das simula\c
+c\~oes; Na se\c c\~ao 5 as conclus\~oes e trabalhos futuros estudo. 
+
+\section{DESPACHO DE ENERGIA}
+A an\'alise dos fatores que envolvem a matriz energ\'etica brasileira sobre os aspectos relacionados \`a demanda e a oferta possui um grau de complexidade elevado. Um dos principais elementos que ocasionam empecilhos \'e a depend\^encia h\'idrica que ocorre no setor energ\'etico brasileiro (Tolmasquim, 2016). O Brasil possui o Sistema Interligado Nacional (SIN) que corresponde as
+regi\~oes Sul, Sudeste, Centro-Oeste, Nordeste e parte do Norte. Sendo este, respons\'avel por abrigar cerca de $96,6\%$ de toda a capacidade de produ\c c\~ao de energia do Brasil (Atlas de
+energia el\'etrica no Brasil, 2008). Uma das vantagens da ado\c c\~ao do SIN deve-se a possibilidade de interc\^ambio
+energ\'etico, isto \'e, regi\~oes que sofrem com problemas no abastecimento  de energia devido a algum motivo externo
+podem ser auxiliadas por outras regi\~oes. Uma outra possibilidade \'e a opera\c c\~ao de usinas hidrel\'etricas e termel\'etricas no
+regime de complementaridade, ou seja, as termel\'etricas s\~ao ativadas para suprir demanda quando por algum motivo as
+hidrel\'etricas n\~ao conseguem suprir a demanda, evitando-se preju\'izos na oferta. O sistema de energia brasileiro tamb\'em \'e constitu\'ido pelos sistemas isolados localizados principalmente na regi\~ao Norte,
+estados como Amazonas, Roraima, Acre, Amap\'a e Rond\^onia. Esta denomina\c c\~ao deve-se por n\~ao estarem interligados ao
+SIN e por n\~ao permitirem um interc\^ambio com outras regi\~oes devido as caracter\'isticas geogr\'aficas. O
+funcionamento dos
+sistemas isolados \'e predominantemente t\'ermico. Os custos para a gera\c c\~ao de energia nesses sistemas s\~ao
+superiores ao SIN (Atlas de
+energia el\'etrica no Brasil, 2008).
+
+ A produ\c c\~ao de eletricidade no sistema brasileiro tem como objetivo principal minimizar
+os custo de opera\c c\~ao e garantir o suprimento de energia em todo o pa\'is (Tolmasquim, 2016). Devido SIN ser
+constitu\'ido predominantemente por um sistema hidrot\'ermico este \'e afetado pela incerteza associada a pluviosidade
+das regi\~oes que o constituem (Atlas de
+energia el\'etrica no Brasil, 2008). No entanto, a demanda do sistema deve ser garantida de forma a n\~ao prejudicar o
+abastecimento, ao mesmo tempo a gera\c c\~ao term\'eletrica associada aos sistemas isolados possui um custo elevado. Este custo deve ser considerado para n\~ao ocasionar um
+aumento desagrad\'avel no pre\c co  associado ao sistema de energia brasileiro. Neste contexto, o planejamento eficiente do sistema energ\'etico observando caracter\'isticas como, demanda, oferta e
+  as configura\c c\~oes do sistema \'e conhecido na literatura como o despacho de energia. Para sistemas
+ hidrot\'ermicos as caracter\'isticas do despacho podem ser resumidas no dilema do
+ ``operador'' dado pelo diagrama a seguir.
+ \begin{figure}[!h]
+   \centering
+   \resizebox{0.4\textwidth}{!}{%
+  \xymatrix@=1.5em{
+	& & *+[F] {\text {CHUVA}} \ar[r]& *+[F]{\text{DECIS\~AO CORRETA}}\\
+	& *+[F]{\text {USAR \ RESERVAT\'ORIO}} \ar[ur] \ar[dr] & &\\
+	& & *+[F]{\text{SECA}} \ar[r] & *+[F]{\text{PREJU\'IZO}} \\
+	*+ [F]{\text {OPERADOR}} \ar[uur] \ar[ddr] & & & \\
+	& & *+[F]{ \text {CHUVA}} \ar[r] & *+ [F]{\text{PREJU\'IZO}}\\
+	& *+ [F]{\text {USAR TERMEL\'ETRICA}} \ar[ur] \ar[dr]& &\\
+	& & *+[F] {\text {SECA}} \ar[r]& *+[F]{\text{DECIS\~AO CORRETA}}
+  }}
+ \caption {Dilema do operador.}  
+ \label{fig1}
+ \end{figure}
+
+Conforme o diagrama o operador do sistema pode ter preju\'izo associado a sua escolha dada a estocasticidade dos
+reservat\'orios das hidrel\'etricas. Dada a complexidade do sistema hidrot\'ermico
+brasileiro este tipo de decis\~ao possui um grau de dificuldade bastante elevado. Nesta perspectiva um dos modelos de
+planejamento desenvolvido para lidar com a tomada de decis\~ao de curto prazo foi desenvolvido pelo Centro de
+Pesquisas de Energia El\'etrica (Cepel), o chamado Modelo de Planejamento de Sistemas Interligados de
+Curto Prazo (DECOMP). Esse modelo fundamenta-se na t\'ecnica conhecida na literatura como Programa\c c\~ao Din\^amica
+Dual Estoc\'astica.
+
+\section{Programa\c c\~ao Din\^amica Dual Estoc\'astica}
+\subsection{Otimiza\c c\~ao}
+No planejamento de um sistema energ\'etico hidrot\'ermico o sistema deve preservar as metas de gera\c c\~ao para suprir a demanda e minimizar o valor esperado do custo de
+opera\c c\~ao ao longo do per\'iodo de estudo. As caracter\'isticas mencionadas configuram o despacho de energia
+. Dadas as possibilidades de configura\c c\~oes poss\'iveis para o sistema (sequ\^encia de acionamento das hidrel\'etricas e das termoel\'etricas com o aumento da demanda para uma produtibilidade fixa) deseja-se obter a combina\c
+c\~ao na qual o valor do custo
+associdado seja m\'inimo. Portanto, o despacho de energia trata-se de um problema de otimiza\c c\~ao. No estudo da
+teoria da otimiza\c c\~ao existe uma fun\c c\~ao $f$ ao qual intenta-se obter
+quando poss\'ivel seu minimizador (Izmailov \& Solodov, 2014). Um entendimento intuitivo pode ser dado pelas figuras a seguir:
+
+\begin{figure}[!h]
+  \centering
+	\resizebox{0.4\textwidth}{!}{%
+\begin{tikzpicture}
+  \draw [->, thick, black] (0,0)--(8,0) node[right] {$x$};
+  \draw [->, thick, black] (0,0)--(0,4) node[above] {$f$};
+  \draw [thick, black] (0,1)--(1,3);
+    \draw [thick, black] (1,3)--(2,0.5) node[above1,xshift = 3,yshift = 16] {$G$};
+  \draw [thick, black](2,0.5)--(4,3);
+  \draw [thick, black](4,3)--(5,2) node[below left] {$L$};
+  \draw [thick, black](5,2)--(6,3)--(8,3)node[above,yshift=8] {$D$};
+  \draw [ultra thick, black](2,0.5) circle (0.5mm);
+  \draw [ultra thick, black](5,2) circle (0.5mm);
+  \draw [ultra thick, black](5,2) circle (0.5mm);
+  \draw [dashed, black](2,0.5)--(0,0.5) node[left] {$f(x_g)$} ;
+  \draw [dashed, black](2,0.5)--(2,0) node[below] {$x_g$};
+  \draw [dashed, black] (1.5,1.8)--(1.5,0) node[below] {$x_1$};
+  \draw [dashed, black] (1.5,1.8)--(0.0,1.8) node[left] {$f(x_1)$};
+  \draw [dashed, black](3.8,2.7)--(3.8,0) node[below] {$x_2$};
+  \draw [dashed, black](3.5,2.7)--(0.0,2.7) node[above left] {$f(x_2)$};
+  \draw [dashed, black](5,2)--(0,2) node[above left] {$f(x_l)$};
+  \draw [dashed, black](5,2)--(5,0) node[below] {$x_l$};
+  \draw [thick, black](4,0) circle (0.01mm) node[below,yshift=-20] {Caso 1};
+\end{tikzpicture}}
+\resizebox{0.4\textwidth}{!}{%
+\begin{tikzpicture}
+  \draw [->, thick, black] (0,0)--(8,0) node[right] {$x$};
+  \draw [->, thick, black] (0,0)--(0,4) node[above] {$f$};
+  \draw [thick, black] (0,1)--(1,3);
+  \draw [thick, black] (1,3)--(2,0.5) node[left] {$G$};
+  \draw [thick, black](2,0.5)--(4,3);
+  \draw [thick, black](4,3)--(5,2) node[below] {$L$};
+  \draw [thick, black](5,2)--(6,3)--(8,3)node[left,yshift=8] {$D$};
+  \draw [ultra thick, black](2,0.5) circle (0.5mm);
+  \draw [ultra thick, black](4.5,0) circle (0.1mm) node[below]{$x_d$};
+  \draw [ultra thick, black](5,2) circle (0.5mm);
+  \fill [black, draw=black, opacity = 0.4] (4.5,0) rectangle (8,4);
+  \draw [thick, black](5,0) circle (0.2mm) node[below] {$x_l$};
+  \draw [dashed, black](2,0.5)--(0,0.5) node[left] {$f(x_g)$};
+  \draw [dashed, black](2,0.5)--(2,0) node[below] {$x_g$};
+  \draw [dashed, black] (1.5,1.8)--(1.5,0) node[below] {$x_1$};
+  \draw [dashed, black] (1.5,1.8)--(0.0,1.8) node[left] {$f(x_1)$};
+  \draw [dashed, black](3.8,2.7)--(3.8,0) node[below] {$x_2$};
+  \draw [dashed, black](3.5,2.7)--(0.0,2.7) node[above left] {$f(x_2)$};
+  \draw [dashed, black](5,2)--(0,2) node[above left] {$f(x_l)$};
+  \draw [thick, black](4,0) circle (0.01mm) node[below,yshift=-20] {Caso 2};
+  \end{tikzpicture}
+}
+\caption{Minizador $G$, minizador $L$ e Conjunto $D$.}
+\label{fig2}
+\end{figure}
+Analisando a Figura (\ref{fig2}) nota-se dois casos espec\'ificos: em cada caso o que muda \'e o dom\'inio da regra de associa\c c\~ao, esse dom\'inio \'e o conjunto vi\'avel. Para o primeiro caso \'e verdadeira a afirma\c c\~ao $f(x_g)
+\leq f(x)$ para qualquer $x$ do dom\'inio maximal. No segundo caso, se restringe o dom\'inio, ou seja, muda-se o conjunto vi\'avel (para valores de $x$ pertencentes ao conjunto cinza da Figura (\ref{fig2})). No segundo caso da Figura (\ref{fig2}) perceba a mudan\c ca do conjunto vi\'avel o que implica ser o ponto $L$ o novo minimizador, para o novo conjunto vi\'avel. Pois $f(x_l) \leq f(x)$ para todo $x$ no segundo conjunto vi\'avel. O  minimizador do problema de
+otimiza\c c\~ao dado o conjunto vi\'avel $D$ \'e conhecido como ponto de \'otimo. Sua nomenclatura comum \'e dada por ${x}^{*}$.  De forma equivalente pode-se
+representar o problema por,
+\begin{align}
+  \min_{x\in D} f(x) ,
+  \label {min1}
+\end{align}
+onde ${x}^{*}$ satisfaz:
+\begin{align}
+	  f({x}^{*}) \leq f(x) \mbox{ para }x \in D \nonumber
+\end{align}
+
+Para o presente estudo \'e suficiente considerar o conjunto $D$ como sendo um conjunto poliedral. De uma forma bem grosseira, a ideia \'e evitar
+poss\'iveis ``fissuras'' em nosso conjunto de restri\c c\~oes. Um conjunto  \'e dito poliedral  quando se pode represent\'a-lo como um conjunto de solu\c c\~oes de um sistema finito de equa\c c\~oes e inequa\c c\~oes lineares (Izmailov \& Solodov, 2014). Por exemplo,
+\begin{align}
+  D = \left\{ x \in \mathbb{R}^{n}; Ax = a, Bx \leq b\right\},\nonumber
+\end{align}
+onde $A \in R(l,m)$, $B \in R(m,n)$, $a \in \mathbb{R}^{n}$, e $b \in \mathbb{R}^{m}$ adotando-se que $R(l,m)$ representa o
+espa\c co de matrizes com $l$ linhas, e $m$ colunas. Dada que $f$ na Eq.(\ref {min1}) \'e uma fun\c c\~ao linear e $D$ um conjunto
+poliedral. Ent\~ao, na Teoria de otimiza\c c\~ao, tais problemas s\~ao denotados ser Problemas de Programa\c c\~ao Linear. O problema de despacho de energia, para o caso determin\'istico pertence a essa categoria. Por fim, para problemas de otimiza\c c\~ao de uma forma geral o conceito de dualidade \'e
+essencial. Considerando-se um problema de Programa\c c\~ao Linear que ser\'a chamado de problema primal,
+\begin{equation}
+  \displaystyle\min_{ x \in D = \left\{ x \in \mathbb{R}^{n}; Bx \geq b \right\}} \left < c,x \right >, 
+  \label{min2}
+\end{equation}
+onde $B \in R(m,n), c \in \mathbb{R}^{n}$ e $b \in \mathbb{R}^{n}$ onde ``$< >$'', representar o produto interno Euclidiano.
+O problema dual para Eq. (\ref{min2}) \'e definido por,
+\begin{equation}
+  \max_{\mu \in \Delta = \left\{ \mu \in \mathbb{R}_+^m;
+  {B}^{T} \mu = c \right\}} \left < b, \mu \right > .
+\end{equation}
+
+A grande import\^ancia da dualidade para a Programa\c c\~ao Linear deve-se ao fato que em certas circunst\^ancias o valor \'otimo do problema dual \'e equivalente ao do
+problema primal e na maioria dos casos o problema dual possui uma estrutura menos complexa (Izmailov \& Solodov, 2014). Uma
+vez que o instrument\'ario necess\'ario foi desenvolvido pela teoria de otimiza\c c\~ao. Assim, pode-se estudar o problema do despacho de
+energia usando o (DECOMP). 
+
+\subsection{Modelo de Planejamento de Opera\c c\~ao de Sistemas Hidrot\'ermicos Interligados de Curto Prazo}
+O despacho de energia em sistemas hidrot\'ermicos envolve um conjunto de fatores que dificultam a tomada de decis\~ao, 
+n\~ao somente os n\'iveis dos reservat\'orios devem ser considerados, mas tamb\'em o acoplamento espacial existente entre as usinas
+hidrel\'etricas. Consequentemente, usinas a jusante possuem depend\^encia de usinas a montante e o acoplamento temporal, isto
+\'e,
+decis\~oes no momento de planejamento podem ocasionar consequ\^encias no futuro, tais fatores  precisam ser observados para
+o despacho hidrot\'ermico. A figura a seguir representa a rela\c c\~ao existente entre as usinas. 
+
+\begin{figure}[!htpb]
+  \centering
+  \resizebox{0.5\textwidth}{!}{%
+  \input{plotcas.tex}}
+  \caption{Representa\c c\~ao do acoplamento espacial e temporal.}
+\end{figure}
+
+Nesse contexto, foi desenvolvido pelo Centro de Pesquisas de Energia El\'etrica (Cepel) o DECOMP. Sua estrutura
+utiliza a Programa\c c\~ao Din\^amica Dual Estoc\'astica. Primeiramente, considera-se o caso determin\'istico supondo um problema de opera\c
+c\~ao em dois est\'agios de tal forma que 
+aflu\^encia em cada usina hidrel\'etrica em qualquer est\'agio do tempo \'e conhecida (DECOMP, 2001). De tal forma, podendo modelar o problema por:
+\begin{align}
+&\min c_1x_1 + c_2x_2 \nonumber \\
+&\mbox{tal que: }	A_1 x_1 \geq b_1 \nonumber\\
+&E_1 x_1 + A_2 x_2 \geq b_2
+	\label{p1}
+\end{align}
+
+\begin{itemize}
+  \item $c_1$ e $c_2$ representam os custos relacionado aos est\'agios 1 e 2 respectivamente;
+  \item $x_1$ e $x_2$ representam as decis\~oes tomadas nos est\'agios 1 e 2 respectivamente;
+  \item $b_1$ e $b_2$  s\~ao os vetores de recursos nos est\'agios 1 e 2 respectivamente;   \item $A_1$ e $A_2$ representam o acoplamento espacial;
+  \item $E_1$ descreve o acoplamento temporal.
+\end{itemize}
+Este tipo de problema pode ser interpretado como uma decis\~ao em dois est\'agios para sua resolu\c c\~ao \'e
+escolhida uma decis\~ao vi\'avel $x_1$ denotada por ${x_1}^{*}$ de tal forma que $A_1{x_1}^{*} \geq b_1$. 
+Assim, o problema para decis\~ao do est\'agio 2 pode ser reescrito como, 
+\begin{align}
+ & 	\min c_2x_2  \nonumber\\
+&\mbox{tal que: }A_2 x_2 \geq b_2 - 	{E_1 x_1}^{*}  
+    \label{p2}
+\end{align}
+onde a Eq. (\ref {p2}) \'e um problema de Programa\c c\~ao Linear e ${x_1}^{*}$ \'e conhecido. Uma vez representadas as decis\~oes vi\'aveis tomadas no est\'agio 1 do
+problema o intuito \'e minimizar o custo da fun\c c\~ao objetivo para o est\'agio 2. Dado que ${x_1}^{*}$ \'e vi\'avel procura-se uma solu\c c\~ao \'otima para $x_2$ representado por
+${x_2}^{*}$. A solu\c c\~ao do est\'agio 2 depende das decis\~oes tomadas no est\'agio 1. Portanto, o
+problema do est\'agio 2 pode ser visto como uma fun\c c\~ao do 1 est\'agio, isto \'e,
+\begin{align}
+	\alpha_{1} (x_1) =& \min c_2x_2  \nonumber\\
+	&\mbox{tal que: }A_2 x_2 \geq b_2 - 	{E_1 x_1}^{*}  
+    \label{p3}
+\end{align}
+onde ${\alpha}_{1}$ representa o valor \'otimo para o est\'agio 2. A Eq.(\ref{p1}) pode ser reescrita como se segue,
+\begin{align}
+  &\min c_1x_1 + {\alpha}_{1}(x_1) \nonumber\\
+&\mbox{tal que: }	A_1x_1 \geq b_1.
+  \end{align}
+Aplicando a dualidade na Eq.(\ref{p2}) \'e imediato que,
+\begin{align}
+ \alpha_{1}(x_1) = &\max \pi (b_2 - E_1x_1 )\nonumber \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+ 	\label{p4}
+\end{align}
+
+Nas circunst\^ancias do problema a solu\c c\~ao da Eq.(\ref{p4}) \'e equivalente a Eq.(\ref{p2})
+nota-se que o conjunto vi\'avel $\pi A_2 \leq c_2$ da Eq.(\ref{p4}) n\~ao depende do valor de $x_1$. Desta forma, os
+pontos extremos ou v\'ertices do conjunto vi\'avel podem ser caracterizados por $\pi = \left\{ \pi_1, \pi_2, \dots,
+\pi_P \right\}$. Uma vez
+que a solu\c c\~ao de um problema de Programa\c c\~ao Linear corresponde  a um v\'ertice do conjunto vi\'avel,
+portanto a Eq.(\ref{p4}) pode ser reescrita como se segue,
+\begin{equation*}
+  \begin{aligned}
+	{\alpha}_{1}(x_1) = \text {max} \ \ {\pi}^{i} (b_2 - E_1x_1) \\
+	{\pi}^{1} \in \left\{ {\pi}^{1}, {\pi}^{2},\dots, {\pi}^{P} \right\}
+  \end{aligned}
+	\label{p5}
+\end{equation*}
+por fim, a Eq.(\ref{p4}) pode ser reescrita para, 
+\begin{align}
+  	\alpha_{1}(x_1) =& \min\alpha \nonumber\\ 
+	&\mbox{tais que: }\alpha \geq \pi^{i}(b_2 - E_1 x_1),\nonumber\\ &\mbox{com } i = 1,2, \dots , P
+	\label{p6}
+\end{align}
+onde $\alpha$ \'e uma vari\'avel escalar. Por fim a Eq.(\ref{p1}) torna-se
+\begin{align}
+&\min c_1x_1 + \alpha \nonumber\\
+&\mbox{tal que: }	A_1 x_1 \geq b_1 \nonumber\\
+&	\pi^{i}(b_2 - E_1x_1) - \alpha \leq 0\nonumber \\ 
+&\mbox{para }	i = 1, 2, \dots , P.
+	\label{p7}
+\end{align}
+A t\'ecnica para problemas determin\'isticos utilizada \'e conhecida na literatura como a decomposi\c c\~ao de Benders
+(Benders, 1962)
+construindo um algoritmo iterativo na buscar da solu\c c\~ao do problema. A PDDE nada
+mais \'e que uma aplica\c c\~ao da decomposi\c c\~ao de Benders em um problema cuja a
+natureza \'e
+ estoc\'astica. Considerando-se o problema de dois est\'agios similar ao caso anterior, contudo o  est\'agio 2 depende dos valores
+que uma ou mais vari\'aveis aleat\'orias podem assumir. Por exemplo, assuma que o vetor $b$ pode assumir dois valores $b_1$ e $b_2$ com
+probabilidades $p_1$ e $p_2$ respectivamente, sendo ($p_1 + p_2 = 1$) (DECOMP, 2001). O objetivo \'e encontrar a estrat\'egia que minimiza o
+valor do custo esperado dado por:
+\begin{align}
+  z = \min  c_1x_1 &+ p_1c_2x_{21} + p_2c_2x_{22} \nonumber\\	
+ \mbox{tal que: }&	A_1 x_1 \geq b_1\nonumber \\
+	&E_1 x_1 + A_2 x_{21} \geq b_{21} \nonumber\\
+	&E_1 x_1 + A_2x_{22} \geq b_{22}
+  	\label{pd1}
+\end{align}
+este problema poder ser reescrito como,
+\begin{align}
+  z = \min  c_1x_1 + p_1{\omega}_{21} + p_2 {\omega}_{22} \nonumber \\	
+	A_1 x_1 \geq b_1 
+  	\label{pd2}
+\end{align}
+\begin{align} 
+  &\omega_{21}(x_1) =\min c_2x_{21} \nonumber\\
+	& A_2 x_{21} \geq b_{21} - E_1 x_1 
+      \label{pd3}
+\end{align}
+\begin{align}
+ 	&\omega_{22}(x_1) = \min  c_2x_{22} \nonumber\\
+	&A_2x_{22} \geq b_{22} - E_1 x_1. 
+     \label{pd4}
+\end{align}
+Em seguida, aplicando a decomposi\c c\~ao de Benders (1962) em $\omega_{21}$ e $\omega_{22}$ obtem-se:  
+\begin{align}
+&\omega_{21}(x_1) = \min  \beta_{1}\nonumber \\
+	&\mbox{tal que: }\beta_{1}  \geq {\pi}_{1}^{i}b_{21} - E_1 x_1 \nonumber\\
+	&\mbox{para }i = 1,2,\dots, P 
+\end{align}
+\begin{align}
+ &\omega_{22}(x_1) = \min \beta_{2}\nonumber \\
+&\beta_{1}  \geq {\pi}_{2}^{i}b_{22} - E_1 x_1 \nonumber\\
+&\mbox{para }i = 1,2,\dots, M 
+\end{align}
+de maneira an\'aloga ao caso anterior pode-se escrever o problema original estoc\'astico como,
+\begin{equation}
+  \begin{aligned}
+	\underset {s \backslash a} {\text{min}} \ \ c_1x_1 + p_1 {\beta}_{1} + p_2 {\beta}_{2} \\
+	A_1 x_1 \geq b_1 \\
+	{\pi}_{1}^{i}(b_{21} - E_1x_1) - {\beta}_{1} \leq 0 \\ 
+	{\pi}_{2}^{j}(b_{22} - E_1x_1) - {\beta}_{2} \leq 0 \\ 
+	i = 1, 2, \dots , P \\
+	j = 1, 2, \dots , P. \\
+  \end{aligned}
+	\label{pd5}
+\end{equation}
+
+Em poucas linhas, a (PDDE) faz uma decomposi\c c\~ao no problema original utilizando-se os princ\'ipios de dualidade e a decomposi\c c\~ao
+de Benders (Benders, 1962). Isto permite a resolu\c c\~ao do problema original, a partir da solu\c c\~ao de outro problema. Contudo este
+\'ultimo possui um melhor tratamento computacional, sendo poss\'ivel analisar a influ\^encia da demanda em sistemas hidrot\'ermicos para v\'arios cen\'arios. A fun\c c\~ao a minimizar  \'e o custo esperado. As restri\c c\~oes do problema variam em fun\c c\~ao da produtibilidade e da demanda. No nosso modelo se constatou a exist\^encia de duas poss\'iveis sequ\^encias de acionamento das hidrel\'etricas e termel\'etricas, ao aumentarmos a demanda, para uma produtibilidade fixa. Por fim, avalia-se qual situa\c c~ao apresenta o menor custo esperado.
+
+\section{AN\'ALISE DO DESPACHO HIDROT\'ERMICO}
+A simula\c c\~ao  foi constitu\'ida para um sistema hidrot\'ermico de duas usinas hidrel\'etricas em cascata
+H1 e H2 com duas termel\'etricas associadas T1 e T2, para dois cen\'arios com probabilidade $p$ e $1-p$ respectivamente.
+O sistema deve manter a demanda dada por,
+\begin{align}
+  \displaystyle{\rho}_1*VTH1 + {\rho}_2*VTH2 + G1 + G2 = DEMANDA,
+\end{align}
+onde $\rho_1$ e $\rho_2$ s\~ao os \'indices de produtibilidade das usinas H1 e H2, VTH1 e VTH2  os volumes turbinados de
+H1 e H2 e G1 e G2 a
+produ\c c\~ao das termel\'etricas T1 e T2 respectivamente e considerando-se o balan\c co h\'idrico,
+\begin{align}
+  \displaystyle Vt = VI + VIC - \left( VT + VV \right), 
+\end{align}
+onde Vt representar volume em qualquer instante de tempo, VI volume inicial, VIC volume incremental, VV volume vertido e
+VT volume turbinado. Uma perspectiva geral \'e dada pela figura a seguir considerando-se uma simula\c c\~ao de curto prazo para uma semana de planejamento.
+\begin{figure}[!htpb]
+\centering
+  \subfigure[Produtibilidade = 1,0.]{
+	\includegraphics[width=5.0cm, height=5.0cm]{simulacaopb01pt10.eps}}
+  \subfigure[Produtibilidade = 1,4.]{
+	\includegraphics[width=5.0cm, height=5.0cm]{simulacaopb01pt14.eps}}
+\subfigure[Produtibilidade = 1,8.]{
+	\includegraphics[width=5.0cm, height=5.0cm]{simulacaopb01pt18.eps}}
+	\caption{Configura\c c\~ao de despacho para $p = 0,1$ e $1-p = 0,9$.}
+	\label{disp1}
+\end{figure}
+
+A Figura (\ref{disp1}) \'e constitu\'ida por configura\c c\~oes distintas de planejamento que est\~ao associados a produtibilidade das usinas hidrel\'etricas. Na Figura (\ref{disp1}a) nota-se uma gera\c c\~ao predominantemente da hidrel\'etrica H1 para um intervalo inicial de demanda. Entretanto, a medida que o aumento de demanda torna-se significativo para o sistema ocorre a ativa\c c\~ao da Hidrel\'etrica H2 e da termel\'etrica T1. Observa-se que ocorre um aumento da gera\c c\~ao de H2 e a gera\c c\~ao de T1 permanece constante no per\'iodo de estudo. A Figura (\ref {disp1}b) possui semelhan\c ca ao caso anterior, por\'em  o principal aspecto relevante deve-se a vasta utiliza\c c\~ao da gera\c c\~ao de H2 para essa configura\c c\~ao de despacho. Por fim, a Figura (\ref{disp1}c) possui ampla gera\c c\~ao de H2. Contudo, sua principal caracter\'istica \'e ativa\c c\~ao posterior de T1 em compara\c c\~ao aos outros casos. De acordo com a Figura (\ref{disp1}), a medida que ocorre uma altera\c c\~ao na produtibilidade  que configura as hidrel\'etricas H1 e H2. O sistema sobre pertuba\c c\~oes na demanda altera o arranjo da gera\c c\~ao. Desta forma, verifica-se um crescente aumento da gera\c c\~ao de H2 e uma diminui\c c\~ao de H1. Por fim, ocorre  um atraso para a solicita\c c\~ao de T1. A an\'alise sobre o impacto que ocorre com o custo em rela\c c\~ao a demanda para configura\c c\~oes de produtibilidade \'e dado a seguir. 
+\begin{figure}[!htpb]
+\centering
+  \subfigure[Produtibilidade = 1,0.]{
+	\includegraphics[width=5.0cm, height=5.0cm]{zpb01pt10.eps}}
+  \subfigure[Produtibilidade = 1,4.]{
+	\includegraphics[width=5.0cm, height=5.0cm]{zpb01pt14.eps}}
+\subfigure[Produtibilidade = 1,8.]{
+	\includegraphics[width=5.0cm, height=5.0cm]{zpb01pt18.eps}}
+	\caption{Relação entre demanda e custo esperado $p = 0,1$ e $1-p = 0,9$.}
+	\label{cust1}
+\end{figure}
+
+Conforme descrito em Figura (\ref{cust1}), as configura\c c\~oes de produtibilidade para aumento da demanda tiveram um impacto consider\'avel no valor de custo. De fato, percebe-se uma suaviza\c c\~ao da curva do valor \'otimo para o custo associado ao sistema. No primeiro momento ocorre um crescimento sim\'etrico em ambos os casos descritos na Figura (\ref{cust1}). Por\'em, a medida que ocorre uma crescimento na demanda. Em determinada ocasi\~ao nota-se uma ruptura na sim\'etria da curva ocorrendo um aumento do custo. Posteriormente, o equil\'ibrio \'e atingido. A configura\c c\~ao da produtibilidade considerada de maior import\^ancia para o despacho hidrot\'ermico \'e a encontrada em Figura (\ref{disp1}c) tamb\'em descrita em Figura (\ref{cust1}c). Pois, nota-se uma adapta\c c\~ao favor\'avel do sistema pelo aspecto do custo, uma vez que pela suaviaza\c c\~ao ocorrida evita-se aumentos inesperados. O segundo ponto  \'e a relev\^ancia ambiental associada com o uso das termel\'etricas. Visto que, a termel\'etrica T1 \'e ativada em um per\'iodo posterior em rela\c c\~ao as outras configura\c c\~oes. Desta forma, o sistema utilizando-se da configura\c c\~ao na Figura (\ref{disp1}) manteve-se em condi\c c\~oes de adpata\c c\~oes para o aumento na demanda. Vale salientar, que a ruptura observada na Figura (\ref{disp1}) em todos casos deve-se ao \^onus da ativa\c c\~ao de T1. Para a presente an\'alise considerou-se v\'arios outros cen\'arios com probabilidades distintas. Contudo, pelos resultados no aspecto geral serem semelhantes esses cen\'arios n\~ao foram descritos no presente trabalho.
+\section{CONCLUS\~OES}
+O objetivo deste trabalho estudo foi analisar o comportamento de um sistema hidrot\'ermico sobre as varia\c c\~oes na demanda com rela\c c\~ao as produtibilidades distintas para a descri\c c\~ao do despacho hidrot\'ermico, na  qual a t\'ecnica utilizada foi a Programa\c c\~ao Din\^amica Dual Estoc\'astica. O sistema foi
+estruturado com duas hidrel\'etricas em cascata H1 e H2 e duas termel\'etricas associadas T1 e T2. Ap\'os a an\'alise dos resultados p\^ode-se verificar que as varia\c c\~oes na demanda podem alterar significativamente o comportamento de sistemas hidrot\'ermicos. Pois, aumentos significativos ocasionaram a ruptura da curva de custo esperado. O principal motivo deve-se ao \^onus do custo associado a gera\c c\~ao da termel\'etrica T1. Entretanto, dada a configura\c c\~ao das produtibilidades das usinas percebeu-se uma mudan\c ca no comportamento do sistema notando-se duas configura\c c\~oes distintas. Com uma produtibilidade elevada o sistema manteve-se com a
+gera\c c\~ao das hidr\'eletricas H1 e H2 evitando-se a ativa\c c\~ao das term\'eletricas associadas T1 e T2. Por outro
+lado, para um produtibilidade baixa notou-se a ativa\c c\~ao simult\^anea de T1 e de H2. A primeira configura\c c\~ao
+considerou-se favor\'avel principalmente pela ativa\c c\~ao tardia de T1 evitando-se preju\'izos ambientais e o aumento
+no custo esperado. Este trabalho se justifica pela necessidade do planejamento energ\'etico no intuito do uso
+efi\^enciente da energia e na perspectiva do desenvolvimento sustent\'avel. Por fim, este trabalho est\'a longe de ser
+um estudo completo sobre o despacho hidrot\'ermio, uma vez que muitas melhorias podem serem feitas. Por exemplo,
+an\'alise dos  iniciais das usinas hidrel\'etricas para diminui\c c\~ao da necessidade de um produtibilidade elevada
+para uma adpta\c c\~ao favor\'avel do sistema. Al\'em de considerar fontes renov\'aveis como a e\'olica e a solar no
+modelamento.
+% ------------------------------------------------------------------------
+\section*{REFER\^ENCIAS}
+
+\begin{description}[noitemsep]
+\fontsize{11}{0}\selectfont
+\item
+Atlas de Energia Elétrica do brasil. {\em Ag\^encia Nacional de Energia El\'etrica, 2008
+3. ed., Brasília}. Dispon\'ivel em: http://www2.aneel.gov.br/arquivos/PDF/atlas3ed.pdf. Acesso em: 15 de Ago. 2019.
+\vspace{-0.1mm}
+\item
+Benders, J. F. {\em Partitioning procedures for solving mixed-variables programming problem}. Numerische Mathematik, 1962. Dispon\'vel em: \url {https://doi.org/10.1007/BF01386316}. Acesso em : 15 de Ago. de 2019
+\item
+Cerisola, S.; Latorre, J.M; RAMOS, {\em A. Stochastic dual dynamic programming applied to nonconvex hydrothermal models. European Journal of Operational Research, 2011}. Dispon\'ivel em: \url {http://www.sciencedirect.com/science/article/pii/S0377221711010496}. Acesso em : 14 de Ago.de 2019.
+\item
+Izmailov, A; Solov, M. {\em Otimiza\c c\~ao volume 1. Condi\c c\~oes de otimalidade, Elementos de An\'alise Convexa e de Dualidade. 3 ed, Rio de Janeiro: IMPA, 2014}. 
+\item
+Martinez, L; Soares,S. {\em Primal and dual stochastic dynamic programming in long term hydrothermal scheduling.IEEE PES Power Systems Conference and Exposition, 2004}.
+Dispon\'ivel em : \url {https://ieeexplore.ieee.org/document/1397703}. 
+Acesso em : 15 de Ago. 2019.
+\item
+Modelo de Planejamento da Operação de Sistemas Hidrotérmicos Interligados de Curto Prazo: Manual de refer\^encia.{\em Centro de Pesquisas de Energia Elétrica, 2001}. Dispon\'ivel em :\url {http://www2.aneel.gov.br/aplicacoes/noticias/arquivos/pdf/Manual_Referencia_DECOMP.pdf}. Acesso em : 15 de Ago. 2019.
+\item
+Rebennack, S. {\em Combining  sampling-based and scenario-based nested Benders decomposition methods: application to stochastic dual dynamic programming, 2016.Mathematical Programming}. 
+Dispon\'ivel em: {\em https://doi.org/10.1007/s10107-015-0884-3}. Acesso em: 14 de ago. de 2019.
+ \item
+ Tolmasquim, M. {\em Energia Termel\'etrica: G\'as Natural, Biomassa, Carv\~ao, Nuclear.} EPE: Rio de Janeiro, 2016.
+\end{description}
+\vspace*{-0.1cm}
+% ------------------------------------------------------------------------
+%For papers written in Portuguese or Spanish.
+
+%\begin{center}
+%  TITLE IN ENGLISH
+
+%\end{center}
+
+%\def\abstractname{Abstract}%
+
+%\begin{abstract}
+%   Abstract in english
+%\end{abstract}
+
+%\keywords{\em{Keywords in english}}
+
+\end{document}

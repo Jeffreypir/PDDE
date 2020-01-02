@@ -1,0 +1,21 @@
+\begin{theglossary}
+\makeatletter
+
+  \item [CCC] Conta de Consumo de Combust\'iveis, p. \hyperpage{9}
+  \item [G1] Produ\c c\~ao da Termel\'etrica T1, p. \hyperpage{24}
+  \item [G2] Produ\c c\~ao da Termel\'etrica T2, p. \hyperpage{24}
+  \item [H1] Hidrel\'etrica 1, p. \hyperpage{24}
+  \item [H2] Hidrel\'etrica 2, p. \hyperpage{24}
+  \item [ONS] Operador Nacional de Energia, p. \hyperpage{8}
+  \item [PDDE] Programa\c c\~ao Din\^amica Dual Estoc\'astica, p. 
+		\hyperpage{1}
+  \item [SIN] Sistema Interligado Nacional, p. \hyperpage{8}
+  \item [T1] Termel\'etrica 1, p. \hyperpage{24}
+  \item [T2] Termel\'etrica 2, p. \hyperpage{24}
+  \item [VIC] Volume Incremental, p. \hyperpage{24}
+  \item [VI] Volume Inicial, p. \hyperpage{24}
+  \item [VTH1] Volume Turbinado de H1, p. \hyperpage{24}
+  \item [VTH2] Volume Turbinado de H2, p. \hyperpage{24}
+  \item [VV] Volume Vertido, p. \hyperpage{24}
+
+\end{theglossary}

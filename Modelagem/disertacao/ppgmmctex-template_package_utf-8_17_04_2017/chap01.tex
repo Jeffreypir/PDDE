@@ -1,0 +1,101 @@
+\chapter{Introdução}
+\section{Contextualiza\c c\~ao}
+A crescente necessidade pelo atendimento \`a demanda tem ocasionado um aumento da complexidade dos
+sistemas de gera\c c\~ao de energia el\'etrica. Em contrapartida, a pesquisa por uma gera\c c\~ao de energia que favore\c
+ca o desenvolvimento sustent\'avel tornou-se um dos principais temas debatidos no cen\'ario internacional. O sistema brasileiro \'e constitu\'ido predominantemente por um sistema interligado
+hidrot\'ermico, tendo como caracter\'isticas principais o interc\^ambio de energia entre regi\~oes e a possibilidade de
+complementaridade existente entre as hidrel\'etricas e as termel\'etricas \cite{tom}. 
+
+Em um planejamento hidrot\'ermico os aspectos
+de relev\^ancia s\~ao: acoplamento espacial, acoplamento temporal e o componente estoc\'astico dos reservat\'orios. Em cada
+est\'agio do planejamento \'e necess\'aria a tomada de decis\~ao fazendo-se a escolha pela quantidade gerada de energia
+proveniente das termel\'etricas e das hidrel\'etricas. Neste
+contexto, atualmente destaca-se a Programa\c c\~ao Din\^amica Dual
+Estoc\'astica (PDDE), pois possibilita uma flexibilidade para a descri\c c\~ao do acoplamento temporal e espacial existente entre as
+usinas hidrel\'etricas, al\'em de permitir o  planejamento em v\'arios cen\'arios de aflu\^encias proporcionando-se a
+modelagem da incerteza dos reservat\'orios\cite{an}. Contudo, com a crescente preocupa\c c\~ao ambiental e a descoberta de
+novas  fontes de energia renov\'aveis \'e necess\'ario a adequa\c c\~ao do modelo hidrot\'ermico brasileiro aos novos fatores para
+o planejamento energ\'etico no intuito de viabilizar um fornecimento de energia el\'etrica de baixo custo e que seja
+suficiente ao atendimento da demanda dos v\'arios setores brasileiros. As fontes de energia que na atualidade se
+destacam s\~ao: a energia \'eolica e a solar.  
+
+O Brasil possui em rela\c c\~ao a energia \'eolica  caracter\'isticas favor\'aveis a sua utiliza\c c\~ao apresentado em
+termos de ventos uma quantidade duas vezes maior que \`a m\'edia mundial. Dessa forma, permitindo maior previsibilidade
+do volume produzido de energia. Al\'em, da velocidade dos ventos ser maior em per\'iodos de estiagem. Portanto,
+permitindo a utiliza\c c\~ao em regime de complementaridade com as usinas hidrel\'etricas \cite{an}. Em rela\c c\~ao a
+energia solar o Brasil possui caracter\'isticas semelhantes em rela\c c\~ao a \'eolica por apresentar altos n\'iveis de
+radia\c c\~ao solar \cite{an}. Os principais m\'etodos utilizados para a obten\c c\~ao de energia solar s\~ao: o
+heliot\'ermico e o fotovoltaico. O heliot\'ermico \'e a obten\c c\~ao da energia por um por um processo indireto no qual
+a irradia\c c\~ao \'e convertida em calor e utilizada para gera\c c\~ao de energia por meio das termel\'etricas. Sua
+utiliza\c c\~ao necessita de alta intensidade solar caracter\'isticas de regi\~oes que possuem poucas nuvens e
+ba\'ixos \'indices pluviom\'etricas, por exemplo, o semi-\'arido brasileiro\cite{an}.
+
+Nesse contexto, o presente trabalho explorar a utiliza\c c\~ao de uma modelagem mista com a utiliza\c c\~ao de fontes de
+energia renov\'aveis solar e e\'olica em regime de complementaridade com o modelo hidrot\'ermico brasileiro
+utilizando-se da t\'ecnica de PDDE. Uma vez que PDDE permite uma modelagem flex\'ivel de problemas que possuem
+componentes estoc\'asticos. Al\'em de ser amplamente utilizada no cen\'ario de modelagem de problemas energ\'eticos. Em
+particular, tem-se o intuito de desenvolver um algoritmo capaz de descrever de maneira realista os cen\'arios que o
+sistema brasileiro pode enfrentar. Dessa
+forma, auxiliando o planejamento energ\'etico e permitindo que o sistema energ\'ertico brasileiro tenha condi\c c\~oes de
+adapta\c c\~ao ao ambiente. Contudo, na perspectiva de uma gera\c c\~ao  limpa e de ba\'ixo custo.
+\section{Objetivos}
+\subsection{Objetivos Gerais}
+Os objetivos gerais deste trabalho s\~ao:
+\begin{itemize}
+	\item O modelamento misto de um modelo hidrot\'ermico em regime de complementaridade com fontes de energia renov\'aveis \'eolica e solar.
+	\item An\'alise do custo esperado do sistema misto para verifica\c c\~ao de sua viabilidade.
+	\item An\'alise dos principais cen\'arios que envolvem o sistema brasileiro. 
+	\item Verifica\c c\~ao se o modelo misto representa de maneira adequada o problema de planejamento energ\'etico.
+\end{itemize}
+
+\subsection{Objetivos Espec\'ificos}
+Os objetivos espec\'ificos deste trabalho s\~ao:
+\begin{itemize}
+	\item Constru\c c\~ao de um algoritmo \'otimo  computacionalmente para o planejamento. 
+	\item An\'alise de poss\'iveis erros do modelo.
+\end{itemize}
+\section{Metodologia}
+Primeiramente realizou-se uma revis\~ao bibliogr\'afica sobre o setor energ\'etico brasileiro. Dessa revis\~ao
+observou-se que o Brasil \'e constitu\'ido por um sistema energ\'etico do tipo hidrot\'ermico de grande porte. No qual a
+principal metodologia utilizada \'e t\'ecnica de Programa\c c\~ao Din\^amica Dual Estoc\'astica, pois, tal t\'ecnica
+posssui a capacidade de realizar o planejamento sobre cen\'arios de incerteza. Al\'em, de possui uma implementa\c c\~ao
+computacional relativamente simples.
+
+A segunda etapa do trabalho foi o entendimento da t\'ecnica e sua reprodu\c c\~a computacional para teste de verifica\c
+c\c c\~ao se tal t\'ecnica realmente poderia ser utilizada como as pesquisas afirmavam. Foi verificado que realmente a
+t\'ecnica de Progrma\c c\~ao din\^amica dual estoc\'astica possui bons resultados e possui uma flexibilidade no
+planejamento de cen\'arios. 
+
+Na terceira etapa buscou-se alguma melhoria ou resultado vantajoso do modelo que ainda n\~ao fosse  observado na base
+bibliogr\'afica. Dessa forma, os principais conceitos analizados foram: os cen\'arios, o custo esperado e a
+produtibilidade. Notou-se que uma varia\c c\~ao de produtibilidade fazia que o modelo modifica-se sua configura\c c\~ao
+de forma excepcional. Portanto, foram feitas extensivas simula\c c\~oes para averiguar se tal mudan\c ca realmente
+estava ocorrendo em todos os cen\'arios de planejamento  utilizados. Finalmente constatou-se que realmente a mudan\c ca
+de produtibilidade fazia que o sistema modifica-se totalmente a sua configura\c c\~ao independentemente a probabilidade
+de ocorr\^encia do cen\'ario.
+
+\section{Estrutura da proposta}
+O presente trabalho \'e estruturado da seguinte forma:
+\begin{description}
+	\item[Cap\'itulo 1: Introdu\c c\~ao.]
+		Nesse cap\'itulo \'e apresentado o contexto do problema, os objetivos gerais e espec\'ificos do trabalho, a
+		metodologia e a estrutura do trabalho.
+	\item[Cap\'itulo 2: Estado da arte.]
+		Descrever as atuais e principais pesquisas relevantes para o trabalho.
+	\item[Cap\'itulo 3: Despacho de Energia.]
+		Nesse cap\'itulo \'e tratado o sistema de energia brasileiro, a diferencia\c c\~ao entre matriz energ\'etica e
+		matriz el\'etrica. Al\'em, da constru\c c\~ao  da defini\c c\~ao do despacho de energia, exemplifica\c c\~ao das
+		caracter\'isticas do sistema hidrot\'ermico, solar e \'eolico.
+	\item[Cap\'itulo 4: Otimiza\c c\~ao.]
+		Desenvolvimento da teoria de otimiza\c c\~ao necess\'aria para o modelo de despacho.
+	\item[Cap\'itulo 5: Probabilidade.]
+		Desenvolvimento da teoria de probabilidade necess\'aria para o modelo de despacho.
+	\item[Cap\'itulo 6: Programa\c c\~ao Din\^amica Dual Estoc\'astica.]
+		Apresenta\c c\~ao e descri\c c\~ao do modelo a ser utilizado.
+	\item[Cap\'itulo 7: Resultados Parciais.]
+		Os resultados parciais do modelo de despacho para o caso hidrot\'ermico. Em particular a an\'alise da varia\c
+		c\~ao de produtibilidade para o modelo.
+	\item[Cap\'itulo 8: Proposta de Disserta\c c\~ao.]
+		trabalhando nisso
+\end{description}
+

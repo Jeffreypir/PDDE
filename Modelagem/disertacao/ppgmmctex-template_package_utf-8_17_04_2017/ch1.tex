@@ -1,0 +1,100 @@
+\chapter{Introdução}
+Neste cap\'itulo \'e abordado a contextualiza\c c\~ao do problema de planejamento energ\'etico. Os objetivos da
+ pesquisa, a metodologia utilizada e por fim a estrutura do trabalho. 
+\section{Contextualiza\c c\~ao}
+A crescente necessidade pelo atendimento \`a demanda tem ocasionado um aumento da complexidade dos
+sistemas de gera\c c\~ao de energia el\'etrica. Em contrapartida, a pesquisa por uma gera\c c\~ao de energia que favore\c
+ca o desenvolvimento sustent\'avel tornou-se um dos principais temas debatidos no cen\'ario internacional.
+O sistema brasileiro \'e constitu\'ido predominantemente por um sistema interligado
+hidrot\'ermico, tendo como caracter\'isticas principais o interc\^ambio de energia entre regi\~oes e a possibilidade de
+complementaridade existente entre as hidrel\'etricas e as termel\'etricas \cite{tom} e \cite{an}. 
+
+Em um planejamento hidrot\'ermico os aspectos
+de relev\^ancia s\~ao: acoplamento espacial, acoplamento temporal e o componente estoc\'astico dos reservat\'orios. Em cada
+est\'agio do planejamento \'e necess\'aria a tomada de decis\~ao fazendo-se a escolha pela quantidade gerada de energia
+proveniente das termel\'etricas e das hidrel\'etricas. Neste
+contexto, atualmente destaca-se a Programa\c c\~ao Din\^amica Dual\abbrev{PDDE}{Programa\c c\~ao Din\^amica Dual
+Estoc\'astica}
+Estoc\'astica (PDDE), pois possibilita uma flexibilidade para a descri\c c\~ao do acoplamento temporal e espacial existente entre as
+usinas hidrel\'etricas, al\'em de permitir o  planejamento em v\'arios cen\'arios de aflu\^encias proporcionando-se a
+modelagem da incerteza dos reservat\'orios. Contudo, dependendo da quantidade elevada de cen\'arios  para o planejamento
+nem sempre \'e poss\'ivel que a t\'ecnica de PDDE obtenha uma configura\c c\~ao \'otima para todos os cen\'arios
+considerados, tornando-se sua principal desvantagem.
+
+Diversos trabalhos na literatura utilizam a PDDE como forma de planejamento. Um estudo recente da t\'ecnica
+de constru\c c\~ao de \'arvore de cen\'arios para a PDDE pode ser encontrado em \cite{Reben}.
+O estudo sobre modelagem hidrot\'ermica n\~ao convexa utilizando PDDE para restri\c c\~oes n\~ao lineares envolvendo reservat\'orios de
+hidrel\'etricas \'e encontrado em \cite{torres}.
+Uma an\'alise comparativa entre Programa\c c\~ao Din\^amica Primal Estoc\'astica e PDDE para modelo
+hidrot\'ermico de longo prazo \'e descrita em \cite{soares}. A utiliza\c c\~ao de um m\'etodo decisor para aux\'ilio da
+PDDE foi proposto por \cite{vitor}. Um m\'etodo baseado em amostragem foi utilizado para constru\c c\~ao de cen\'arios
+por \cite{homem}. Por fim, foi proposto por \cite{dematos} uma metodologia para o melhoramento da PDDE em rela\c c\~ao
+ao aspecto computacional por meio da sele\c c\~ao de hiperplanos utilizados nas itera\c c\~oes. 
+
+Neste trabalho foi feita a an\'alise dos pontos cr\'iticos de demanda e de produtibilidade em modelos hidrot\'ermicos que utilizam a PDDE.
+Tendo como intuito verificar quais as consequ\^encias nas varia\c c\~oes da demanda e da produtibilidade no valor total do custo esperado.
+Vale destacar a obten\c c\~ao de duas configura\c c\~oes de despacho considerando-se o aspecto macro, ou seja, ordem de acionamento das 
+hidrel\'etricas e das termel\'etricas, com o aumento da demanda e dos n\'iveis de produtibilidade.
+Ao final se detecta qual cen\'ario apresenta o menor custo esperado de produ\c c\~ao de gera\c c\~ao de energia el\'etrica,
+dentro das situa\c c\~oes modeladas.
+
+ \section{Objetivos}
+\subsection{Objetivos Gerais}
+Os objetivos gerais deste trabalho s\~ao:
+\begin{itemize}
+	\item An\'alise da varia\c c\~ao da produtibilidade de um modelo hidrot\'ermico em rela\c c\~ao aos cen\'arios de
+		planejamento. 
+	\item O modelamento misto de um modelo hidrot\'ermico em regime de complementaridade com fontes de energia renov\'aveis \'eolica e solar.
+	\item An\'alise do custo esperado do sistema misto para verifica\c c\~ao de sua viabilidade.
+	\item An\'alise dos principais cen\'arios que envolvem o sistema brasileiro. 
+	\item Verificar se o modelo misto representa de maneira adequada o problema de planejamento energ\'etico.
+\end{itemize}
+
+\subsection{Objetivos Espec\'ificos}
+Os objetivos espec\'ificos deste trabalho s\~ao:
+\begin{itemize}
+	\item Constru\c c\~ao de um algoritmo \'otimo  computacionalmente para o planejamento. 
+	\item An\'alise de poss\'iveis erros do modelo.
+\end{itemize}
+\section{Metodologia}
+Primeiramente realizou-se uma revis\~ao bibliogr\'afica sobre o setor energ\'etico brasileiro. Dessa revis\~ao
+observou-se que o Brasil \'e constitu\'ido por um sistema energ\'etico do tipo hidrot\'ermico de grande porte. No qual a
+principal metodologia utilizada \'e t\'ecnica de Programa\c c\~ao Din\^amica Dual Estoc\'astica, pois, tal t\'ecnica
+posssui a capacidade de realizar o planejamento sobre cen\'arios de incerteza. Al\'em, de possui uma implementa\c c\~ao
+computacional relativamente simples.
+
+A segunda etapa do trabalho foi o entendimento da t\'ecnica e sua reprodu\c c\~ao computacional para teste de verifica\c
+c\~ao se tal t\'ecnica, realmente poderia ser utilizada como as pesquisas afirmavam. Foi verificado que realmente a
+t\'ecnica de Programa\c c\~ao Din\^amica Dual Estoc\'astica possui bons resultados e possui uma flexibilidade no
+planejamento de cen\'arios. 
+
+Na terceira etapa buscou-se alguma melhoria ou resultado vantajoso do modelo que ainda n\~ao fosse  observado na base
+bibliogr\'afica. Dessa forma, os principais conceitos analizados foram: os cen\'arios, o custo esperado e a
+produtibilidade. Notou-se que uma varia\c c\~ao de produtibilidade fazia que o modelo modifica-se sua configura\c c\~ao
+de forma excepcional. Portanto, foram feitas extensivas simula\c c\~oes para averiguar se tal mudan\c ca realmente
+estava ocorrendo em todos os cen\'arios de planejamento  utilizados. Finalmente, constatou-se que realmente a mudan\c ca
+de produtibilidade fazia que o sistema modifica-se totalmente a sua configura\c c\~ao independentemente da probabilidade
+de ocorr\^encia do cen\'ario.
+\section{Estrutura da proposta}
+O presente trabalho \'e estruturado da seguinte forma:
+
+\begin{description}
+	\item[Cap\'itulo 1: Introdu\c c\~ao] \hfill \\
+		Neste cap\'itulo \'e apresentado o contexto do problema, os objetivos gerais e espec\'ificos do trabalho, a
+		metodologia e a estrutura do trabalho.
+	\item[Cap\'itulo 2: Estado da arte] \hfill \\
+		Descrever as atuais e principais pesquisas relevantes para o trabalho.
+	\item[Cap\'itulo 3: Fundamenta\c c\~ao Te\'orica] \hfill \\
+		Neste cap\'itulo \'e tratado o problema para o despacho hidrot\'ermico e estrutura do modelo de planejamento
+		baseado em Programa\c c\~ao Din\^amica Dual Estoc\'astica.
+	\item[Cap\'itulo 4: Resultados Parciais] \hfill \\
+		Os resultados parciais do modelo de despacho para o caso hidrot\'ermico. Em particular a an\'alise da varia\c
+		c\~ao de produtibilidade para o modelo.
+	\item[Cap\'itulo 5: Proposta da Disserta\c c\~ao] \hfill \\
+		Neste cap\'itulo \'e abordado a proposta da disserta\c c\~ao, isto \'e,  a utiliza\c c\~ao de fontes de energia
+		renov\'aveis em regime de complementaridade com as hidrel\'etricas e termel\'etricas.
+\end{description}
+\section{Considera\c c\~oes finais}
+Nesse cap\'itulo foi abordado a contextualiza\c c\~ao do problema de planejamento energ\'etico, os objetivos da
+pesquisa, a metodologia a ser utilizada e a estrutura do trabalho.
+

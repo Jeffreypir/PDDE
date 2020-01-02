@@ -1,0 +1,10 @@
+This is makeindex, version 2.15 [TeX Live 2016] (kpathsea + Thai support).
+Scanning style file ./ppgmmc/ppgmmc.ist....
+** Input style error (file = ./ppgmmc/ppgmmc.ist, line = 51):
+   -- Unknown specifier lethead_flag.
+...done (7 attributes redefined, 1 ignored).
+Scanning input file jefferson.syx....done (2 entries accepted, 0 rejected).
+Sorting entries....done (2 comparisons).
+Generating output file jefferson.los....done (6 lines written, 0 warnings).
+Output written in jefferson.los.
+Transcript written in jefferson.ilg.

@@ -1,0 +1,369 @@
+  \section{Otimiza\c c\~ao}
+  No planejamento de um sistema energ\'etico hidrot\'ermico o sistema deve preservar as metas de gera\c c\~ao para suprir a demanda e minimizar o valor esperado do custo de
+  opera\c c\~ao ao longo do per\'iodo de estudo. As caracter\'isticas mencionadas configuram o despacho de energia
+  . Diante das possibilidades de configura\c c\~oes poss\'iveis para o sistema (sequ\^encia de acionamento das hidrel\'etricas e das termoel\'etricas com o aumento da demanda para uma produtibilidade fixa) deseja-se obter a combina\c
+  c\~ao na qual o valor do custo
+  associdado seja m\'inimo. Portanto, o despacho de energia trata-se de um problema de otimiza\c c\~ao. Sejam os conjuntos 
+  $D \subset \mathbb {R}^n $ e $\Psi \subset \mathbb {R}^n$ onde $D \subset \mathbb{R}^n$ e uma  fun\c c\~ao $f: \Psi
+  \rightarrow R$ o objetivo \'e encontrar um minimizador de $f$ no conjunto $D$ \cite{alexey}. Isto \'e, 
+  	\begin{align}%DEFINITION  OF FUNCTION OBJECTIVE 
+		\label {obj}
+	  	\min_{x\in D} f(x), 
+	\end{align}
+  define-se o conjunto D como o conjunto vi\'avel do problema, os pontos de D ser\~ao chamados pontos vi\'aveis e $f$ ser\'a chamada
+  de fun\c c\~ao objetivo. Uma vez formulado o problema em \eq{obj} para a sua resolu\c c\~ao \'e necess\'ario uma
+  defini\c c\~ao dos elementos que constituem um problema do otimiza\c c\~ao. Nesta perspectiva s\~ao abordadas as defini\c c\~oes
+  consideradas de relev\^ancia para o presente estudo dadas a seguir.
+  	\begin{defin}%DEFINITION OF MINIMIZER  
+		\label{def1}
+		Um ponto $\bx {x} \in D$ \'e, 
+		\begin{enumerate}
+			\item minimizador global para \eq{obj} se,
+				$$ f(\bx x) \leq f(x), \forall x \in D;$$
+			\item minimizador local da \eq{obj}, se existe uma vizinhan\c ca $U$ de \bx {x} tal que
+				$$ f(\bx {x})\leq f(x), \forall x \in D \cap U.$$
+		\end{enumerate}
+	\end{defin}
+  \noindent
+ Pode-se definir de maneira equivalente o minizador local como,
+ 	\begin{align}% DEFINITION OF EQUIVALENCE FOR THE MINIMIZER     
+		\label{eq2}
+		{\bx {x} \in D} & \mbox{ \'e minizador local} \nonumber \\
+	 	& \Updownarrow \\
+	 	\exists  \epsilon > 0 \enspace \mbox{t.q} \enspace f(\bx {x}) \leq f(x), & \enspace \forall x \in \{ x \in D; ||x -
+	   	\bx{x}|| \leq \epsilon \} \nonumber 
+  	\end{align}
+  Adotando-se $x_g$ e $x_l$ minizador global e local respectivamente o entendimento intuitivo das ideias apresentadas
+  \'e dado pela \fig{fig1} a seguir:
+  	\begin{figure}[!h]%THE VIABLE WITHOUT RESTRICTIONS 
+		\label{fig1}
+		\centering
+		\resizebox{1.0\width}{!}{
+		\input{fig1.tex} 
+  	}
+		\caption{Minizador global ($x_g$), local ($x_l$) e vizinhan\c ca (U).}
+  	\end{figure}
+
+  O significado da formula\c c\~ao apresentada na \fig{fig1} \'e que um minimizador local existe quando \'e poss\'ivel
+  encontrar uma regi\~ao $\mathrm{U}$ em $\mathrm{D}$ na qual seja satisfeita a rela\c c\~ao $f(\bx{x}) \leq f(x)$.
+  Nota-se pela \df{def1} que um minizador global tamb\'em \'e um minizador local, contudo a reciproca n\~ao 
+  \'e verdadeira \cite{alexey}. O fato do minizador local necessitar de apenas uma vizinha\c ca $U$ em $D$  indica a possibilidade da fun\c
+  c\~ao $f$ ter 
+  v\'arios minizadores locais no conjunto vi\'avel D. \'E importante salientar que dependendo do problema de otimiza\c
+  c\~ao pode existir restri\c c\~oes no conjunto vi\'avel $D$. 
+  \\
+  Considerando-se o problema,
+  	\begin{align}%PROBLEM WITH RESTRICIONS  
+		\label{eq3}
+		\min_{x,x_d \in D; x \geq x_d} f(x)
+	\end{align}
+  a situa\c c\~ao \'e exemplificada em \fig{fig11}.
+  	\begin{figure}[!htpb]%THE SET VIABLE WITH RESTRICTIONS
+		\centering
+		\resizebox{0.9\width}{!}{
+			\input{fig11.tex}
+	}
+		\caption{M\'inimo global ($x_g$), local ($x_l$) e conjunto com restri\c c\~oes D.}
+  		\label{fig11}
+	\end{figure}
+
+De acordo com \fig{fig11} apesar de $x_g$ ser o m\'inimo de $f$ a restri\c c\~ao $ x\geq x_d$ torna invi\'avel $x_g$
+ser o minizador para a fun\c c\~ao $f$ considerando-se o conjunto vi\'avel $D$, portanto, neste caso o minizador
+corresponde ao elemento $x_l$.\\
+  Considerando-se o problema de minimiza\c c\~ao na \eq{obj} o valor \'otimo \'e 
+  o menor valor que $f(x)$ assumir considerando-se $x \in D$ essa ideia embasar a \df{def2}. 
+  	\begin{defin}
+		\label{def2}
+		Seja $\bx {v} \in [-\infty, +\infty)$ definido por,
+	  	\begin{equation*}
+			\bx {v} =  \underset{x \in D} {\textrm{inf}} \ \ f(x)
+	  	\end{equation*}
+	  	\bx {v} \'e o valor \'otimo da \eq{obj}.
+	\end{defin}
+Nota-se pela \df{def2} que o objeto a ser encontrado (valor \'otimo) est\'a bem definido. O fato de tomar o inf indica
+que o valor \'otimo pode n\~ao pertence ao conjunto de restri\c c\~oes $D$, contudo deve est\'a suficiente pr\'oximo
+para ser considerado de relev\^ancia para n\~ao comprometer a solu\c c\~ao do problema dado pela \eq{obj}. 
+De forma geral problemas de minimiza\c c\~ao est\~ao relacionados com problemas de maximiza\c c\~ao. De fato, uma rela\c c\~ao bastante 
+conhecida entre problemas de maximiza\c c\~ao e minimiza\c c\~ao \'e encontrada em \cite{alexey} dada por,
+	\begin{align}
+  		\label{eq4}
+		\max_{x \in D} f(x) \Leftrightarrow  
+		\min_{x \in D} -f(x).
+  	\end{align}
+Desta forma, problemas de minimiza\c c\~ao e maximiza\c c\~ao podem ser interpretados como o mesmo tipo de
+problema, entretanto as solu\c c\~oes locais e globais dos problemas na \eq{eq4} evidentemente possuem sinais opostos. A
+exemplifica\c c\~ao deste fato \'e dada pela \fig{fig2}.
+	\begin{figure}[!htpb]%MINIMIZER AND MAXIMIZER 
+		\centering
+		\resizebox{0.5\textwidth}{!}{
+			\input{fig2.tex}
+		}  \caption{Minimiza\c c\~ao ($-f$) e Maximiza\c c\~ao ($f$).}
+		\label{fig2}
+	\end{figure}
+
+O conjunto vi\'avel de um problema de 
+otimiza\c c\~ao \'e definido por um conjunto de igualdades e/ou desigualdades e/ou inclus\~ao da seguinte forma,
+	\begin{equation*}%THE SET VIABLE
+  		D = \left \{ x \in \Psi; \begin{array}{cc} h_i(x) = 0, i = 1, \dots, l \\ g_j(x) \leq 0, j = 1, \dots, m  \end{array} \right \}
+	\end{equation*}
+ou de forma equivalente, 
+	\begin{equation*}%DEFINITION FOR SET VIABLE
+  		D = \{ x \in \Psi; h(x) = 0, g(x) \leq 0\}.
+	\end{equation*}
+dado que $\Psi \subset \mathbb{R}^n$, $h:\Psi \rightarrow R^l$ e $g: \Psi \rightarrow \mathbb{R}^{m}$ admitindo-se que $f$ est\'a 
+definida no conjunto $\Psi$. O conjunto  $\Psi$ representa as condi\c c\~oes diretas e as desigualdades 
+s\~ao conhecidas como restri\c c\~oes funcionais. Na pr\'atica a separa\c c\~ao entre restri\c c\~oes diretas e funcionais \'e apenas 
+uma conveni\^encia. De fato, seja a condi\c c\~ao direta $x \in \Psi = \mathbb{R}_+^n$ \'e equivalente a
+representa\c c\~ao funcional dada por  $x \in \{x \in R^n; x_i \geq 0, i = 1,\dots, n \}$ \cite{alexey}. No conjunto de restri\c
+c\~oes $D$ em alguns casos existe a necessidade de manipula\c c\~oes e/ou transforma\c c\~oes para tornar poss\'ivel ou facilitar a resolu\c
+c\~ao do problema de otimiza\c c\~ao. 
+Por exemplo, as restri\c c\~oes de igualdade $h_i = 0$ podem ser reescritas de maneira equivalente como inequa\c c\~oes, ou seja, 
+
+	\begin{align*}%EQUIVALENT WRITING OF THE EQUALITY RESTRICTION
+		h_{i} (x) & = 0 \\
+		& \Updownarrow \hspace{1.4cm} \mbox{com $i = 0,1, \dots, l$}\\ 
+		h_{i} \leq 0,& -h_{i}(x) \leq 0. 
+	\end{align*}
+De forma an\'aloga pode-se transformar restri\c c\~oes de desigualdade mediante uma transforma\c c\~ao inserindo nas inequa\c c\~oes
+termos artificiais conhecidos como vari\'aveis de folga, isto \'e, 
+	\begin{align*}%VARIABLE OF BACKSLASH
+		g_{i} (x) & \leq 0 \\ 
+ 		&\Updownarrow \hspace{1.4cm} \mbox{com $i = 0,1, \dots, l$}\\ 
+ 		g_{i}  + z_i^2 & = 0, z_i \in R. 
+	\end{align*}
+Contudo, na pr\'atica dependendo do contexto o problema de otimiza\c c\~ao pode ser tornar mais complexo com tais transforma\c c\~oes 
+sua utiliza\c c\~ao dever ocorrer quando realmente existe alguma indica\c c\~ao do melhoramento do problema transformado em compara\c c\~ao com o
+problema original. Em
+primeiro lugar existe a possibilidade do problema relaxado possui condi\c c\~oes de otimalidade mais fracas que o problema com as 
+restri\c c\~oes originais \cite{alexey}. Outro fator a ser considerado \'e 
+o aumento no n\'umero de restri\c c\~oes. Quanto ao tipo de problema em rela\c c\~ao ao conjunto de restri\c c\~oes ($D$),
+por enquanto deve-se considerar basicamente dois casos especificos: sem restri\c c\~oes quando $D = R^n$, isto \'e, sem
+restri\c c\~oes no dom\'inio no qual $f$ \'e definida. Uma exemplifica\c c\~ao deste caso pode ser observado em \fig{fig1}.
+Para o caso $D \neq R^n$ tem-se um problema com restri\c c\~oes, ou seja, deve-se considerar um subconjunto do
+dom\'inio de $f$ um exemplo \'e dado em \fig{fig11}. O conjunto das restri\c c\~oes \'e de 
+fundamental import\^ancia para o estudo da otimiza\c c\~ao \cite{alexey}. De fato, uma classe importante de problemas \'e definida quando
+o conjunto das restri\c c\~oes 
+forma um poliedro.
+	\begin{defin}%DEFINITION OF THE POLYHEDRAL SET
+  		Um conjunto \'e dito poliedral quando ele pode ser representado como um conjunto de solu\c c\~oes de um sistema finito de equa\c c\~oes 
+  		e inequa\c c\~oes lineares, isto \'e,
+		\begin{equation*}%VIABLE SET
+  			D = \left\{ x \in R^n; Ax = a, Bx \leq b \right\},
+		\end{equation*}
+		onde:
+		\begin{itemize}
+			\setlength\itemsep{-6pt}
+			\item $A \in R(l,n)$, $B \in R(m,n)$;
+			\item $a \in R^l$ $b \in R$.
+		\end{itemize}
+		\begin{figure}[!h]%POLYHEDRAL SET
+			\centering
+			\label{pol} 
+			\resizebox{2.5\width}{!}{
+			\input{pol.tex}
+			}
+			\caption{Exemplo de um conjunto poliedral  $\mathbb{R}^3$.}
+		\end{figure}
+	\end{defin}
+	Desta forma tomando-se $h:R^n \rightarrow R^l$ e $g: R^n \rightarrow R^m$ definidas como $h(x) = Ax -a$ e $g(x) = Bx -
+b$ fun\c c\~oes afins nesse contexto \cite{alexey}. Nota-se que para o caso em $\mathbb{R}^{2}$ teriamos um
+pol\'igono no plano.  
+Uma vez que o conjunto poliedral est\'a bem definido pode-se estabelecer informa\c c\~oes \'uteis sobre a fun\c c\~ao
+objetivo $f$. 
+	\begin{defin}%DEFINITION OF THE FUNCTION QUADRATIC
+  		Uma fun\c c\~ao $f: R^n  \rightarrow R$, definida por,
+  		$$ f(x) = \left < Qx,x \right > + \left < q, x \right > $$
+  		onde $Q \in R(n,n),q \in R^n$, \'e chamada fun\c c\~ao quadr\'atrica.
+  		\label{fun}
+	\end{defin}
+Dada Q em \autoref {fun} pode-se admitir sem perca de generalidade que est\'a \'e sim\'etrica, portanto,
+	\begin{equation*}%RELATION OF THE FUNCTION QUADRATIC
+  		\left <Qx,x \right > = \frac {1} {2} \left < (Q + Q^T)x, x \right >.
+	\end{equation*}
+Uma vez que \'e poss\'ivel a substitui\c c\~ao da matriz Q pela sim\'etrica $ \frac{(Q + Q^t)} {2}$ \cite{alexey}.
+Desta forma considera-se dois casos
+de grande import\^ancia: o conjunto ($D$) \'e poliedral e a fun\c c\~ao ($f$) \'e quadr\'atrica trata-se de um problema de programa\c
+c\~ao quadr\'atrico para o caso que o conjunto ($D$) \'e poliedral  e a fun\c c\~ao objetivo ($f$) seja linear,
+ou seja, quando $Q = 0$ em \autoref{fun} trata-se de um problema de programa\c c\~ao linear. Para o presente trabalho
+ser\'a considerado somente problemas de programa\c c\~ao linear. Contudo, somente a informa\c c\~ao sobre o conjunto $D$
+ser um conjunto poliedral n\~ao permite considera\c c\~oes que facilitem a buscar pela a solu\c c\~ao do problema liner,
+al\'em de n\~ao permite verificar se a solu\c c\~ao encontrada \'e realmente adequada para o problema proposto na 
+\eq{obj}. Com esse intuito ser\'a tratado somente os aspectos de
+relev\^ancia da an\'alise convexa para o tratamento adequado do conjunto poliedral ($D$) e para o desenvolvimento de
+outros resultados importantes para o presente estudo.  
+ 	\begin{defin}%DEFINITION OF THE CONVEX SET
+	 	\label{conv}
+	 	Um conjunto  $Q \subset R^n$ \'e chamado conjunto convexo se para quaisquer $x \in Q$, $y \in Q$ e $\forall \lambda \in [0,1]$ tem-se que 
+     	$\lambda x + (1 - \lambda)y \in Q$.
+     	Onde tem-se que o ponto $\lambda x + (1 - \lambda)y$ \'e uma combina\c c\~ao convexa de $x$ e $y$ com o par\^ametro
+     	$\lambda$.
+ 	\end{defin}
+ \noindent
+ Dada a defini\c c\~ao \autoref{conv} para que um conjunto $Q$ qualquer seja convexo \'e necess\'ario que dados dois
+ pontos de $Q$ o segmento de reta cujos os extremos sejam esses pontos deve est\'a no conjunto $Q$.
+ 	\begin{defin}%DEFINITION OF THE CONVEX FUNCTION 
+		\label{conv2}
+   		Se $Q \subset R^n$ \'e um conjunto convexo, diz-se que a fun\c c\~ao $f:Q \rightarrow R$ \'e convexa em $Q$ quando para quaisquer 
+    	$x \in Q$, $y \in Q$ e $\lambda \in [0,1]$ tem-se que,
+   			\begin{equation*}
+	    		f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y).
+   			\end{equation*}
+	\end{defin}
+ \noindent
+ As defini\c c\~oes \autoref{conv} e \autoref{conv2} caracterizam os elementos principais de convexidade por meio da
+ convexidade \'e poss\'ivel determinar caracter\'isticas favor\'aveis na resolu\c c\~ao da \eq{obj}. Por exemplo, os
+ resultados a seguir permitem descrever os objetos que formam o conjunto vi\'avel (D) como conjuntos convexos.
+ 	%RESULTS FOR CONVEXITY
+ 	\begin{prop}%ALL SEMI-SPACE IN R^N IS CONVEX
+	 	\label{propv1}
+	 	Qualquer semi-espa\c co em $\mathbb{R}^n$, isto \'e, o conjunto da forma $D = \{x \in R^n;\left <x,a \right >  \leq
+	 	c\}$ onde $a \in R^n$ $c \in R$ \'e convexo.\\
+	 	Prova: 
+	 	De fato, tomando-se $x,y \in D$ e definindo uma $f: D\rightarrow R$ tal que,
+	 		\begin{align*}
+		 		f(x) =\left <x,a \right >  = \sum_{i = 1}^{n}x_ia_i \hspace{2pt} \mbox{com $x,a \in D$, onde a \'e fixo e $i = 1,2 \dots n$}.
+	 		\end{align*}
+	 	Portanto, da hip\'otese tem-se que \\
+	 		\begin{align}
+		 		\left <x,a\right > = \sum_{i = 1}^{n} x_ia_i \leq c \label{eqp1}\\
+		 		\left <y,a\right > = \sum_{i = 1}^{n} x_ia_i \leq c  \label{eqp2}.
+	 		\end{align}
+	 	Tomando $\alpha \in [0,1]$ e multiplicando \ref{eqp1} por ($\alpha$) e \ref{eqp2} por ($1 - \alpha$) tem-se,
+	 		\begin{align}
+		 		\left <\alpha x,a\right > &= \alpha \sum_{i = 1}^{n} x_ia_i \leq \alpha c \label{eqp1a}\\
+		 		\left <\alpha y,a\right > &= (1-\alpha)\sum_{i = 1}^{n} y_ia_i \leq (1 - \alpha)c  \label{eqp2b}.
+	 		\end{align}
+	 	Somando-se \ref{eqp1a} com \ref{eqp2b} segue que
+	 		\begin{align*}
+		 		\left <\alpha x,a\right > + \left <(1-\alpha) y,a\right >  &= \alpha \sum_{i = 1}^{n} x_ia_i + (1-\alpha)\sum_{i =
+		 		0}^{n} y_ia_i \leq \alpha c + (1 - \alpha)c \Rightarrow \nonumber\\
+		 		\left <\alpha x,a\right > + \left <(1 -\alpha) y,a\right >  &= \alpha f(x) + (1 - \alpha)f(y) \leq c
+	 		\end{align*}
+	 	pela defini\c c\~ao \autoref{conv} a prova est\'a terminada.
+	\end{prop}
+	\begin{prop}%ALL SEMI-FLAT IN r^N IS CONVEX
+		\label{propv2}
+		Qualquer hiperplano em $\mathbb{R}^n$, isto \'e, o conjunto da forma $D = \{x \in R^n;\left <x,a \right >  \leq
+	 	c\}$ onde $a \in R^n$ $c \in R$ \'e convexo. \\
+	 	Prova:\\
+	 	De maneira an\'aloga a proposi\c c\~ao \autoref{propv1} deve-se utilizar "$=$" ao inv\'es de "$\leq$".
+	\end{prop}
+	\begin{prop}%INTERSECTION OF THE CONVEX SETS IS CONVEX 
+		\label{proconv}
+ 		Sejam $D_i \subset \mathbb R^n$ tal que $i \in I$  conjuntos convexos onde I \'e um conjunto qualquer (possivelmente infinito). \\
+  		Ent\~ao a intersec\c c\~ao $D \cap _{ i \in I} D_i$ tamb\'em \'e um conjunto convexo \cite{alexey}.
+ 	\end{prop}
+	\begin{cor}%THE CONVEX SET IN R^N IS CONVEX 
+		\label{cov1}
+		Um conjunto poliedral em $\mathbb{R}^n$ \'e convexo \cite{alexey}.\\
+		Prova:\\
+		De fato, o conjunto vi\'avel de \eq{obj} \'e um poliedro formado pela intersec\c c\~ao de semi-espa\c cos e
+		hiperplanos nota-se pelas preposi\c c\~oes \autoref{propv1} e \autoref{propv2} que tais conjuntos s\~ao convexos, logo,
+		segue pela proposi\c c\~ao \autoref{proconv} que conjunto ($D$) \'e convexo.
+	\end{cor}
+ \noindent
+  Desta forma, o  conjunto  problemas de otimiza\c c\~ao quadr\'atricos
+ e lineares com o conjunto ($D$) de restri\c c\~oes podem sem perca de generalidade serem tratados como conjuntos
+ convexos, portanto, quando houve refer\^encia ao conjunto vi\'avel ($D$) ser\'a considerado tanto como um conjunto poliedral
+ como tamb\'em um conjunto convexo. 
+ A proposi\c c\~ao \autoref{proconv} e o corol\'ario \autoref{cov1} podem ser encontrados com maiores detalhes em \cite{alexey}. 
+ O fato de pode-se trabalhar com o conjunto 
+ das restri\c c\~oes de um problema de otimiza\c c\~ao como um conjunto convexo deve-se ao Teorema de Maximiza\c c\~ao de uma fun\c c\~ao 
+ convexa em um conjunto poliedral diretamente deste teorema obt\'em-se uma forma de assegurar a 
+ exist\^encia de uma solu\c c\~ao para um problema de programa\c c\~ao linear. Al\'em de indicar uma formula\c c\~ao
+ para a buscar da  solu\c c\~ao. 
+  	\begin{teo}%SOLUTION OF THE PROBLEM IN THE CONVEX SET IS VERTICE OF THE CONVEX SET	
+	 	\label{proconv2}
+	 	Sejam $D \subset \mathbb{R}^n$ um conjunto poliedral que n\~ao cont\'em nenhuma reta e $f: D \rightarrow R$ uma
+	 	fun\c c\~ao convexa. Supondo-se que o problema dado por
+	 		\begin{align}
+		 		\label{max}
+		 		\max_{x \in D} f(x) 
+	 		\end{align}
+	 	possua uma solu\c c\~ao.
+	 	Ent\~ao existe uma solu\c c\~ao deste problema que \'e um v\'ertice de D \cite{alexey}.
+ 	\end{teo}
+ Conforme o teorema \autoref{proconv2} desde que as suposi\c c\~oes sejam respeitadas tem-se uma maneira de encontra uma
+ solu\c c\~ao para o problema \ref{max}. Nota-se que o problema tem caracter\'isticas que se assemelham ao problema
+ original dado pela \eq{obj}. Contudo, a forma apresentada no teorema \autoref{proconv2} ainda n\~ao \'e a procurada. O
+ resultado do corol\'ario \autoref{cov2} estabele a rela\c c\~ao final que o problema esteja bem definido, al\'em de
+ permite um melhor an\'alise do problema dado pela \eq{obj}.
+ 	\begin{cor}%SOLUTION OF PROBLEM LINEAR IS A VERTICE OF THE VIABLE SET
+	 	\label{cov2}
+		Supondo-se que $D \subset R^n$ seja um conjunto poliedral que n\~ao cont\'em nenhuma reta e que o problema de programa\c c\~ao 
+		linear
+	   \begin{align} 
+		   \label {obj2}
+		   \min \left<c,x\right> \mbox{sujeito a} \hspace{6pt}x \in D
+	   \end{align}
+	   onde $c \in R^n$, tenha uma solu\c c\~ao \cite{alexey}. \\
+   	   Demonstra\c c\~ao:\\
+       De fato, aplicando a rela\c c\~ao entre problemas de maximiza\c c\~ao e miniza\c c\~ao  \ref{eq4} no problema
+	   \ref{obj2} esse \'e reescrito como,
+       \begin{align*}
+	   		-\max\left <-c,x \right > \mbox{sujeito a} \hspace{5pt}x \in D.
+   		\end{align*}
+   		nota-se que a fun\c c\~ao objetivo desse problema \'e convexa, portanto, o resultado segue da aplica\c c\~ao do
+   		teorema \autoref{proconv2}. O   
+ 	\end{cor}
+ Nota-se que o fato deste resultado exige que o conjunto D, n\~ao dever exite uma reta n\~ao se tornar um impedimento, de fato para problemas
+  de programa\c c\~ao linear cujo o conjunto de D de restri\c c\~oes \'e dado por,
+	\begin{equation*}%VIABLE CONVEX SET
+		D = \left\{ x \in R_+^n; Ax = a, Bx \leq b \right\},
+  	\end{equation*}
+  desde que este conjunto vi\'avel possua uma solu\c c\~ao, com base, no coro\'ario pode-se garantir que uma das solu\c c\~oes \'e vertice 
+  de $D$, conforme \cite{alexey}, o fator das restri\c c\~oes $x \geq 0 $ garatem que o conjunto vi\'avel $D$ n\~ao cont\'em nenhuma reta,
+  problemas que requerem que as vari\'aveis sejam n\~ao negativas, s\~ao comuns em problemas pr\'aticos. Como um problema de 
+  minimiza\c c\~ao pode ser tranformado em problema de maximiza\c c\~ao o resultado do corol\'ario tamb\'em ser\'a v\'alido, com as 
+  devidas altera\c c\~oes. Apesar deste resultado n\~ao ser v\'alido para programa\c c\~o quadr\'atrica, a validade para a program\c c\~ao 
+  ser\'a suficiente para presente estudo, oi resultados apresentados evidencia que uma boa forma para procurar, solu\c c\~oes em 
+  problemas de programa\c c\~ao linear, \'e pelos v\'ertices do conjunto poliedral, apesar de a ideia ser intuitiva, para problemas 
+  complexo que a contru\c c\~ao geometrica da regi\~ao vi\'avel pode n\~ao ser poss\'ivel, ou depende de um grande esfor\c co, ter um 
+  resultado que garanta a exist\^encia da solu\c c\~ao e permita ter uma ideia da solu\c c\~ao ter o seu m\'erito, para problemas 
+  pr\'aticos, que na maioria das vezes s\~ao de carater complexo cujo para a procurar de uma solu\c c\~ao n\~ao deve ser desperfi\c cado 
+  este resultado mostra a sua import\^ancia. 
+  \par
+  Outro fator importante h\'a ser mencionado quanto as vari\'aveis n\~ao negativas no conjunto 
+  vi\'avel para problemas de natureza s\~ao melhores observadas com um exemplo, portanto, considerando a seguinte situa\c c\~ao,
+  certa empresa entre quantidades de mercadorias A, B e C em tempos $t_1$ $t_2$ e $t_3$, suponha que o lucro da empresa depende do tempo 
+  de entregar das mercadorias, quanto menor o tempo, maior o lucro, contudo, n\~ao pode-se apenas diminuir o tempo de entregar sem 
+  garantir certas condi\c c\~oes para a integridade dos produtos entregues, a fun\c c\~ao custo neste caso para ser minizar, 
+  ir\'a depender do tempo de entregar, nota-se que para este tipo de problema n\~ao h\'a sentido considera-se um tempo negativo, 
+  portanto $t_1$, $t_2$ e $t_3$ s\~ao vari\'aveis n\~ao negativas, este tipo de exemplo ilustrar o fator comentado de as vari\'aveis 
+  do conjunto vi\'avel serem n\~ao negativas n\~ao serem vistas como um grande problema do ponto de vista pr\'atico. 
+  Uma vez que o conceitos de convexidade relevantes para o presente estudo foram colocados, tem-se o conhecimento necess\'ario, para 
+  ser trabalhar a subcategoria de interesse  que s\~ao os problemas de Programa\c c\~ao Linear, conforme abordado, estes problemas pela 
+  an\'alise convexa, possuem resultados de grande interesse que permitem que conforme \cite{alexey} este classe de problemas seja bem 
+  estudar.
+  \par
+  O conceito de dualidade, a grosso modo \'e uma forma de transforma\c c\~ao de um problema original para outro problema onde busca-se 
+  que ambos tenham a mesma solu\c c\~ao, de uma maneira mais formal, conforme \cite{alexey}, a teoria da dualidade se baseia em uma 
+  associa\c c\~ao entre um problema original (primal) e um outro problema, chamado de dual, onde sob certas condi\c c\~oes, como tamb\'em 
+  em um certo sentido, \'e equivalente ao primal contudo pode possui um grau de complexidade inferior ao problema primal (original). Para 
+  o estudo de dualidade, primeiramente que evitar qualquer evitar qualquer equivoco, segue a defini\c c\~ao de dualidade no contexto 
+  mais matem\'atico.
+  	\begin{defin}%Dual of problem
+		Considerando-se o seguinte problema de programa\c c\~ao de linear, que ser\'a denominado de problema primal:
+			\begin{center}
+	  			min $\left < c,x \right > $ sujeito a $x \in D = \{ x \in R^n|Bx \geq b \}$,
+			\end{center}
+		onde $B \in R(m,n), c \in R^n$ e $b \in R^m$, o problema dual deste problema ser\'a dado por
+			\begin{center}
+	  			max $\left<b,\mu \right>$ sujeito a $\mu \in \Delta = \{ \mu \in R_{+}^{m}| B^T\mu = c\}$
+			\end{center}
+  	\end{defin}
+  Alguma considera\c c\~oes que devem ser tomadas no contexto de dualidade de um problema primal, nota-se que um no problema primal, 
+  tem-se $n$ vari\'aveis com $m$ restri\c c\~oes, contudo para o problema dual s\~ao $m$ vari\'aveis para e $n$ restri\c c\~oes.
+  conforme \cite{alexey}, a natureza do resultados para a dualidade n\~ao ser modificar, mesmo que o formato do problema primal seja 
+  modificado, por\'em, est\'a afima\c c\~o s\'o \'e verdadeira deste que o problema dual para o problema primal esteja definido 
+  adequadamente.
+  Uma propriedade simples que pode ser encontrada em \cite{alexey} conhecida como dualidade simples, para todo $x \in D$ e $\mu \in \Delta$
+  tem-se,
+  	\begin{equation*}
+		\left< c,x \right> = \left< B^{T}\mu,x \right> = \left< \mu, Bx \right> \leq \left< b, \mu \right>,
+  	\end{equation*}
+  tomando-se que $B^{T}\mu = c, \mu \geq 0$ e $Bx \geq b$, esta propriedade  \'e conhecida, conforme \cite{alexey}, chama-se 
+  dualidade fraca e pode ser generalizada como,
+  	\begin{equation*}
+		\left< c,x \right> \geq \left< b,\mu  \right> \forall x \in D, \forall \mu \in \Delta.
+  	\end{equation*}

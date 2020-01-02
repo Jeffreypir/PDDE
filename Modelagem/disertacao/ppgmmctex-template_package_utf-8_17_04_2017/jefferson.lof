@@ -1,0 +1,86 @@
+\select@language {brazil}
+\select@language {english}
+\select@language {brazil}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Representa\c c\~ao do acoplamento espacial e temporal.\relax }}{10}{figure.caption.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Dilema do operador.\relax }}{11}{figure.caption.7}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Representa\c c\~ao dos est\'agios.\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Exemplo de um conjunto poliedral $\mathbb {R}^3$.\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Rela\c c\~ao entre o dom\'inio e o conjunto vi\'avel $D$.\relax }}{14}{figure.caption.10}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Representa\c c\~ao dos est\'agios para o caso estoc\'astico.\relax }}{19}{figure.caption.11}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Simula\c c\~ao para cen\'arios de probabilidade $p = 0.1$ e $1 - p = 0.9$.\relax }}{25}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\rho = 1,0$.}}}{25}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\rho = 1,4$.}}}{25}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\rho = 1,5$.}}}{25}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\rho = 1,6$.}}}{25}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\rho = 1,8$.}}}{25}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\rho = 2,0$.}}}{25}{figure.caption.12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Simula\c c\~ao da curva de custo esperado $p = 0.1$ e $1 - p = 0.9$.\relax }}{26}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Custo para $\rho = 1,0.$}}}{26}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Custo para $\rho = 1,4.$}}}{26}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Custo para $\rho = 1,5.$}}}{26}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Custo para $\rho = 1,6.$}}}{26}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Custo para $\rho = 1,8.$}}}{26}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Custo para $\rho = 2,0.$}}}{26}{figure.caption.13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Simula\c c\~ao para cen\'arios de probabilidade $p = 0.2$ e $1 - p = 0.8$.\relax }}{27}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\rho = 1,0$.}}}{27}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\rho = 1,4$.}}}{27}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\rho = 1,5$.}}}{27}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\rho = 1,6$.}}}{27}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\rho = 1,8$.}}}{27}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\rho = 2,0$.}}}{27}{figure.caption.14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Simula\c c\~ao da curva de custo esperado $p = 0.2$ e $1 - p = 0.8$.\relax }}{28}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Custo para $\rho = 1,0.$}}}{28}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Custo para $\rho = 1,4.$}}}{28}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Custo para $\rho = 1,5.$}}}{28}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Custo para $\rho = 1,6.$}}}{28}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Custo para $\rho = 1,8.$}}}{28}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Custo para $\rho = 2,0.$}}}{28}{figure.caption.15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Simula\c c\~ao para cen\'arios de probabilidade $p = 0.5$ e $1 - p = 0.5$.\relax }}{29}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\rho = 1,0$.}}}{29}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\rho = 1,4$.}}}{29}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\rho = 1,5$.}}}{29}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\rho = 1,6$.}}}{29}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\rho = 1,8$.}}}{29}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\rho = 2,0$.}}}{29}{figure.caption.16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Simula\c c\~ao da curva de custo esperado $p = 0.5$ e $1 - p = 0.5$.\relax }}{30}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Custo para $\rho = 1,0.$}}}{30}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Custo para $\rho = 1,4.$}}}{30}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Custo para $\rho = 1,5.$}}}{30}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Custo para $\rho = 1,6.$}}}{30}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Custo para $\rho = 1,8.$}}}{30}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Custo para $\rho = 2,0.$}}}{30}{figure.caption.17}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Simula\c c\~ao para cen\'arios de probabilidade $p = 0.7$ e $1 - p = 0.3$.\relax }}{31}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\rho = 1,0$.}}}{31}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\rho = 1,4$.}}}{31}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\rho = 1,5$.}}}{31}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\rho = 1,6$.}}}{31}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\rho = 1,8$.}}}{31}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\rho = 2,0$.}}}{31}{figure.caption.18}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Simula\c c\~ao da curva de custo esperado $p = 0.7$ e $1 - p = 0.3$.\relax }}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Custo para $\rho = 1,0.$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Custo para $\rho = 1,4.$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Custo para $\rho = 1,5.$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Custo para $\rho = 1,6.$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Custo para $\rho = 1,8.$}}}{32}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Custo para $\rho = 2,0.$}}}{32}{figure.caption.19}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Simula\c c\~ao para cen\'arios de probabilidade $p = 1.0$ e $1 - p = 0.0$.\relax }}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\rho = 1,0$.}}}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\rho = 1,4$.}}}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\rho = 1,5$.}}}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$\rho = 1,6$.}}}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$\rho = 1,8$.}}}{33}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$\rho = 2,0$.}}}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Simula\c c\~ao da curva de custo esperado $p = 1.0$ e $1 - p = 0.0$.\relax }}{34}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Custo para $\rho = 1,0.$}}}{34}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Custo para $\rho = 1,4.$}}}{34}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Custo para $\rho = 1,5.$}}}{34}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Custo para $\rho = 1,6.$}}}{34}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Custo para $\rho = 1,8.$}}}{34}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Custo para $\rho = 2,0.$}}}{34}{figure.caption.21}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Configura\c c\~oes para o despacho hidrot\'ermico.\relax }}{36}{figure.caption.22}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

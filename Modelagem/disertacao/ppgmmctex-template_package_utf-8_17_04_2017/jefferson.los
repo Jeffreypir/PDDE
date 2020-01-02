@@ -1,0 +1,34 @@
+\begin{theglossary}
+\makeatletter
+
+  \item [$ \min $] Minimiza\c c\~ao, p. \hyperpage{11}
+  \item [$A_i, B_i, E_i$] Matrizes de dimens\~ao $(m,n)$, para $i = 1,2, \dots$, p.  
+		\hyperpage{12}
+  \item [$D$] Conjunto vi\'avel pertecendo ao $R^n$, p.\hyperpage{12}
+  \item [$E(x)$] Valor Esperado, p. \hyperpage{17}
+  \item [$R(m,n)$] Espa\c co da matrizes (m,n), p. \hyperpage{15}
+  \item [$R^n$] Espa\c co Euclidiano, p. \hyperpage{12}
+  \item [$\Psi$] Subconjunto do $R^n$, p. \hyperpage{12}
+  \item [$\alpha, \alpha_i, i = 1,2 \dots $] Vari\'avel escalar, p.
+		\hyperpage{15}
+  \item [$\beta_i, i = 1, 2 \dots$] Vari\'avel escalar, p. \hyperpage{20}
+  \item [$\geq$] Maior ou igual que, p. \hyperpage{11}
+  \item [$\in$] Pertence, p. \hyperpage{13}
+  \item [$\langle c_1,x_1\rangle$] Produto Interno Euclidiano, p. 
+		\hyperpage{12}
+  \item [$\leq$] Menor ou igual que, p. \hyperpage{13}
+  \item [$\max$] Maximiza\c c\~ao, p. \hyperpage{15}
+  \item [$\omega_{ij},i = 1,2 \dots, j = 1,2 \dots  $] Cen\'arios de probabilidade, p.
+		\hyperpage{18}
+  \item [$\pi, \pi_i, i = 1, 2 \dots $] Vari\'avel dual, p. \hyperpage{15}
+  \item [$\sum$] Somat\'orio, \hyperpage{18}
+  \item [$c_i,x_i$] Vetores do $R^n$ com $i = 1, 2 , \dots$, p.
+		\hyperpage{11}
+  \item [$f(x)$] Fun\c c\~ao objetivo , p. \hyperpage{12}
+  \item [$g_i, i \leq 1,2 \dots$] Hiperplano do $R^n$, p. \hyperpage{13}
+  \item [$h_i, i = 1,2 \dots$] Semi-espa\c co do $R^n$, p. \hyperpage{13}
+  \item [$p(x)$] Fun\c c\~ao de probabilidade, p. \hyperpage{17}
+  \item [Gmax] Produ\c c\~ao M\'axima da term\'eletricas, p. 
+		\hyperpage{24}
+
+\end{theglossary}

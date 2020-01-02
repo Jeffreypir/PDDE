@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\path
+	( 1, 0, 0) coordinate (A1)
+	( 0, 0,-1) coordinate (A2)
+	(-1, 0, 0) coordinate (A3)
+	( 0, 0, 1) coordinate (A4)
+	( 0, 1, 0) coordinate (B1)
+	( 0,-1, 0) coordinate (B2);
+
+	\draw 
+	(A1)--(A4)--(A3)
+	(B1)--(A4)--(B2)
+	(A1)--(B1)--(A3)
+	(A1)--(B2)--(A3);
+
+	\draw[dashed]
+	(A1)--(A2)--(A3)
+	(B1)--(A2)--(B2);
+\end{tikzpicture}

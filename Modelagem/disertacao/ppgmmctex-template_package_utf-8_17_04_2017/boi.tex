@@ -1,0 +1,96 @@
+\documentclass[msc,numbers]{ppgmmc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{indentfirst}
+\setlength{\parindent}{1.5cm}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{pageslts}
+\usepackage{mdwlist}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array,multirow}
+\usepackage{mathtools}
+\usepackage[]{graphicx}
+\usepackage{tikz}
+\usepackage{nomencl}
+\usepackage{subfiles}
+\usepackage[all]{xy} 
+\usepackage[]{subfigure}
+\usepackage{caption}
+\usepackage{pgfplotstable}
+%comandos auxiliares 
+\newcommand{\eq}[1]{Eq.(\ref{#1})} % Eq.()
+\newcommand{\df}[1]{defini\c c\~ao \ref{#1}} % Def ()
+\newcommand{\fig}[1]{figura(\ref{#1})} % Figura ()
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}}}
+\theoremstyle{definition}
+\newtheorem{defin}{Defini\c{c}\~{a}o}[section]
+\newtheorem{prop}{Proposi\c{c}\~{a}o}[section]
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{cor}{Corol\'ario}[section]
+\makelosymbols
+\makeloabbreviations
+
+\newcommand\chap[1]{
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}
+\markboth{#1}{#1}}
+
+\begin{document}
+\title{Modelo de balan\c co energ\'etico hibr\'ido, contendo fontes intermitentes, baseada em  Programa\c{c}\~{a}o Din\^{a}mica Dual Estoc\'{a}stica}
+  \foreigntitle{Thesis Title}
+  \author{Jefferson}{Bezerra dos Santos}
+  \advisor{Prof.}{Camila}{Mara Vital Barros }{D.Sc.}
+  \advisor{Prof.}{S\'{e}rgio}{de Carvalho Bezerra}{Ph.D.}
+
+  \examiner{Prof.}{Nome do Primeiro Examinador Sobrenome}{D.Sc.}
+  \examiner{Prof.}{Nome do Segundo Examinador Sobrenome}{Ph.D.}
+  \examiner{Prof.}{Nome do Terceiro Examinador Sobrenome}{D.Sc.}
+  \department{MMC}
+  \date {02}{2020}
+
+
+  \keyword{Gera\c c\~ao de Energia}
+  \keyword{Modelo Hidrot\'ermico}
+  \keyword{Progra-ma\c c\~ao Din\^amica Dual Estoc\'astica} 
+
+  %\fichacatalogclassautor{M21m}
+  %\fichacatalogclasschamada{CDU: 719.6(043)} 
+  \maketitle
+
+  \frontmatter
+  
+  %\include{dedic}
+  %\include{thanks}
+  \include{resumo}
+  \include{abstract}
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \printlosymbols
+  \printloabbreviations
+
+  \mainmatter
+  \include{ch1}
+  \include{ch2}
+  \include{ch3}
+  \include{ch4}
+  \include{ch5}
+  \include{cronog}
+  %\include{chap02}
+  %\include{chap03}
+  %\include{chap04}
+  %\include{chap05}
+  %\include{chap06}
+
+  \backmatter
+  
+  %\bibliographystyle{./ppgmmc/ppgmmc-unsrt}
+  \bibliographystyle{./ppgmmc/ppgmmc-plain}
+  \bibliography{refs}
+
+  \appendix
+  \include{appenA}
+  %\include{appenB}
+\end{document}

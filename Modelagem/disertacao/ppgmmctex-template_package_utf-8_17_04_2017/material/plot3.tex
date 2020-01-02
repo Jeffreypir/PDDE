@@ -1,0 +1,44 @@
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}
+	\begin{axis}[   
+		legend style={  
+		  at={(1.8,1)},
+		anchor=north east},
+		axis lines = left,
+		xlabel= {$\text{Demanda (kW)}$},% nomeando os eixos
+	  ylabel={$\text{Gera\c c\~ao(kW)}$},
+	]
+
+\addplot[color=green,mark=*] coordinates{% caracterizando a plotagem
+(62600,0.000000)
+(62700,0.000000)
+(62800,100.000000)
+(62900,200.000000)
+(63000,300.000000)
+(63100,400.000000)
+};
+	\addplot[color=red,mark=*] coordinates{% caracterizando a plotagem
+(62400,0.000000)
+(62500,0.000000)
+(62600,100.000000)
+(62700,200.000000)
+(62800,200.000000)
+(62900,200.000000)
+};
+\begin{comment}
+	\addplot[color=blue, mark=*] coordinates{
+(99400,49950.000000)
+(99500,50000.000000)
+(99600,50000.000000)
+(99700,50000.000000)
+(99800,50000.000000)
+};
+\end{comment}
+\legend{Hidrel\'etrica H2,Termel\'etrica T1}
+
+\end{axis} 
+\end{tikzpicture}
+\caption {Intervalo de ativa\c c\~ao de H2 e T1}
+\label{fig5}
+\end{figure}

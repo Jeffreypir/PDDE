@@ -1,0 +1,163 @@
+INICIO 
+Primal 
+Chute viável hidroelétrica 1 e 2 no estágio 1: 
+VTH1S1 = 50000.000000,VVH1S1 = 20000.000000,VTH2S1 = 40000.000000,VVH2S1 = 10000.000000 
+
+Chute viável térmicas no estágio 1: 
+G1 = 0.000000, G2 = 0.000000 
+ 
+Diferença de (ALFA1_1x - ALFA1_1) = 5000.000000 
+ 
+Diferença de (ALFA1_2x - ALFA1_2) = 9996.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.333333333e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema dual 1 cenário: Interação : 1 
+ALFA1_1X = 233.333;u1_1 = 0.333333;u2_1 = 0 u3_1 = 0;u4_1 = 0,u5_1 = 0,u6_1 = 0
+
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.000000000e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema Dual Cenário 2: Interação : 1 
+ALFA1_2x = 2000;u1_2 = 0.333333;u2_2 = 0;u3_2 = 0;u4_2 = 0,u5_2 = 0,u6_2 = 0
+
+GLPK Simplex Optimizer, v4.61
+10 rows, 8 columns, 16 non-zeros
+      0: obj =   0.000000000e+00 inf =   8.533e+03 (3)
+      3: obj =   4.786666667e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Primal interação : 1  
+z = 4786.67; VTH1S1 = 2100; VVH1S1 = 0;VTH2S1 = 0;VVH2S1 = 0; G1 = 0; G2 = 0 
+ 
+Houve convergência na interação: 1 
+Erro relativo 1 Cenário: 0.000000
+Erro relativo 2 Cenário: 0.000000
+Os pontos ótimos são: 
+z = 4786.666667 
+VTH1S1 = 2100.000000,VVH1S1 = 0.000000,VTH2S1 = 0.000000, VVH2S1 = 0.000000, G1 = 0.000000,G2 = 0.000000 
+O valor ótimo de z: 
+z = 4786.666667
+ 
+Valor do custo eperado no estágio 2
+AlFA = 586.666667 
+ALFA1_1 = 233.333333
+ALFA1_2 = 2000.000000
+INICIO 
+Primal 
+Chute viável hidroelétrica 1 e 2 no estágio 1: 
+VTH1S1 = 50000.000000,VVH1S1 = 20000.000000,VTH2S1 = 40000.000000,VVH2S1 = 10000.000000 
+
+Chute viável térmicas no estágio 1: 
+G1 = 0.000000, G2 = 0.000000 
+ 
+Diferença de (ALFA1_1x - ALFA1_1) = 5000.000000 
+ 
+Diferença de (ALFA1_2x - ALFA1_2) = 9996.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.333333333e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema dual 1 cenário: Interação : 1 
+ALFA1_1X = 233.333;u1_1 = 0.333333;u2_1 = 0 u3_1 = 0;u4_1 = 0,u5_1 = 0,u6_1 = 0
+
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.000000000e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema Dual Cenário 2: Interação : 1 
+ALFA1_2x = 2000;u1_2 = 0.333333;u2_2 = 0;u3_2 = 0;u4_2 = 0,u5_2 = 0,u6_2 = 0
+
+GLPK Simplex Optimizer, v4.61
+10 rows, 8 columns, 16 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.077e+04 (3)
+      3: obj =   5.373333333e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Primal interação : 1  
+z = 5373.33; VTH1S1 = 2100; VVH1S1 = 0;VTH2S1 = 0;VVH2S1 = 0; G1 = 0; G2 = 0 
+ 
+Diferença de (ALFA1_1x - ALFA1_1) = 233.333333 
+ 
+Diferença de (ALFA1_2x - ALFA1_2) = 2000.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.333333333e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema dual 1 cenário: Interação : 2 
+ALFA1_1X = 233.333;u1_1 = 0.333333;u2_1 = 0 u3_1 = 0;u4_1 = 0,u5_1 = 0,u6_1 = 0
+
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.000000000e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema Dual Cenário 2: Interação : 2 
+ALFA1_2x = 2000;u1_2 = 0.333333;u2_2 = 0;u3_2 = 0;u4_2 = 0,u5_2 = 0,u6_2 = 0
+
+GLPK Simplex Optimizer, v4.61
+12 rows, 8 columns, 18 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.077e+04 (3)
+      3: obj =   5.373333333e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Primal interação : 2  
+z = 5373.33; VTH1S1 = 2100; VVH1S1 = 0;VTH2S1 = 0;VVH2S1 = 0; G1 = 0; G2 = 0 
+ 
+Diferença de (ALFA1_1x - ALFA1_1) = 233.333333 
+ 
+Diferença de (ALFA1_2x - ALFA1_2) = 2000.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.333333333e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema dual 1 cenário: Interação : 3 
+ALFA1_1X = 233.333;u1_1 = 0.333333;u2_1 = 0 u3_1 = 0;u4_1 = 0,u5_1 = 0,u6_1 = 0
+
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.000000000e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema Dual Cenário 2: Interação : 3 
+ALFA1_2x = 2000;u1_2 = 0.333333;u2_2 = 0;u3_2 = 0;u4_2 = 0,u5_2 = 0,u6_2 = 0
+
+GLPK Simplex Optimizer, v4.61
+14 rows, 8 columns, 19 non-zeros
+      0: obj =   0.000000000e+00 inf =   1.300e+04 (5)
+      4: obj =   5.373333333e+03 inf =   2.000e+03 (1)
+LP HAS NO PRIMAL FEASIBLE SOLUTION
+Primal interação : 3  
+z = 5373.33; VTH1S1 = 2100; VVH1S1 = 0;VTH2S1 = 0;VVH2S1 = 0; G1 = 0; G2 = 0 
+ 
+Diferença de (ALFA1_1x - ALFA1_1) = 233.333333 
+ 
+Diferença de (ALFA1_2x - ALFA1_2) = 2000.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.333333333e+02 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema dual 1 cenário: Interação : 4 
+ALFA1_1X = 233.333;u1_1 = 0.333333;u2_1 = 0 u3_1 = 0;u4_1 = 0,u5_1 = 0,u6_1 = 0
+
+GLPK Simplex Optimizer, v4.61
+6 rows, 6 columns, 14 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (1)
+*     1: obj =   2.000000000e+03 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Problema Dual Cenário 2: Interação : 4 
+ALFA1_2x = 2000;u1_2 = 0.333333;u2_2 = 0;u3_2 = 0;u4_2 = 0,u5_2 = 0,u6_2 = 0
+
+glp_load_mat: ia[107] = 14; ja[107] = 4; duplicate indices not allowed
+Error detected in file api/prob1.c at line 1035

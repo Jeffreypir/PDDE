@@ -1,0 +1,87 @@
+Primal 
+ Chute Inicial: x1 = 0, x2 = 0, lambda = 0  
+ 
+Diferença de (Q - lambda) = 2.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+1 row, 3 columns, 3 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (3)
+*     2: obj =   2.500000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Problema Dual Interação : 1 
+Q = 25; u1 = 5; u2 = 0; u3 = 0 
+ 
+ 
+GLPK Simplex Optimizer, v4.61
+1 row, 3 columns, 3 non-zeros
+      0: obj =   0.000000000e+00 inf =   2.500e+01 (1)
+      1: obj =   3.333333333e+00 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Primal interação : 1  
+z = 3.33333; x1 = 1.66667; x2 = 0; lambda = 0 
+ 
+Diferença de (Q - lambda) = 25.000000 
+ 
+GLPK Simplex Optimizer, v4.61
+1 row, 3 columns, 3 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (2)
+*     1: obj =   6.666666667e+00 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Problema Dual Interação : 2 
+Q = 6.66667; u1 = 0; u2 = 1.25; u3 = 0 
+ 
+ 
+GLPK Simplex Optimizer, v4.61
+2 rows, 3 columns, 6 non-zeros
+      0: obj =   0.000000000e+00 inf =   3.375e+01 (2)
+      3: obj =   1.400000000e+01 inf =   0.000e+00 (0)
+*     4: obj =   1.014285714e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Primal interação : 2  
+z = 10.1429; x1 = 0; x2 = 1.85714; lambda = 6.42857 
+ 
+Diferença de (Q - lambda) = 0.238095 
+ 
+GLPK Simplex Optimizer, v4.61
+1 row, 3 columns, 3 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (3)
+*     1: obj =   1.464285714e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Problema Dual Interação : 3 
+Q = 14.6429; u1 = 0; u2 = 0; u3 = 2.5 
+ 
+ 
+GLPK Simplex Optimizer, v4.61
+3 rows, 3 columns, 9 non-zeros
+      0: obj =   0.000000000e+00 inf =   4.375e+01 (3)
+      3: obj =   1.156666667e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Primal interação : 3  
+z = 11.5667; x1 = 0.766667; x2 = 0.433333; lambda = 9.16667 
+ 
+Diferença de (Q - lambda) = 5.476190 
+ 
+GLPK Simplex Optimizer, v4.61
+1 row, 3 columns, 3 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (3)
+*     2: obj =   9.166666667e+00 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+ Problema Dual Interação : 4 
+Q = 9.16667; u1 = 0; u2 = 0; u3 = 2.5 
+ 
+ 
+GLPK Simplex Optimizer, v4.61
+4 rows, 3 columns, 12 non-zeros
+      0: obj =   0.000000000e+00 inf =   5.375e+01 (4)
+      4: obj =   1.156666667e+01 inf =   8.882e-16 (0)
+OPTIMAL LP SOLUTION FOUND
+ Primal interação : 4  
+z = 11.5667; x1 = 0.766667; x2 = 0.433333; lambda = 9.16667 
+ 
+Houve convergência na interação: 4, Erro =  0.000000 
+ 
+Os pontos ótimos são: 
+x1 = 0.766667, x2 = 0.433333, lambda = 9.166667 
+O valor ótimo de z: 
+z = 11.566667
+ 

@@ -1,0 +1,61 @@
+\chapter{Estado da Arte}
+No cap\'itulo anterior foi abordado a contextualiza\c c\~ao do trabalho, os objetivos, a metodologia da pesquisa e a
+estrutura do trabalho. Neste cap\'itulo \'e realizada uma revis\~ao bibliogr\'afica sobre o estado da arte para o tema
+estudado.
+Verificou-se que no planejamento energ\'etico para sistemas hidrot\'ermicos a principal t\'ecnica utilizada \'e a
+Programa\c c\~ao Din\^amica Dual Estoc\'astica. Desta forma, foi realizado um profundo estudo sobre a t\'ecnica deste sua
+fundamenta\c c\~ao te\'orica at\'e sua implementa\c c\~ao.
+\section{Revis\~ao bibliogr\'afica}
+A t\'ecnica da Programa\c c\~ao Din\^amica Dual Estoc\'astica(PDDE) \'e baseda na decomposi\c c\~ao de Benders \cite{benders}.
+Sua ideia principal \'e evitar o problema relacionado com a discretiza\c c\~ao do espa\c co de estados por meio da utiliza\c c\~ao da
+dualidade de um problema de otimiza\c c\~ao \cite{alexey} e \cite{boyd}.
+
+Em 2004 foi realizado uma an\'alise da Programa\c c\~ao  Din\^amica Dual Estoc\'astica por \cite{soares} para malha
+aberta parcial em compara\c c\~ao com a malha fechada do sistema. Sua principal justificativa deve-se ao fato que a PDDE
+mesmo em sistemas simples demanda um esfor\c co computacional n\~ao desprez\'ivel. A sua principal contribui\c c\~ao
+foi a
+modelagem por meio de um modelo auxiliar determin\'istico o qual tem como fun\c c\~ao a tomada de decis\~ao para a
+mudan\c ca de cen\'arios no modelo de PDDE. Foi observado resultados vantajosos para sua metodologia, particularmente em
+per\'iodos de estriagem.
+
+O m\'etodo baseado em constru\c c\~oes de cen\'arios por meio de amostragem foi proposto por \cite{homem} utilizando-se
+de simula\c c\~ao de Monte Carlo usual, hipercubo latino e Monte Carlo Randonizado. Os dois objetivos principais na
+utiliza\c c\~ao das t\'ecnicas mencionadas foram a constru\c c\~ao dos cen\'arios. Al\'em, de utilizar t\'ecnicas
+baseadas em testes de hip\'otese para a constru\c c\~ao de crit\'erios de parada robustos para o problema de
+planejamento energ\'etico por meio da PDDE. 
+
+Na utiliza\c c\~ao da t\'ecnica da PDDE o problema relacionado aos cortes por hiperplanos para v\'arios cen\'arios
+pode ser necess\'ario um grande esfor\c co computacional. Nessa perspectiva foi proposto por \cite{dematos} melhorias da
+t\'ecnica de PDDE em rela\c c\~ao a implementa\c c\~ao computacional. O metodologia utilizada foi a
+utiliza\c c\~ao de uma medida para o selecionamento dos cortes por hiperplanos para cada itera\c c\~ao. O principal
+resultado foi diminui\c c\~ao do tempo computacional do modelo sem percas siginificativas na qualidade da solu\c c\~ao. 
+
+No planejamento  hidrot\'ermico as incertezas do ambiente possuem grande import\^ancia. Em 2012 foi proposto por
+\cite{torres}  o
+modelamento do planejamento hidrot\'ermico por meio da PDDE para um conjunto n\~ao convexo. O seu intuito era o
+planejamento
+utilizando o modelo hidrot\'ermico para o caso do fen\^omeno de cabe\c ca d'\'agua de uma usina hidrel\'etrica. Pelo fen\^omeno ser
+de natureza n\~ao linear houve uma modifica\c c\~ao no modelo de PDDE para a adequa\c c\~ao do planejamento. Para o
+modelamento para o caso do conjunto vi\'avel ser de natureza convexa \'e poss\'ivel a aplica\c c\~ao direta do m\'etodo
+de relaxa\c c\~ao de Benders. Sua principal contribui\c c\~ao foi superar a dificuldade apresentada utilizando-se da
+t\'ecnica de RL para o planejamento estoc\'astico n\~ao linear. 
+
+O m\'etodo de decis\~ao do sistema possui caracter\'istica importante para o problema do tipo PDDE. Nesse intuito foi
+formulado em 2012 \cite{vitor} um m\'etodo para auxiliar a t\'ecnica de PDDE no processo decisivo. O m\'etodo
+utilizar a fun\c c\~ao denominada fun\c c\~ao de utilizadade com a qual \'e poss\'ivel a an\'alise de decisores para o
+planejamento permitindo obter informa\c c\~oes sobre os riscos no planejamento. A metodologia utilizada nessa abordagem
+foi constitu\'ida por tr\^es formas para o planejamento. A primeira baseada em uma discretiza\c c\~ao, a segunda baseada
+em uma forma cont\'inua e a terceira utilizando-se um modelo j\'a desenvolvido como forma de apoio.
+
+Na utiliza\c c\~ao da PDDE existe duas principais abordagens a constru\c c\~ao de cen\'arios e a utiliza\c
+c\~ao de m\'etodos de amostragem. Em 2016 foi proposto por \cite{Reben} a unifica\c c\~ao das t\'ecnicas no intuito da
+formula\c c\~ao de um modelo robusto de PDDE. Pois, os m\'etodos por cen\'arios possuem a desvantagem da necessidade de
+um grande n\'umero de cen\'arios. Por outro lado m\'etodos de amostragem necessitam de uma escolha razo\'avel para a
+descri\c c\~ao do conjunto observado podendo ser uma representa\c c\~ao razo\'avel ou  n\~ao representa de maneira
+adequada. Entre os principais resultados da abordagem foram: a contru\c c\~ao de algoritmo robusto para o modelamento da
+incerteza por meio de cen\'arios e amostragem, particularmente o modelo foi aplicado para um caso real do Panam\'a.
+
+\section{Considera\c c\~oes finais}
+Nesse cap\'itulo foram abordados alguns dos trabalhos sobre o tema proposto. Vale destacar que o planejamento energ\'etico possui
+caracter\'isticas que o tornam bastante complexo. Desta forma, h\'a uma grande quantidade de metodologias e t\'ecnicas na
+buscar de um planejamento eficiente, contudo, a t\'ecnica que recebe maior destaque \'e a PDDE.  

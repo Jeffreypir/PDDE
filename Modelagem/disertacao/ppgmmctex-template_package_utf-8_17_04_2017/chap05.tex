@@ -1,0 +1,378 @@
+\chapter{Programa\c c\~ao Din\^amica Dual Estoc\'astica}
+Na constru\c c\~ao do modelo considera-se primeiramente o caso determin\'istico supondo um problema de opera\c
+c\~ao em dois est\'agios de tal forma que 
+aflu\^encia em cada usina hidrel\'etrica em qualquer est\'agio do tempo \'e conhecida \cite{cp}. Desta forma,
+podendo-se modelar o problema por:
+\begin{align}
+\label{t1}
+&\min \langle c_1,x_1\rangle + \langle c_2,x_2\rangle \nonumber \\
+&\mbox{tal que: }	A_1 x_1 \geq b_1 \\
+&E_1 x_1 + A_2 x_2 \geq b_2 \nonumber
+\end{align}
+\begin{itemize}
+  \item $c_1$ e $c_2$ s\~ao vetores que representam os custos relacionados ao 1 e 2 est\'agio respectivamente;
+  \item $x_1$ e $x_2$ s\~ao vetores que representam as decis\~oes tomadas 1 e 2 est\'agios respectivamente;
+  \item $b_1$ e $b_2$  s\~ao os vetores de recursos no 1 e 2 est\'agios respectivamente;
+  \item $A_1$ e $A_2$ s\~ao matrizes que representam o acoplamento espacial;
+  \item $E_1$ \'e uma matriz que descreve o acoplamento temporal.
+\end{itemize}
+Observando-se o modelo \ref{t1} nota-se que a fun\c c\~ao a ser minizada \'e o custo em cada est\'agio do sistema. O
+per\'iodo de tempo do est\'agio a ser analizado
+depende do operador do sistema podendo ser dado por dia, semana, m\^es e ano. O tempo
+utilizado para o planejamento do sistema possui uma relev\^ancia consider\'avel. Uma vez que o planejamento para um
+per\'iodo de tempo suficiente longo ocorre a perca de informa\c c\~oes advindas das mudan\c cas naturais ou artificiais
+que ocorrem no ambiente \cite{tom}. As usinas em cascata possuem o acoplamento  temporal e o
+acoplamento temporal. Portanto, para a viabilidade do planejamento tais caracter\'istica devem ser consideradas no
+modelo \ref{t1}. Dessa forma, as matrizes $A_1, A_2$  e $E_1$ caracterizam o comportamento natural das usinas no planejamento.
+O problema descrito no modelo \ref{t1} pode ser interpretado como uma decis\~ao em dois est\'agios. O problema de dois
+est\'agios \'e representado pelo
+diagrama na \fig{estagio}.
+\begin{figure}[!h]
+ \centering
+ \label{estagio}
+ \resizebox{0.8\textwidth}{!}{%
+  \xymatrix@=1.0em{
+	  & & *+[F]{\text{PLANEJAMENTO}}\ar[d]&\\ 
+	  & & *+[F]{\text{CONFIGURA\c C\~AO INICIAL}} \ar[d]&\\  
+	  & & *+[F]{\text{1 EST\'AGIO}} \ar[r] \ar[d]& *+[F]{\text{DECIS\~AO VI\'AVEL}} \ar[dd]\\
+	  & & *+[F]{\text{CUSTO}} &\\   
+	  & & & *+[F]{\text{2 EST\'AGIO}} \ar[d] \\ 
+	  & & & *+[F]{\text{CUSTO}} 
+}}
+\caption{Representa\c c\~ao dos est\'agios.}
+\end{figure}
+
+
+Para a  resolu\c c\~ao  do problema descrito em \reg{t1} \'e
+escolhida uma decis\~ao vi\'avel $x_1$ para o 1 est\'agio que ser\'a denotada por ${x_1}^{*}$ de tal forma que $A_1{x_1}^{*} \geq b_1$.
+Nota-se que a priori n\~ao \'e poss\'ivel obter nenhuma informa\c c\~ao futura do sistema. Portanto, o operador do sistema
+somente tem condi\c c\~oes para a escolha de uma configura\c c\~ao vi\'avel $x_1$. A vari\'avel ${x_1}^{*}$ nesse
+caso \'e considerada \'otima pela falta de informa\c c\~ao sobre o estado futuro do sistema.
+Assim, o problema para decis\~ao do est\'agio 2 pode ser reescrito como, 
+\begin{align}
+  \begin{split}	
+ & 	\min \langle c_2,x_2\rangle  \\
+&\mbox{tal que: }A_2 x_2 \geq b_2 -{E_1 x_1}^{*}.
+  \end{split}
+    \label{p2}
+\end{align}
+O problema(\ref {p2}) \'e um problema de programa\c c\~ao linear e ${x_1}^{*}$ \'e conhecido (decis\~ao vi\'avel do
+primeiro est\'agio). Uma vez representadas
+as decis\~oes vi\'aveis tomadas no est\'agio 1 do
+problema o intuito \'e minimizar o custo da fun\c c\~ao objetivo para o 2 est\'agio. Dado que ${x_1}^{*}$ \'e vi\'avel procura-se uma solu\c c\~ao \'otima para $x_2$ representado por
+${x_2}^{*}$. A solu\c c\~ao do est\'agio 2 depende das decis\~oes tomadas no est\'agio 1. Portanto, o
+problema do est\'agio 2 pode ser visto como uma fun\c c\~ao do 1 est\'agio, isto \'e,
+\begin{align}
+  \begin{split}	
+	\alpha_{1} (x_1) =& \min \langle c_2,x_2\rangle \\
+	&\mbox{tal que: }A_2 x_2 \geq b_2 - {E_1 x_1}^{*} 
+  \end{split}
+    \label{p3}
+\end{align}
+onde ${\alpha}_{1}$ representa o valor \'otimo para o est\'agio 2. O problema \ref{t1} pode ser reescrito como se segue,
+\begin{align}
+  \begin{split}	
+  &\min \langle c_1,x_1\rangle + {\alpha}_{1}(x_1) \\
+&\mbox{tal que: }	A_1x_1 \geq b_1.
+\end{split}
+  \end{align}
+Aplicando a dualidade no problema (\ref{p2}) \'e imediato que,
+\begin{align}
+  \begin{split}	
+ \alpha_{1}(x_1) = &\max \pi (b_2 - E_1x_1 ) \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+  \end{split}
+ 	\label{p4}
+\end{align}
+
+Nas circunst\^ancias do problema a solu\c c\~ao da problema (\ref{p4}) \'e equivalente ao problema (\ref{p2}). De fato, 
+assumindo-se que o problema (\ref{p2}) possui solu\c c\~ao. Portando, o seu dual descrito por (\ref{p4}) admite o mesmo
+conjuto de pontos \'otimos como solu\c c\~ao.
+Nota-se que o conjunto vi\'avel $\pi A_2 \leq c_2$ do problema (\ref{p4}) n\~ao depende do valor de $x_1$. Desta forma, os
+pontos extremos ou v\'ertices do conjunto vi\'avel podem ser caracterizados por $\pi = \left\{ \pi^1, \pi^2, \dots,
+\pi^P \right\}$ \cite{cp}. Uma vez
+que o problema de programa\c c\~ao linear descrito por (\ref{p4}) possua uma solu\c c\~ao os resultados apresentados no cap\'itulo 3
+garatem que o problema ter\'a como uma solu\c c\~ao um dos v\'ertice do conjunto vi\'avel.
+Portanto, o problema descrito por (\ref{p4}) pode ser reescrito como se segue,
+\begin{align*}
+  \begin{aligned}
+	{\alpha}_{1}(x_1) = \text {max} \ \ {\pi}^{i} (b_2 - E_1x_1) \\
+	{\pi}^{i} \in  D_1 = \left\{ {\pi}^{1}, {\pi}^{2},\dots, {\pi}^{P} \right\}.
+  \end{aligned}
+\end{align*}
+
+O conjunto $D_1$ representa o conjunto de v\'ertices do conjunto vi\'avel D.
+Finalmente, o problema (\ref{p4}) pode ser reescrito para, 
+
+\begin{align}
+	\label{aux1}
+  	\alpha_{1}(x_1) =& \min\alpha \nonumber \\ 
+	&\mbox{tal que: }\alpha \geq \pi^{i}(b_2 - E_1 x_1) \\
+	&\mbox{com } i = 1,2, \dots , P \nonumber
+\end{align}
+onde $\alpha$ \'e uma vari\'avel escalar. Por fim, fazendo-se a substitui\c c\~ao (\ref{aux1}) em (\ref{t1}) o problema
+dado por \ref{t1} torna-se,
+\begin{align}
+	\label{fin1}
+&\min \langle c_1,x_1\rangle + \alpha \nonumber\\
+&\mbox{tal que: }	A_1 x_1 \geq b_1 \\
+&	\pi^{i}(b_2 - E_1x_1) - \alpha \leq 0\nonumber \\ 
+&\mbox{parar }	i = 1, 2, \dots , P.\nonumber
+\end{align}
+
+A t\'ecnica para problemas determin\'isticos utilizada para a formula\c c\~ao do problema \ref{fin1} \'e conhecida na literatura como
+a decomposi\c c\~ao de Benders
+(Benders, 1962) ou cortes por hiperplanos. A ideia da t\'ecnica \'e decompor o problema original permitindo que esse
+seja resolvido de forma iterativa por meio da resolu\c c\~ao de problemas auxiliares. Outro fator importante da
+utiliza\c c\~ao da t\'ecnica de decomposi\c c\~ao de Benders \'e evidenciado na formula\c c\~ao dada em \ref{fin1}. Uma
+vez que na formula\c c\~ao apresentada em \ref{fin1} nenhum do termos depende de $x_2$, ou seja, o planejamento pela
+utiliza\c c\~ao da t\'ecnica de Benders independe das decis\~oes tomadas no 2 est\'agio. A import\^ancia desse fato
+deve-se que o operador do sistema n\~ao necessitar tomar alguma decis\~ao para o planejamento o que diminuir a
+complexidade do processo de planejamento e evitar poss\'iveis erros.
+A descri\c c\~ao do algoritmo \'e
+dada a seguir.
+
+\begin{center}
+Algoritmo do problema determin\'istico:\\
+\end{center}
+Resolve problema principal:
+\begin{align*}
+&\min \langle c_1,x_1\rangle + \alpha \nonumber\\
+&\mbox{tal que: }	A_1 x_1 \geq b_1
+\end{align*}
+Chute inicial para o problema principal = $x_1^{*}$ e $\alpha_1$.\\
+Repitar:\\
+Resolver  o problema auxiliar (1):
+\begin{align*}
+  \begin{split}	
+ \alpha_2= &\max \pi (b_2 - E_1x_1 ) \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+  \end{split}
+\end{align*}
+Compara\c c\~ao de converg\^encia:
+\begin{align*}
+	&|\alpha_1 - \alpha_2|< \mbox{toler\^ancia}\\
+	&\mbox{para;}\\
+	&\mbox{Sair da repeti\c c\~ao;}\\
+	&\mbox{Sa\'ida \'otima} = x_1^{*}, \alpha_1.
+\end{align*}
+Caso contr\'ario:\\
+Acrecente ao problema principal a condi\c c\~ao:
+\begin{align*}
+\pi(b_2 - E_1x_1) - \alpha \leq 0
+\end{align*}
+Resolver o problema principal:
+\begin{align*}
+&\min \langle c_1,x_1\rangle + \alpha \nonumber\\
+&\mbox{tal que: }	A_1 x_1 \geq b_1\\
+&\pi(b_2 - E_1x_1) - \alpha \leq 0
+\end{align*}
+Voltar ao passo 1.\\
+Atingido o número de itera\c c\~oes parar.\\
+
+A Programa\c c\~ao Din\^amica Dual Estoc\'astica consiste em uma aplica\c c\~ao da decomposi\c c\~ao de Benders em um problema cuja a
+natureza \'e
+estoc\'astica. Considerando-se o problema de dois est\'agios similar ao caso anterior, contudo o 2 est\'agio depende dos valores
+que uma ou mais vari\'aveis aleat\'orias discretas podem assumir. Por exemplo, suponde-se que o vetor $b$ pode assumir dois
+valores $b_1$ e $b_2$ com
+probabilidades $p_1$ e $p_2$ respectivamente ($p_1 + p_2 = 1$) \cite{cp}. O objetivo \'e encontrar a estrat\'egia que minimiza o
+valor do custo esperado. Portanto, o problema fica modelado por:
+\begin{align}
+	\label{aux2}
+  z = \min  \langle c_1,x_1\rangle &+ p_1\langle c_2,x_{21}\rangle + p_2\langle c_2,x_{22}\rangle \nonumber\\	
+ \mbox{tal que: }&	A_1 x_1 \geq b_1 \\
+	&E_1 x_1 + A_2 x_{21} \geq b_{21} \nonumber\\
+	&E_1 x_1 + A_2x_{22} \geq b_{22} \nonumber
+\end{align}
+O modelo descrito por \ref{aux2} possui considera\c c\~oes distintas do caso determin\'istico. Primeiramente, o termo
+dado por $p_1\langle c_2,x_{21}\rangle + p_2\langle c_2,x_{22}\rangle $ \'e igual a $E(X_2)$, isto \'e, para a miniza\c c\~ao da
+fun\c c\~ao objetivo do modelo \ref{aux2} utiliza-se o valor esperado do custo no 2 est\'agio. Como o planejamento
+considerar os dois cen\'arios de planejamento, portanto, para cada um dos cen\'arios deve-se considerar o acoplamento
+temporal e o acoplamento espacial existente entre as usinas hidrel\'etricas no 2 est\'agio. Nota-se que a condi\c c\~ao
+$A_1 x_1 \geq b_1$ permanece inalterada, pois, semelhantemente ao caso determin\'istico para o caso estoc\'astico o
+1 est\'agio ainda depende somente da decis\~ao do operador do sistema dada as condi\c c\~oes do ambiente. 
+
+O objetivo do
+modelo no planejamento e encontrar o custo esperado. O custo esperado \'e calculado levando-se em considera\c c\~ao dois
+custos parciais. Primeiramente \'e calculado o custo do primeiro est\'agio dada a escolha vi\'avel tomada pelo
+operador do sistema. No segundo momento \'e calculado um custo parcial levando-se em consequ\^encia as decis\~oes do
+operador do sistema tomadas no 1 est\'agio e as condi\c c\~oes ambientais como o volume dos reservat\'orios e quest\~oes 
+relacionadas a demanda do sistema. A partir da obten\c c\~ao dos custos do 1 est\'agio e do 2 est\'agio \'e poss\'ivel
+estipular o custo esperado para o planejamento do sistema no per\'iodo observado. 
+O diagrama na Figura (\ref{estocastico}) a seguir representar o problema de planejamento de dois est\'agios para o caso
+estoc\'astico de dois cen\'arios.
+
+\begin{figure}[!h]
+ \centering
+ \resizebox{1.1\textwidth}{!}{%
+  \xymatrix@=1.0em{
+	  & & &*+[F]{\text{PLANEJAMENTO}}\ar[d]&\\ 
+	  & & &*+[F]{\text{CONFIGURA\c C\~AO INICIAL}} \ar[d]&\\  
+	  & & &*+[F]{\text{1 EST\'AGIO}} \ar[r] \ar[d]& *+[F]{\text{DECIS\~AO VI\'AVEL}} \ar[dd]\\
+	  & & &*+[F]{\text{CUSTO}}& \\ 
+	  & & && *+[F]{\text{2 EST\'AGIO}} \ar[dl] \ar[drrr]\\
+	  & & & *+[F]{\text{CEN\'ARIO 1}} &
+	  & & & *+[F]{\text{CEN\'ARIO 2}}\\
+	  & & && *+[F]{\text{CUSTO ESPERADO NO 2 EST\'AGIO}}\ar[urrr] \ar[ul]
+}}
+\caption{Representa\c c\~ao dos est\'agios para o caso estoc\'astico.}
+ \label{estocastico}
+\end{figure}
+Pelo diagrama na Figura (\ref{estocastico})e levando-se em considera\c c\~ao a decis\~ao vi\'avel $x_1^{*}$ tomada pelo
+operador do sistema no 1 est\'agio o problema \ref {aux2} pode ser reescrito como,
+{\setlength{\belowdisplayskip}{-4pt}
+\begin{align*}
+  z = \min  \langle c_1,x_1\rangle + p_1{\omega}_{21} + p_2 {\omega}_{22} \nonumber \\	
+	A_1 x_1 \geq b_1
+  \end{align*}}%
+{\setlength{\abovedisplayskip}{-6pt}
+ \setlength{\belowdisplayskip}{0pt}
+\begin{align}
+	\label{principal}
+  \begin{split}	
+  &\omega_{21}(x_1) =\min \langle c_2,x_{21}\rangle \\
+  & A_2 x_{21} \geq b_{21} - E_1 x_1^{*} 
+  \end{split}
+	\end{align}}%
+{\setlength{\abovedisplayskip}{0pt}
+\begin{align}
+  \begin{split}	
+ 	&\omega_{22}(x_1) = \min  \langle c_2,x_{22}\rangle \\ \nonumber
+	&A_2x_{22} \geq b_{22} - E_1 x_1^{*}. 
+  \end{split}
+   \end{align}}%
+A formula\c c\~ao do problema dado em \ref{principal} decomp\~oe o problema principal em um problema derivado com dois
+subproblemas auxiliares. O problema principal derivado \'e dado por,
+\begin{align}
+	\label{estoPrincipal}
+  z = \min  \langle c_1,x_1\rangle + p_1{\omega}_{21} + p_2 {\omega}_{22} \nonumber \\	
+	A_1 x_1 \geq b_1.
+\end{align}
+Os problemas auxiliares s\~ao:
+\begin{align}
+	\label{estoAux1}
+  \begin{split}	
+  	&\omega_{21}(x_1) =\min \langle c_2,x_{21}\rangle \\
+  	& A_2 x_{21} \geq b_{21} - E_1 x_1^{*} 
+  \end{split}
+\end{align}
+\begin{align}
+	\label{estoAux2}
+	\begin{split}	
+ 		&\omega_{22}(x_1) = \min  \langle c_2,x_{22}\rangle \\
+		&A_2x_{22} \geq b_{22} - E_1 x_1^{*}. 
+	\end{split}
+\end{align}
+Os subproblemas \ref{estoAux1} e \ref{estoAux2} representam os cen\'arios 1 e 2 considerados no planejamento respectivamente.
+Nota-se que os problemas  \ref{estoPrincipal}, \ref{estoAux1} e \ref{estoAux2} s\~ao todos problemas de programa\c c\~ao
+linear. De modo an\'aloga ao caso determ\'inistico aplica-se a dualidade nos problemas \ref{estoAux1} e \ref{estoAux2}
+obtendo-se:
+\begin{align}
+  \begin{split}	
+	  \omega_{21}(x_1) = &\max \pi_1 (b_{21} - E_1x_1 ) \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+  \end{split}
+ 	\label{auxdual1}
+\end{align}
+\begin{align}
+  \begin{split}	
+	  \omega_{22}(x_1) = &\max \pi_2 (b_{22} - E_1x_1 ) \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+  \end{split}
+ 	\label{auxdual2}
+\end{align}
+Em seguida, aplicando a decomposi\c c\~ao de Benders nos problemas \ref{auxdual1} e \ref{auxdual2} obt\^em-se:  
+\begin{align}
+	\label{auxb1}
+&\omega_{21}(x_1) = \min  \beta_{1}\nonumber \\
+	&\mbox{tal que: }\beta_{1}  \geq {\pi}_{1}^{i}b_{21} - E_1 x_1 \\
+	&\mbox{para }i = 1,2,\dots, P  \nonumber
+  \end{align}
+\begin{align}
+	\label{auxb2}
+&\omega_{21}(x_1) = \min  \beta_{2}\nonumber \\
+	&\mbox{tal que: }\beta_{2}  \geq {\pi}_{2}^{j}b_{21} - E_1 x_1 \\
+	&\mbox{para }i = 1,2,\dots, P  \nonumber
+  \end{align}
+ de maneira semelhante ao caso determin\'istico aplica-se a substitui\c c\~ao \ref{auxb1} e \ref{auxb2} no problema
+ principal  dado por \ref{principal}, portanto, o problema original estoc\'astico \'e formulado como,
+
+ \begin{align}
+ \begin{aligned}
+	\underset {s \backslash a} {\text{min}} \ \ \langle c_1,x_1\rangle + p_1 {\beta}_{1} + p_2 {\beta}_{2} \\
+	A_1 x_1 \geq b_1 \\
+	{\pi}_{1}^{i}(b_{21} - E_1x_1) - {\beta}_{1} \leq 0 \\ 
+	{\pi}_{2}^{j}(b_{22} - E_1x_1) - {\beta}_{2} \leq 0 \\ 
+	i = 1, 2, \dots , P \\
+	j = 1, 2, \dots , P. \\
+  \end{aligned}
+  \label{pd5}
+\end{align}
+
+A t\'ecnica de decomposi\c c\~ao de Benders aplicada as problemas de planejamento estoca\'astico de v\'arios cen\'arios
+\'e conhecida na literatura como Programa\c c\~ao Din\^amica Dual Estoc\'astica (PDDE).
+Em poucas linhas, a PDDE faz uma decomposi\c c\~ao no problema original utilizando-se os princ\'ipios de dualidade e a decomposi\c c\~ao
+de Benders. Isto permite a resolu\c c\~ao do problema original, a partir da solu\c c\~ao de outro
+problema. Contudo, este
+\'ultimo possui um melhor tratamento computacional permitindo uma implementa\c c\~ao menos complexa. Al\'em de permitir
+o planejamento pelo operador do sistema sem a necessidade de considera\c c\~oes sobre as decis\~oes tomadas no 2
+est\'agio, de fato de maneira semelhante ao caso determin\'istico n\~ao se observar na formula\c c\~ao final do problema
+dado por \ref{pd5}, qualquer depend\^encia com o vetor das decis\~oes do 2 est\'agio representado por $x_2$. O
+modelamento por meio da PDDE permitir a modelagem mista, isto \'e, a formula\c c\~ao final do problema dada por
+\ref{pd5} permitir o modelo descrever as caracter\'isticas de um sitema hidrot\'ermico (hidrel\'etricas e
+termel\'etricas associadas). A descri\c c\~ao do algoritmo de PDDE \'e dado a seguir.
+\begin{center}
+Algoritmo para programa\c c\~ao dual estoc\'astica:\\
+\end{center}
+Resolve problema principal:
+\begin{align*}
+&\min \langle c_1,x_1\rangle + p_1\beta_1  + p_2\beta_2\nonumber\\
+&\mbox{tal que: }	A_1 x_1 \geq b_1
+\end{align*}
+Chute inicial para o problema principal = $x_1^{*}$, $\beta_1$ e $\beta_2$.\\
+Repitar:\\
+Resolver  os problemas auxiliares (1):
+\begin{align}
+  \begin{split}	
+	  \omega_1 = &\max \pi_1 (b_{21} - E_1x_1 ) \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+  \end{split}
+ 	\label{auxdual1}
+\end{align}
+\begin{align}
+  \begin{split}	
+	  \omega_2 = &\max \pi_2 (b_{22} - E_1x_1 ) \\
+	&\mbox{tal que: }\pi A_2  \leq c_2.
+  \end{split}
+ 	\label{auxdual2}
+\end{align}
+
+Compara\c c\~ao de converg\^encia:
+\begin{align*}
+	&|\beta_1 - \omega_1|\hspace{3pt} \mbox{e} \hspace{3pt} |\beta_2 - \omega_2|< \mbox{toler\^ancia}\\
+	&\mbox{parar;}\\
+	&\mbox{Sair da repeti\c c\~ao;}\\
+\end{align*}
+Sa\'ida \'otima = $x_1^{*}, \beta_1, \beta_2.$ \\
+Caso contr\'ario:\\
+
+Acrecente ao problema principal a condi\c c\~ao:
+\begin{align*}
+	\pi_1(b_{21} - E_1x_1) - \beta_1 \leq 0\\
+	\pi_2(b_{22} - E_1x_1) - \alpha \leq 0
+\end{align*}
+
+Resolver o problema principal:
+\begin{align*}
+&\min \langle c_1,x_1\rangle + \alpha \nonumber\\
+&\mbox{tal que: }	A_1 x_1 \geq b_1\\
+&\pi_1(b_{21} - E_1x_1) - \beta_1 \leq 0\\
+&\pi_2(b_{22} - E_1x_1) - \beta_2 \leq 0
+\end{align*}
+Voltar ao passo 1.\\
+Atingido o número de itera\c c\~oes parar.\\
+Nesse cap\'itulo foi apresentado o modelamento de despacho hidrot\'ermico. A modelagem abordada foi a programa\c c\~ao
+din\^amica dual estoc\'astica pelas suas caracter\'isticas permitirem vantagens no modelamento. Como principais
+vantagens o aspecto computacional e a possibilidade de planejamento sem a necessidade de conhecimento das decis\~oes do 2
+est\'agio.
+
