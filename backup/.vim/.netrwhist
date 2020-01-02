@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/jefferson/.vim/after/syntax'
+let g:netrw_dirhist_2='/home/jefferson'
+let g:netrw_dirhist_3='/home'
+let g:netrw_dirhist_4='/home/jefferson'
+let g:netrw_dirhist_5='/home/jefferson/.config'
+let g:netrw_dirhist_6='/home/jefferson'
+let g:netrw_dirhist_7='/home/jefferson/EDO'
+let g:netrw_dirhist_8='/home/jefferson/EDO/octave'

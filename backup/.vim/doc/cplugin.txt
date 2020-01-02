@@ -1,0 +1,39 @@
+*cplugin.txt* functionaly for the C language
+============================================
+										~
+  ___ _ __ | |_   _  __ _(_)_ __    ~
+ / __| '_ \| | | | |/ _` | | '_ \   ~
+| (__| |_) | | |_| | (_| | | | | |  ~
+ \___| .__/|_|\__,_|\__, |_|_| |_|    ~
+     |_|            |___/            ~
+
+
+Author: Jefferson Bezerra dos Santos
+============================================
+
+"Structure of loop
+	Normal Mode <leader>sf ........... for (int i = 0; i <= n;i++){arguments} 
+	Normal Mode <leader>sw ----------- while (condicion){arguments}
+
+"Strucure condicional
+	Normal Mode <leader>if ------------ if(condition){arguments}
+	Normal Mode <leader>il ------------ if(condition){arguments}else{arguments}
+
+"Print of data
+	Normal Mode <leader>p ------------- printf(arguments);
+
+"Archive
+	Normal Mode <leader>fp ------------ sprintf(arguments);
+
+"Template of functions
+	Normal Mode <leader>fi ------------- int function(arguments){codeblock};
+	Normal Mode <leader>ff ------------- foat function(arguments){codeblock};
+	Normal Mode <leader>fd ------------- double function(arguments){codeblock};
+	Normal Mode <leader>fv ------------- void function(arguments){codeblock};
+
+"Complementation of code
+	Inserction Mode -na ------------------ Archive name
+	Inserction Mode -da ------------------ Date
+
+"Compilaion of archives
+	Normal Mode <F10> -------------------- gcc archive.c -o archive && execute archive

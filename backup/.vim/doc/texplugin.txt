@@ -1,0 +1,42 @@
+*texplugin* functionaly for the latex programming linguage
+========================================================
+                 _             _           ~
+| |_ _____  ___ __ | |_   _  __ _(_)_ __   ~
+| __/ _ \ \/ / '_ \| | | | |/ _` | | '_ \   ~
+| ||  __/>  <| |_) | | |_| | (_| | | | | | ~
+ \__\___/_/\_\ .__/|_|\__,_|\__, |_|_| |_| ~
+             |_|            |___/           ~
+
+Author: Jefferson Bezerra dos Santos
+========================================================
+
+"Dissertation
+	<F2> ........................... pdflatex archivename.tex
+	<F3> ........................... zathura archivename.pdf
+
+"Keys enviromment
+	Normal Mode <leader>bg ...................... \begin{enviromment}-----\end{enviromment}
+	Insection Mode  <leader>ali ...................... \begin{align}-----\end{align}
+	Insection Mode  <leader>ani ...................... \begin{enviromment}-----\end{enviromment}
+	Insection Mode  <leader>fig ...................... \begin{enviromment}-----\end{enviromment}
+	Insection Mode  <leader>tab ...................... \begin{enviromment}-----\end{enviromment}
+
+"Userpackage 
+	<F7> ..................... \userpackage{package}
+
+"Template
+	Normal Mode <leader>tp ........................ template enviromment 
+	Normal Mode <leader>tc ........................ template commands 
+
+"Dictionary
+	<leader>ev ............................ dictionary enviromment
+	<leader>gr ............................ dictionary grego
+
+"Left and Right
+	<leader> ............................. \left symbol arguments \right symbol
+
+"Resibox 
+	<leader> ............................. \resibox{arguments\width{!}}
+
+"Enviroment math
+	\4 ............................... $$
