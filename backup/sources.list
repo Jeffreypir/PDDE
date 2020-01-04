@@ -1,0 +1,55 @@
+# 
+
+#Minha source lista
+
+deb [trusted=yes]  file:///mnt/dvd1/ stretch  main
+deb [trusted=yes]  file:///mnt/dvd2/ stretch  main 
+deb [trusted=yes]  file:///mnt/dvd3/ stretch  main  
+deb [trusted=yes]  file:///mnt/dvd4/ stretch  main 
+deb [trusted=yes]  file:///mnt/dvd5/ stretch  main 
+deb [trusted=yes]  file:///mnt/dvd6/ stretch  main
+deb [trusted=yes]  file:///mnt/dvd7/ stretch  main 
+deb [trusted=yes]  file:///mnt/dvd8/ stretch   main
+deb [trusted=yes]  file:///mnt/dvd9/ stretch   main
+deb [trusted=yes]  file:///mnt/dvd10/ stretch   main
+deb [trusted=yes]  file:///mnt/dvd11/ stretch   main
+deb [trusted=yes]  file:///mnt/dvd12/ stretch   main
+deb [trusted=yes]  file:///mnt/dvd13/ stretch   main
+deb [trusted=yes]  file:///mnt/dvd14/ stretch   main
+
+#Pacotes fonte
+deb-src [trusted=yes] file:///mnt/dvd1source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd2source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd3source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd4source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd5source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd6source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd7source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd8source/ stretch main
+deb-src [trusted=yes] file:///mnt/dvd9source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd10source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd11source/ stretch main 
+deb-src [trusted=yes] file:///mnt/dvd12source/ stretch main 
+
+deb http://deb.debian.org/debian stretch main
+deb-src http://deb.debian.org/debian stretch main
+
+deb http://deb.debian.org/debian-security/ stretch/updates main
+deb-src http://deb.debian.org/debian-security/ stretch/updates main
+
+deb http://deb.debian.org/debian stretch-updates main
+deb-src http://deb.debian.org/debian stretch-updates main
+
+deb http://deb.debian.org/debian stretch main contrib non-free
+deb-src http://deb.debian.org/debian stretch main contrib non-free
+
+deb http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security/ stretch/updates main contrib non-free
+
+deb http://deb.debian.org/debian stretch-updates main contrib non-free
+deb-src http://deb.debian.org/debian stretch-updates main contrib non-free
+
+
+deb http://security.debian.org/debian-security stretch/updates main contrib
+deb-src http://security.debian.org/debian-security stretch/updates main contrib
+
