@@ -1,5 +1,5 @@
 \chapter{Fundamenta\c c\~ao Te\'orica}
-No cap\'itulo anterior foi abordado algumas da pesquisas sobre o tema abordado. Neste cap\'itulo ser\'a definido o
+No cap\'itulo anterior foram abordadas algumas das pesquisas sobre o tema. Neste cap\'itulo ser\'a definido o
 problema de planejamento energ\'etico para o caso hidrot\'ermico e a estrutura do planejamento baseado na Programa\c c\~ao
 Din\^amica Dual Estoc\'astica.
 \section{Despacho de energia}
@@ -370,19 +370,19 @@ Resolve problema principal:
 &\mbox{tal que: }	A_1 x_1 \geq b_1
 \end{align*}
 Na primeira verifica\c c\~ao simplesmente assumir valores vi\'aveis.\\
-Chute inicial para o problema principal = $x_1^{*}$ e $\alpha_1$.\\
+Chute inicial para o problema principal = $x_1^{*}$ e $\alpha$.\\
 Repitar:\\
 Resolver  o problema auxiliar (1):
 \begin{align*}
   \begin{split}	
- \alpha_2= &\max \pi (b_2 - E_1x_1 ) \\
+ \alpha_1 = &\max \pi (b_2 - E_1x_1 ) \\
 	&\mbox{tal que: }\pi A_2  \leq c_2.
   \end{split}
 \end{align*}
 
 	Compara\c c\~ao de converg\^encia:
 		\begin{align*}
-			&|\alpha_1 - \alpha_2|< \mbox{toler\^ancia}\\
+			&|\alpha - \alpha_1|< \mbox{toler\^ancia}\\
 			&\mbox{para;}\\
 			&\mbox{Sair da repeti\c c\~ao;}\\
 			&\mbox{Sa\'ida \'otima} = x_1^{*}, \alpha_1.
@@ -573,8 +573,8 @@ Em seguida, aplicando a decomposi\c c\~ao de Benders nos problemas \ref{auxdual1
   \end{align}
 \begin{align}
 	\label{auxb2}
-&\omega_{21}(x_1) = \min  \beta_{2}\nonumber \\
-	&\mbox{tal que: }\beta_{2}  \geq {\pi}_{2}^{j}b_{21} - E_1 x_1 \\
+&\omega_{22}(x_1) = \min  \beta_{2}\nonumber \\
+	&\mbox{tal que: }\beta_{2}  \geq {\pi}_{2}^{j}b_{22} - E_1 x_1 \\
 	&\mbox{para }i = 1,2,\dots, P  \nonumber
   \end{align}
  de maneira semelhante ao caso determin\'istico aplica-se a substitui\c c\~ao \ref{auxb1} e \ref{auxb2} no problema
@@ -642,7 +642,7 @@ Caso contr\'ario:\\
 Acrecente ao problema principal a condi\c c\~ao:
 \begin{align*}
 	\pi_1(b_{21} - E_1x_1) - \beta_1 \leq 0\\
-	\pi_2(b_{22} - E_1x_1) - \alpha \leq 0
+	\pi_2(b_{22} - E_1x_1) - \beta_2 \leq 0
 \end{align*}
 
 Resolver o problema principal:
